@@ -1,0 +1,76 @@
+VI 
+Analýza co si vlastně představujeme vizualizovat
+dokument bude a anglicky
+cílem bude web aplikace (pro nás v Dockeru)
+technologie webu
+nějaká jednoduchá mapa
++++ použít jíná data než dána
+
+
+DATA
+Typy institucí
+    CZ
+    - Universities
+        - Jméno univerzity
+        - Oddělení 
+            - Jméno oddělení
+            - Link
+    - Universities of Applied Sciences
+        - Jméno univerzity
+        - Link
+    
+    DE
+    - Universities
+    - Universities of Applied Sciences
+    
+    Latvia
+    - Higher Education Institutions
+        - Jméno univerzity
+        - Link
+        OR
+        - Jméno univerzity
+        - Oddělení
+            - Jméno oddělení
+            - Link
+    
+    Norway
+    - Universities
+        - Jméno univerzity
+        - Oddělení 
+            - Jméno 
+            - Link
+    - Universities Colleges
+        - Jméno
+        - Link
+    
+    Portugal
+    - Universities
+        - Jméno univerzity
+        - Oddělení 
+            - Jméno 
+            - Link
+    - Universities of Applied Sciences
+        - Jméno univerzity
+        - Oddělení 
+            - Jméno 
+            - Links
+            
+Students Statistics
+Institutions Type RU a UAS
+RU = Reaserch univerzities
+UAS = Universities of Applied Sciences
+
+From Students in EU (bachelor, master and doc) there is no evidence of Croatia, Slovakia, Slovenia, Hungary
+Column population is probably is mean from all years
+
+
+Conclusion
+Popisný soubory institucí v pár státech EU, Statistiky v univerzitách v norsku a portugalsku, a statistiky států v EU
+
+GeoJson pro hranice 
+httpsgeojson-maps.kyd.au
+
+Pro univerzity
+httpswiki.openstreetmap.orgwikiOverpass_API
+
+Jaký státy vynechat z EU
