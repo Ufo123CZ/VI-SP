@@ -1,0 +1,6 @@
+Fetching of universities is too slow probably loading screend to know something is happening.
+
+Lock view on europe.
+
+More detailed borders
+https://geojson-maps.kyd.au/
