@@ -1,0 +1,180 @@
+country: Czech Republic
+institutions:
+  - title: Universities
+    data:
+      - name: Česká zemědělská univerzita v Praze
+        departments: 
+          - name: Provozně ekonomická fakulta
+            link: https://www.pef.czu.cz/en
+      - name: České vysoké učení technické v Praze
+        departments: 
+          - name: Fakulta biomedicínského inženýrství
+            link: https://www.fbmi.cvut.cz
+      - name: České vysoké učení technické v Praze
+        departments: 
+          - name: Fakulta dopravní
+            link: https://www.fd.cvut.cz/english          
+      - name: České vysoké učení technické v Praze
+        departments: 
+          - name: Fakulta elektrotechnická
+            link: https://www.fel.cvut.cz/en
+      - name: České vysoké učení technické v Praze
+        departments: 
+          - name: Fakulta informačních technologií
+            link: https://fit.cvut.cz/en
+      - name: Jihočeská univerzita v Českých Budějovicích
+        departments: 
+          - name: Ekonomická fakulta
+            link: https://www.ef.jcu.cz/?set_language=en          
+      - name: Jihočeská univerzita v Českých Budějovicích
+        departments:          
+          - name: Přírodovědecká fakulta
+            link: https://www.prf.jcu.cz/en
+      - name: Masarykova univerzita
+        departments: 
+          - name: Ekonomicko-správní fakulta
+            link: https://www.econ.muni.cz/en
+      - name: Masarykova univerzita
+        departments:         
+          - name: Fakulta informatiky
+            link: https://www.fi.muni.cz
+      - name: Masarykova univerzita
+        departments: 
+          - name: Přírodovědecká fakulta
+            link: https://www.sci.muni.cz
+      - name: Mendelova univerzita v Brně
+        departments: 
+          - name: Provozně ekonomická fakulta
+            link: http://www.pef.mendelu.cz/en
+      - name: Ostravská univerzita
+        departments: 
+          - name: Přírodovědecká fakulta
+            link: https://prf.osu.eu 
+      - name: Slezská univerzita v Opavě
+        departments: 
+          - name: Filozoficko-přírodovědecká fakulta v Opavě
+            link: https://www.slu.cz/fpf/en
+      - name: Slezská univerzita v Opavě
+        departments: 
+          - name: Obchodně podnikatelská fakulta v Karviné
+            link: https://www.slu.cz/opf/en 
+      - name: Technická univerzita v Liberci
+        departments: 
+          - name: Ekonomická fakulta
+            link: http://www.ef.tul.cz/en 
+      - name: Technická univerzita v Liberci
+        departments: 
+          - name: Fakulta mechatroniky, informatiky a mezioborových studií
+            link: https://www.fm.tul.cz/en 
+      - name: Technická univerzita v Liberci
+        departments: 
+          - name: Fakulta přírodovědně-humanitní a pedagogická
+            link: https://www.fp.tul.cz
+      - name: Univerzita Hradec Králové
+        departments: 
+          - name: Fakulta informatiky a managementu
+            link: https://www.uhk.cz/en-GB/FIM
+      - name: Univerzita Hradec Králové
+        departments: 
+          - name: Přírodovědecká fakulta
+            link: https://www.uhk.cz/en-GB/PRF
+      - name: Univerzita Jana Evangelisty Purkyně v Ústí nad Labem
+        departments: 
+          - name: Přírodovědecká fakulta
+            link: http://sci.ujep.cz/faculty-of-science.html 
+      - name: Univerzita Karlova
+        departments: 
+          - name: Matematicko-fyzikální fakulta
+            link: https://www.mff.cuni.cz/en
+      - name: Univerzita Karlova
+        departments: 
+          - name: Přírodovědecká fakulta
+            link: https://www.natur.cuni.cz/eng
+      - name: Univerzita Karlova
+        departments: 
+          - name: 2. lékařská fakulta
+            link: https://www.lf2.cuni.cz/en
+      - name: Univerzita obrany v Brně
+        departments: 
+          - name: Fakulta vojenských technologií
+            link: https://www.unob.cz/fvt 
+      - name: Univerzita Palackého v Olomouci
+        departments: 
+          - name: Přírodovědecká fakulta
+            link: https://www.prf.upol.cz/en                              
+      - name: Univerzita Pardubice
+        departments: 
+          - name: Fakulta ekonomicko-správní
+            link: https://fes.upce.cz/en
+      - name: Univerzita Pardubice
+        departments: 
+          - name: Fakulta elektrotechniky a informatiky
+            link: https://fei.upce.cz/en 
+      - name: Univerzita Tomáše Bati ve Zlíně
+        departments: 
+          - name: Fakulta aplikované informatiky
+            link: https://fai.utb.cz/en    
+      - name: Univerzita Tomáše Bati ve Zlíně
+        departments: 
+          - name: Fakulta managementu a ekonomiky
+            link: https://fame.utb.cz/en    
+      - name: Vysoká škola báňská - Technická univerzita Ostrava
+        departments: 
+          - name: Ekonomická fakulta
+            link: https://www.ekf.vsb.cz/en
+      - name: Vysoká škola báňská - Technická univerzita Ostrava
+        departments: 
+          - name: Fakulta elektrotechniky a informatiky
+            link: https://www.fei.vsb.cz/en  
+      - name: Vysoká škola chemicko-technologická v Praze
+        departments: 
+          - name: Fakulta chemicko-inženýrská
+            link: https://fchi.vscht.cz/?jazyk=en
+      - name: Vysoká škola chemicko-technologická v Praze
+        departments: 
+          - name: Fakulta chemické technologie
+            link: https://fcht.vscht.cz/?jazyk=en
+      - name: Vysoká škola ekonomická v Praze
+        departments: 
+          - name: Fakulta informatiky a statistiky
+            link: https://fis.vse.cz/english  
+      - name: Vysoké učení technické v Brně
+        departments: 
+          - name: Fakulta elektrotechniky a komunikačních technologií
+            link: http://www.feec.vutbr.cz/fakulta/home.php.en?lang=en 
+      - name: Vysoké učení technické v Brně
+        departments: 
+          - name: Fakulta informačních technologií
+            link: https://www.fit.vutbr.cz 
+      - name: Vysoké učení technické v Brně
+        departments: 
+          - name: Fakulta podnikatelská
+            link: https://www.fbm.vutbr.cz 
+      - name: Západočeská univerzita v Plzni
+        departments: 
+          - name: Fakulta aplikovaných věd
+            link: https://www.fav.zcu.cz/en 
+      - name: Západočeská univerzita v Plzni
+        departments: 
+          - name: Fakulta ekonomická
+            link: https://www.fek.zcu.cz/en
+      - name: Západočeská univerzita v Plzni
+        departments: 
+          - name: Fakulta elektrotechnická
+            link: https://fel.zcu.cz/en 
+
+  - title: Universities of Applied Sciences
+    data:
+      - name: Akademie HUSPOL s.r.o.
+        link: https://edukomplex.cz
+      - name: Moravská vysoká škola Olomouc o.p.s.
+        link: https://mvso.cz/en 
+      - name: Unicorn vysoká škola s.r.o.
+        link: https://unicornuniversity.net/en/
+      - name: Vysoká škola finanční a správní a.s. 
+        link: https://www.vsfs.cz/en
+      - name: Vysoká škola logistiky o.p.s.
+        link: https://vslg.cz
+      - name: Vysoká škola polytechnická Jihlava
+        link: http://en.vspj.cz/school/welcome
+
