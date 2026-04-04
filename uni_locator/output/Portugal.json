@@ -1,0 +1,739 @@
+[
+  {
+    "institution": "Universities",
+    "name": "Atlântica - Escola Universitária de Ciências Empresariais, Saúde, Tecnologias e Engenharia",
+    "departments": [
+      {
+        "name": "Tecnologias de Informação e Comunicação",
+        "link": "https://www.uatlantica.pt/index.php/sti-licenciaturas",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "ISCTE - Instituto Universitário de Lisboa",
+    "departments": [
+      {
+        "name": "Centro de Investigação em Ciências da Informação, Tecnologias e Arquitetura",
+        "link": "http://istar.iscte-iul.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "ISMAI - Instituto Universitário da Maia",
+    "departments": [
+      {
+        "name": "Departamento de Ciências da Comunicação e Tecnologias da Informação",
+        "link": "https://www.ismai.pt/pt/departamentos/departamento-ciencias-comunicacao-tecnologias-informacao",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "ISMAT - Instituto Superior Manuel Teixeira Gomes",
+    "departments": [
+      {
+        "name": "Departamento de Ciências Empresariais e Tecnologias de Informação",
+        "link": "https://www.ismat.pt/pt/ensino/licenciaturas/licenciatura-em-engenharia-informatica.html",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "ISMT - Instituto Superior Miguel Torga",
+    "departments": [
+      {
+        "name": "Informática",
+        "link": "https://ismt.pt/ensino/oferta-educativa/licenciaturas/informatica",
+        "location": {
+          "lat": -34.9033513,
+          "lon": -57.9358019
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Aberta",
+    "departments": [
+      {
+        "name": "Departamento de Ciências e Tecnologia",
+        "link": "https://portal.uab.pt/dcet",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Autónoma de Lisboa Luís de Camões",
+    "departments": [
+      {
+        "name": "Departamento de Ciências e Tecnologias",
+        "link": "https://autonoma.pt/departamento/ciencias-e-tecnologias",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Católica Portuguesa",
+    "departments": [
+      {
+        "name": "Faculdade de Filosofia e Ciências Sociais",
+        "link": "https://ffcs.braga.ucp.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade da Beira Interior",
+    "departments": [
+      {
+        "name": "Departamento de Informática",
+        "link": "http://www.di.ubi.pt",
+        "location": {
+          "lat": -25.4506532,
+          "lon": -49.2317672
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade da Madeira",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências Exatas e da Engenharia",
+        "link": "http://www.cee.uma.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade de Aveiro",
+    "departments": [
+      {
+        "name": "Departamento de Eletrónica, Telecomunicações e Informática",
+        "link": "https://www.ua.pt/deti",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade de Coimbra",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências e Tecnologia",
+        "link": "https://www.uc.pt/en/fctuc",
+        "location": {
+          "lat": 22.1323955,
+          "lon": 113.5431347
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade de Évora",
+    "departments": [
+      {
+        "name": "Escola de Ciências e Tecnologia",
+        "link": "https://www.ect.uevora.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Instituto de Investigação e Formação Avançada",
+        "link": "https://www.en.iifa.uevora.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade de Lisboa",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências",
+        "link": "https://ciencias.ulisboa.pt/en",
+        "location": {
+          "lat": 38.7567018,
+          "lon": -9.1566581
+        }
+      },
+      {
+        "name": "Instituto Superior de Economia e Gestão",
+        "link": "https://www.iseg.ulisboa.pt/aquila/instituicao/ISEG/?locale=en",
+        "location": {
+          "lat": 38.7104506,
+          "lon": -9.1555526
+        }
+      },
+      {
+        "name": "Instituto Superior Técnico",
+        "link": "https://www.ulisboa.pt/en/unidade-organica/ist-tecnico-lisboa",
+        "location": {
+          "lat": 38.7367455,
+          "lon": -9.1383914
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade de Trásos-Montes e Alto Douro",
+    "departments": [
+      {
+        "name": "Escola de Ciências e Tecnologia",
+        "link": "https://www.utad.pt/ect/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade do Algarve",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências e Tecnologia",
+        "link": "https://fct.ualg.pt/pt",
+        "location": {
+          "lat": 22.1323955,
+          "lon": 113.5431347
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade do Minho",
+    "departments": [
+      {
+        "name": "Escola de Ciências",
+        "link": "https://www.ecum.uminho.pt/en/Pages/default.aspx",
+        "location": {
+          "lat": 42.0321988,
+          "lon": -8.6328449
+        }
+      },
+      {
+        "name": "Escola de Engenharia",
+        "link": "https://www.eng.uminho.pt/pt",
+        "location": {
+          "lat": 41.4533882,
+          "lon": -8.2890056
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade do Porto",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências",
+        "link": "https://sigarra.up.pt/fcup/pt/web_page.inicial",
+        "location": {
+          "lat": 41.1524743,
+          "lon": -8.6396792
+        }
+      },
+      {
+        "name": "Faculdade de Economia",
+        "link": "https://sigarra.up.pt/fep/en/WEB_PAGE.INICIAL",
+        "location": {
+          "lat": 41.1754856,
+          "lon": -8.5984686
+        }
+      },
+      {
+        "name": "Faculdade de Engenharia",
+        "link": "https://sigarra.up.pt/feup/en/WEB_PAGE.INICIAL",
+        "location": {
+          "lat": 41.1784933,
+          "lon": -8.5961974
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade dos Açores",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências e Tecnologia",
+        "link": "https://www.uac.pt/pt-pt/institucional-faculdades-escolas#faculdade-de-ci-ncias-e-tecnologia",
+        "location": {
+          "lat": 22.1323955,
+          "lon": 113.5431347
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Europeia",
+    "departments": [
+      {
+        "name": "IADE - Faculdade de Design, Tecnologia e Comunicação",
+        "link": "https://www.iade.europeia.pt/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Fernando Pessoa",
+    "departments": [
+      {
+        "name": "Engenharia Informática",
+        "link": "https://www.ufp.pt/inicio/estudar-e-investigar/licenciaturas/engenharia-informatica",
+        "location": {
+          "lat": 38.7552245,
+          "lon": -9.1579699
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Lusíada",
+    "departments": [
+      {
+        "name": "Engenharia Informática",
+        "link": "https://www.lis.ulusiada.pt/pt-pt/cursos/2019-2020/1%C2%BAciclo%E2%80%93licenciaturasemestradosintegrados/engenhariainform%C3%A1tica.aspx",
+        "location": {
+          "lat": 38.7552245,
+          "lon": -9.1579699
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Lusófona de Humanidades e Tecnologias",
+    "departments": [
+      {
+        "name": "Escola de Comunicação, Arquitetura, Artes e Tecnologias da Informação",
+        "link": "https://www.ulusofona.pt/school-of-communication-arts-and-technologies",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Lusófona do Porto",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências Naturais, Engenharias e Tecnologias",
+        "link": "https://www.ulp.pt/fcnet",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Nova de Lisboa",
+    "departments": [
+      {
+        "name": "Faculdade de Ciências e Tecnologia",
+        "link": "https://www.fct.unl.pt/en",
+        "location": {
+          "lat": 22.1323955,
+          "lon": 113.5431347
+        }
+      },
+      {
+        "name": "Instituto Superior de Estatística e Gestão de Informação",
+        "link": "https://www.novaims.unl.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universidade Portucalense Infante D. Henrique",
+    "departments": [
+      {
+        "name": "Departamento de Ciência e Tecnologia",
+        "link": "https://www.upt.pt/page.php?p=974",
+        "location": {
+          "lat": -31.7674959,
+          "lon": -60.4585327
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Superior de Tecnologias Avançadas de Lisboa",
+    "link": "https://www.istec.pt",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico da Guarda",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e Gestão",
+        "link": "http://www.estg.ipg.pt",
+        "location": {
+          "lat": 39.7342381,
+          "lon": -8.8216654
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Beja",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e de Gestão",
+        "link": "https://www.ipbeja.pt/UnidadesOrganicas/ESTIG/Paginas/default.aspx",
+        "location": {
+          "lat": 38.016164,
+          "lon": -7.8756699
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Bragança",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e de Gestão de Bragança",
+        "link": "http://portal3.ipb.pt/index.php/en/guiaects/schools/school-of-technology-and-management",
+        "location": {
+          "lat": 41.4781843,
+          "lon": -7.1785079
+        }
+      },
+      {
+        "name": "Escola Superior de Comunicação, Administração e Turismo de Mirandela",
+        "link": "http://www.esact.ipb.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Castelo Branco",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia de Castelo Branco",
+        "link": "https://www.ipcb.pt/estcb/escola-superior-de-tecnologia",
+        "location": {
+          "lat": 39.8201994,
+          "lon": -7.5124986
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Coimbra",
+    "departments": [
+      {
+        "name": "ISEC - Instituto Superior de Engenharia de Coimbra",
+        "link": "https://www.isec.pt/EN",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Escola Superior de Tecnologia e Gestão de Oliveira do Hospital",
+        "link": "https://websrv2.estgoh.ipc.pt/portal2",
+        "location": {
+          "lat": 40.3608302,
+          "lon": -7.8610718
+        }
+      },
+      {
+        "name": "Instituto Superior de Contabilidade e Administração de Coimbra",
+        "link": "http://www.iscac.pt",
+        "location": {
+          "lat": 40.209627,
+          "lon": -8.4528721
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Leiria",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e Gestão",
+        "link": "https://www.ipleiria.pt/estg",
+        "location": {
+          "lat": 39.7342381,
+          "lon": -8.8216654
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Lisboa",
+    "departments": [
+      {
+        "name": "ISEL - Instituto Superior de Engenharia de Lisboa",
+        "link": "https://www.isel.pt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Portalegre",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e Gestão",
+        "link": "https://www.estgp.pt",
+        "location": {
+          "lat": 39.7342381,
+          "lon": -8.8216654
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Santarém",
+    "departments": [
+      {
+        "name": "Escola Superior de Gestão e Tecnologia de Santarém",
+        "link": "https://siesgt.ipsantarem.pt/esgt/SI_MAIN",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Setúbal",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia de Setúbal",
+        "link": "https://www.estsetubal.ips.pt",
+        "location": {
+          "lat": 38.5217797,
+          "lon": -8.8388042
+        }
+      },
+      {
+        "name": "Escola Superior de Ciências Empresariais",
+        "link": "https://www.esce.ips.pt",
+        "location": {
+          "lat": 38.522766,
+          "lon": -8.8412849
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Tomar",
+    "departments": [
+      {
+        "name": "ESTT- Escola Superior de Tecnologia de Tomar",
+        "link": "http://portal2.ipt.pt/pt/ipt/estrutura_organica/instituto_politecnico_de_tomar/unidades_organicas/estt_escola_superior_de_tecnologia_de_tomar",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "ESTA - Escola Superior de Tecnologia de Abrantes",
+        "link": "http://portal2.ipt.pt/pt/ipt/estrutura_organica/instituto_politecnico_de_tomar/unidades_organicas/esta_escola_superior_de_tecnologia_de_abrantes",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Viana do Castelo",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e Gestão",
+        "link": "http://www.estg.ipvc.pt",
+        "location": {
+          "lat": 39.7342381,
+          "lon": -8.8216654
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico de Viseu",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e Gestão de Viseu",
+        "link": "http://www.estgv.ipv.pt/estgv",
+        "location": {
+          "lat": 40.6449509,
+          "lon": -7.9206799
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico do Cávado e do Ave",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia",
+        "link": "https://est.ipca.pt",
+        "location": {
+          "lat": 41.5379692,
+          "lon": -8.6274961
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Politécnico do Porto",
+    "departments": [
+      {
+        "name": "Instituto Superior de Engenharia do Porto",
+        "link": "https://www.isep.ipp.pt",
+        "location": {
+          "lat": 41.1785155,
+          "lon": -8.6078359
+        }
+      },
+      {
+        "name": "Escola Superior de Tecnologia e Gestão",
+        "link": "https://www.estg.ipp.pt/?set_language=en",
+        "location": {
+          "lat": 39.7342381,
+          "lon": -8.8216654
+        }
+      },
+      {
+        "name": "Escola Superior de Media Artes e Design",
+        "link": "https://www.esmad.ipp.pt/?set_language=en",
+        "location": {
+          "lat": 41.3665682,
+          "lon": -8.7386579
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Instituto Superior Politécnico Gaya",
+    "departments": [
+      {
+        "name": "Escola Superior de Ciência e Tecnologia",
+        "link": "http://www.ispgaya.pt/site/por/page/view/school-esct",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Universidade de Aveiro",
+    "departments": [
+      {
+        "name": "Escola Superior de Tecnologia e Gestão de Águeda",
+        "link": "https://www.ua.pt/estga",
+        "location": {
+          "lat": 40.574339,
+          "lon": -8.4439831
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Universidade do Algarve",
+    "departments": [
+      {
+        "name": "Instituto Superior de Engenharia",
+        "link": "https://ise.ualg.pt/en",
+        "location": {
+          "lat": 37.0277948,
+          "lon": -7.922302
+        }
+      }
+    ]
+  }
+]

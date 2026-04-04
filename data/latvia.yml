@@ -1,0 +1,50 @@
+country: Latvia
+institutions:
+  - title: Higher Education Institutions 
+    data:
+        - name: Baltijas Starptautiskā akadēmija
+          link: http://bsa.edu.lv
+        - name: Daugavpils Universitāte
+          departments:
+            - name: Dabaszinātņu un matemātikas fakultāte
+              link: http://du.lv/fakultates/dabaszinatnu-un-matematikas-fakultate
+        - name: Ekonomikas un kultūras augstskola
+          link: http://www.eka.edu.lv
+        - name: Informācijas sistēmu menedžmenta augstskola
+          link: https://www.isma.lv/
+        - name: Latvijas Lauksaimniecības universitāte
+          departments:
+            - name: Informācijas tehnoloģiju fakultāte 
+              link: http://www.itf.llu.lv
+        - name: Latvijas Universitāte
+          departments:
+            - name: Datorikas fakultāte
+              link: http://www.df.lu.lv
+        - name: Liepājas Universitāte
+          departments:
+            - name: Dabas un inženierzinātņu fakultāte
+              link: http://dif.liepu.lv
+        - name: Rēzeknes Tehnoloģiju akadēmija
+          departments:
+            - name: Inženieru fakultāte
+              link: https://www.rta.lv/engineering_faculty                      
+        - name: Rīgas Tehniskā universitāte 
+          departments:
+            - name: Datorzinātnes un informācijas tehnoloģijas fakultāte
+              link: https://www.rtu.lv/en/university/structure-and-administration/faculties/computer-science-and-information-technology
+        - name: Rīgas Tehniskā universitāte
+          departments:
+            - name: Elektronikas un telekomunikāciju fakultāte
+              link: https://www.rtu.lv/en/university/structure-and-administration/faculties/electronics-and-telecommunications 
+        - name: Transporta un sakaru institūts
+          link: https://en.tsi.lv/
+        - name: Ventspils Augstskola
+          departments:
+            - name: Informācijas tehnoloģiju fakultāte
+              link: https://www.venta.lv/en/faculty/faculty-of-information-technologies
+        - name: Vidzemes Augstskola
+          departments:
+            - name: Inženierzinātņu fakultāte
+              link: https://va.lv/lv/taxonomy/term/28
+
+

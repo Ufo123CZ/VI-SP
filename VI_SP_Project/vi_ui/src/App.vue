@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import {onMounted, onUnmounted, ref} from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -106,7 +106,168 @@ const fetchUniversities = async () => {
   }
 };
 
-onMounted(() => {
+const fetchUniversities2 = async (overpassQueries: string[]) => {
+  if (!map) return;
+
+  for (const overpassQuery of overpassQueries) {
+    try {
+      const response = await fetch('https://overpass-api.de/api/interpreter', {
+        method: 'POST',
+        body: "data=" + encodeURIComponent(overpassQuery)
+      });
+      const data = await response.json();
+
+      data.elements.forEach((school: any) => {
+        const lat = school.lat || (school.center && school.center.lat);
+        const lon = school.lon || (school.center && school.center.lon);
+
+        if (lat && lon) {
+          const schoolName = school.tags?.name ?? "Unknown University";
+          L.marker([lat, lon])
+              .addTo(map!)
+              .bindPopup(`<b>${schoolName}</b>`);
+        }
+      });
+
+      console.log(`Successfully loaded ${data.elements.length} universities.`);
+    } catch (error) {
+      console.error("Error fetching from Overpass API:", error);
+    } finally {
+      // To be polite to the Overpass API, we can add a short delay between requests
+      // await new Promise(resolve => setTimeout(resolve, 1000)); // 1 second delay
+    }
+  }
+};
+
+type Department = {
+  name: string;
+  link?: string;
+  location: {
+    lat: number | null;
+    lon: number | null;
+  };
+};
+
+type University = {
+  institution: string;
+  name: string;
+  link?: string;
+  location?: {
+    lat: number | null;
+    lon: number | null;
+  };
+  departments?: Department[];
+};
+
+async function buildOverpassQuery(fileName: string): Promise<string[]> {
+  const response = await fetch(`/unis/${fileName}`);
+  const unis: University[] = await response.json();
+
+  const queries: string[] = [];
+
+  unis.forEach((uni) => {
+    if (uni.departments && uni.departments.length > 0) {
+      // One query for all departments of this uni combined
+      const deptPattern = uni.departments
+          .map((dept) => [
+            `^${dept.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`,
+            `^${dept.shortcut.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`
+          ])
+          .flat()
+          .join('|');
+
+      queries.push(`
+      [out:json][timeout:25];
+      area["ISO3166-1"="CZ"]->.czechia;
+      (
+        nwr["amenity"="university"]["operator"~"${deptPattern}",i](area.czechia);
+        nwr["amenity"="university"]["name"~"${deptPattern}",i](area.czechia);
+        nwr["amenity"="university"]["short_name"~"${deptPattern}",i](area.czechia);
+      );
+      out center;
+    `);
+
+    } else {
+      const pattern = `^${uni.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`;
+
+      queries.push(`
+      [out:json][timeout:25];
+      area["ISO3166-1"="CZ"]->.czechia;
+      (
+        nwr["amenity"="university"]["operator"~"${pattern}",i](area.czechia);
+        nwr["amenity"="university"]["name"~"${pattern}",i](area.czechia);
+      );
+      out center;
+    `);
+    }
+  });
+
+  console.log("Generated Overpass Queries:", queries);
+    return queries;
+}
+
+const loadAllUniversities = async (): Promise<University[]> => {
+  try {
+    // Fetch the directory listing or a manifest file
+    const manifestResponse = await fetch('/unis/manifest.json');
+    const fileNames: string[] = await manifestResponse.json();
+
+    const allUniversities = await Promise.all(
+        fileNames.map(async (fileName) => {
+          try {
+            const response = await fetch(`/unis/${fileName}`);
+            const unis: University[] = await response.json();
+            console.log(`Loaded universities from ${fileName}:`, unis);
+            return unis;
+          } catch (error) {
+            console.error(`Error loading file ${fileName}:`, error);
+            return [];
+          }
+        })
+    );
+
+    return allUniversities.flat();
+  } catch (error) {
+    console.error("Error loading university manifest:", error);
+    return [];
+  }
+};
+
+const placeUniversityMarkers = (universities: University[]) => {
+  if (!map) return;
+
+  universities.forEach((uni) => {
+    // Case 1: University has departments with individual locations
+    if (uni.departments && uni.departments.length > 0) {
+      uni.departments.forEach((dept) => {
+        const lat = dept.location?.lat;
+        const lon = dept.location?.lon;
+
+        console.log(`Placing marker for ${uni.name} - ${dept.name} at (${lat}, ${lon})`);
+        if (lat && lon) {
+          const popupContent = `<b>${uni.name}</b><br/><span>${dept.name}</span>`;
+          L.marker([lat, lon])
+              .addTo(map!)
+              .bindPopup(popupContent);
+        }
+      });
+    }
+    // Case 2: University has a top-level location (no departments)
+    else {
+      const lat = uni.location?.lat;
+      const lon = uni.location?.lon;
+
+      if (lat && lon) {
+        const popupContent = `<b>${uni.name}</b>`;
+        L.marker([lat, lon])
+            .addTo(map!)
+            .bindPopup(popupContent);
+      }
+    }
+  });
+};
+
+onMounted(async () => {
   if (!mapContainer.value) return;
 
   const europeBounds = L.latLngBounds(
@@ -124,14 +285,28 @@ onMounted(() => {
   map.fitBounds(europeBounds);
 
   // Set the initial view nicely over central Europe
-
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
+  // Second fetch approach
   // Trigger the fetch function after the map is ready
-  fetchUniversities();
-  fetchAndDrawBorders();
+  // await fetchAndDrawBorders();
+  // const queries = buildOverpassQuery('Czech Republic.json');
+  // console.log("Generated Overpass Queries:", queries);
+  // await fetchUniversities2(await queries);
+
+  // First fetch approach
+  // await fetchUniversities();
+  // await fetchAndDrawBorders();
+
+  // File loading approach
+  await fetchAndDrawBorders()
+
+  const unis = await loadAllUniversities();
+  placeUniversityMarkers(unis);
+
+
 });
 
 onUnmounted(() => {

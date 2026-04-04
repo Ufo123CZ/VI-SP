@@ -1,0 +1,496 @@
+[
+  {
+    "institution": "Universities",
+    "name": "Česká zemědělská univerzita v Praze",
+    "departments": [
+      {
+        "name": "Provozně ekonomická fakulta",
+        "link": "https://www.pef.czu.cz/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "České vysoké učení technické v Praze",
+    "departments": [
+      {
+        "name": "Fakulta biomedicínského inženýrství",
+        "link": "https://www.fbmi.cvut.cz",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Fakulta dopravní",
+        "link": "https://www.fd.cvut.cz/english",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Fakulta elektrotechnická",
+        "link": "https://www.fel.cvut.cz/en",
+        "location": {
+          "lat": 49.7240271,
+          "lon": 13.3505164
+        }
+      },
+      {
+        "name": "Fakulta informačních technologií",
+        "link": "https://fit.cvut.cz/en",
+        "location": {
+          "lat": 50.1050066,
+          "lon": 14.389523
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Jihočeská univerzita v Českých Budějovicích",
+    "departments": [
+      {
+        "name": "Ekonomická fakulta",
+        "link": "https://www.ef.jcu.cz/?set_language=en",
+        "location": {
+          "lat": 49.8327978,
+          "lon": 18.1617967
+        }
+      },
+      {
+        "name": "Přírodovědecká fakulta",
+        "link": "https://www.prf.jcu.cz/en",
+        "location": {
+          "lat": 48.7200758,
+          "lon": 21.2518043
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Masarykova univerzita",
+    "departments": [
+      {
+        "name": "Ekonomicko-správní fakulta",
+        "link": "https://www.econ.muni.cz/en",
+        "location": {
+          "lat": 49.1934783,
+          "lon": 16.5772569
+        }
+      },
+      {
+        "name": "Fakulta informatiky",
+        "link": "https://www.fi.muni.cz",
+        "location": {
+          "lat": 48.151946,
+          "lon": 17.0691166
+        }
+      },
+      {
+        "name": "Přírodovědecká fakulta",
+        "link": "https://www.sci.muni.cz",
+        "location": {
+          "lat": 48.7200758,
+          "lon": 21.2518043
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Mendelova univerzita v Brně",
+    "departments": [
+      {
+        "name": "Provozně ekonomická fakulta",
+        "link": "http://www.pef.mendelu.cz/en",
+        "location": {
+          "lat": 50.1311578,
+          "lon": 14.3732238
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Ostravská univerzita",
+    "departments": [
+      {
+        "name": "Přírodovědecká fakulta",
+        "link": "https://prf.osu.eu",
+        "location": {
+          "lat": 49.8434782,
+          "lon": 18.3045034
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Slezská univerzita v Opavě",
+    "departments": [
+      {
+        "name": "Filozoficko-přírodovědecká fakulta v Opavě",
+        "link": "https://www.slu.cz/fpf/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Obchodně podnikatelská fakulta v Karviné",
+        "link": "https://www.slu.cz/opf/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technická univerzita v Liberci",
+    "departments": [
+      {
+        "name": "Ekonomická fakulta",
+        "link": "http://www.ef.tul.cz/en",
+        "location": {
+          "lat": 49.8327978,
+          "lon": 18.1617967
+        }
+      },
+      {
+        "name": "Fakulta mechatroniky, informatiky a mezioborových studií",
+        "link": "https://www.fm.tul.cz/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Fakulta přírodovědně-humanitní a pedagogická",
+        "link": "https://www.fp.tul.cz",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Univerzita Hradec Králové",
+    "departments": [
+      {
+        "name": "Fakulta informatiky a managementu",
+        "link": "https://www.uhk.cz/en-GB/FIM",
+        "location": {
+          "lat": 50.2042663,
+          "lon": 15.8293537
+        }
+      },
+      {
+        "name": "Přírodovědecká fakulta",
+        "link": "https://www.uhk.cz/en-GB/PRF",
+        "location": {
+          "lat": 48.7200758,
+          "lon": 21.2518043
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Univerzita Jana Evangelisty Purkyně v Ústí nad Labem",
+    "departments": [
+      {
+        "name": "Přírodovědecká fakulta",
+        "link": "http://sci.ujep.cz/faculty-of-science.html",
+        "location": {
+          "lat": 48.7200758,
+          "lon": 21.2518043
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Univerzita Karlova",
+    "departments": [
+      {
+        "name": "Matematicko-fyzikální fakulta",
+        "link": "https://www.mff.cuni.cz/en",
+        "location": {
+          "lat": 50.1158852,
+          "lon": 14.4497963
+        }
+      },
+      {
+        "name": "Přírodovědecká fakulta",
+        "link": "https://www.natur.cuni.cz/eng",
+        "location": {
+          "lat": 48.1496233,
+          "lon": 17.0708799
+        }
+      },
+      {
+        "name": "2. lékařská fakulta",
+        "link": "https://www.lf2.cuni.cz/en",
+        "location": {
+          "lat": 50.074038,
+          "lon": 14.3410805
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Univerzita obrany v Brně",
+    "departments": [
+      {
+        "name": "Fakulta vojenských technologií",
+        "link": "https://www.unob.cz/fvt",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Univerzita Palackého v Olomouci",
+    "departments": [
+      {
+        "name": "Přírodovědecká fakulta",
+        "link": "https://www.prf.upol.cz/en",
+        "location": {
+          "lat": 48.7200758,
+          "lon": 21.2518043
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Univerzita Pardubice",
+    "departments": [
+      {
+        "name": "Fakulta ekonomicko-správní",
+        "link": "https://fes.upce.cz/en",
+        "location": {
+          "lat": 49.1934783,
+          "lon": 16.5772569
+        }
+      },
+      {
+        "name": "Fakulta elektrotechniky a informatiky",
+        "link": "https://fei.upce.cz/en",
+        "location": {
+          "lat": 50.0332608,
+          "lon": 15.767504
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Univerzita Tomáše Bati ve Zlíně",
+    "departments": [
+      {
+        "name": "Fakulta aplikované informatiky",
+        "link": "https://fai.utb.cz/en",
+        "location": {
+          "lat": 49.2304791,
+          "lon": 17.6575589
+        }
+      },
+      {
+        "name": "Fakulta managementu a ekonomiky",
+        "link": "https://fame.utb.cz/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Vysoká škola báňská - Technická univerzita Ostrava",
+    "departments": [
+      {
+        "name": "Ekonomická fakulta",
+        "link": "https://www.ekf.vsb.cz/en",
+        "location": {
+          "lat": 49.8327978,
+          "lon": 18.1617967
+        }
+      },
+      {
+        "name": "Fakulta elektrotechniky a informatiky",
+        "link": "https://www.fei.vsb.cz/en",
+        "location": {
+          "lat": 48.7306729,
+          "lon": 21.2458715
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Vysoká škola chemicko-technologická v Praze",
+    "departments": [
+      {
+        "name": "Fakulta chemicko-inženýrská",
+        "link": "https://fchi.vscht.cz/?jazyk=en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Fakulta chemické technologie",
+        "link": "https://fcht.vscht.cz/?jazyk=en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Vysoká škola ekonomická v Praze",
+    "departments": [
+      {
+        "name": "Fakulta informatiky a statistiky",
+        "link": "https://fis.vse.cz/english",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Vysoké učení technické v Brně",
+    "departments": [
+      {
+        "name": "Fakulta elektrotechniky a komunikačních technologií",
+        "link": "http://www.feec.vutbr.cz/fakulta/home.php.en?lang=en",
+        "location": {
+          "lat": 49.22736,
+          "lon": 16.5743359
+        }
+      },
+      {
+        "name": "Fakulta informačních technologií",
+        "link": "https://www.fit.vutbr.cz",
+        "location": {
+          "lat": 50.1050066,
+          "lon": 14.389523
+        }
+      },
+      {
+        "name": "Fakulta podnikatelská",
+        "link": "https://www.fbm.vutbr.cz",
+        "location": {
+          "lat": 49.2310813,
+          "lon": 16.5734482
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Západočeská univerzita v Plzni",
+    "departments": [
+      {
+        "name": "Fakulta aplikovaných věd",
+        "link": "https://www.fav.zcu.cz/en",
+        "location": {
+          "lat": 49.7266592,
+          "lon": 13.3520885
+        }
+      },
+      {
+        "name": "Fakulta ekonomická",
+        "link": "https://www.fek.zcu.cz/en",
+        "location": {
+          "lat": 49.7252363,
+          "lon": 13.349799
+        }
+      },
+      {
+        "name": "Fakulta elektrotechnická",
+        "link": "https://fel.zcu.cz/en",
+        "location": {
+          "lat": 49.7240271,
+          "lon": 13.3505164
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Akademie HUSPOL s.r.o.",
+    "link": "https://edukomplex.cz",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Moravská vysoká škola Olomouc o.p.s.",
+    "link": "https://mvso.cz/en",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Unicorn vysoká škola s.r.o.",
+    "link": "https://unicornuniversity.net/en/",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Vysoká škola finanční a správní a.s.",
+    "link": "https://www.vsfs.cz/en",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Vysoká škola logistiky o.p.s.",
+    "link": "https://vslg.cz",
+    "location": {
+      "lat": 49.4525635,
+      "lon": 17.4492422
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Vysoká škola polytechnická Jihlava",
+    "link": "http://en.vspj.cz/school/welcome",
+    "location": {
+      "lat": 49.399298,
+      "lon": 15.5825458
+    }
+  }
+]

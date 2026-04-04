@@ -1,0 +1,240 @@
+country: Portugal
+institutions:
+  - title: Universities
+    data:
+      - name: Atlântica - Escola Universitária de Ciências Empresariais, Saúde, Tecnologias e Engenharia
+        departments: 
+          - name: Tecnologias de Informação e Comunicação
+            link: https://www.uatlantica.pt/index.php/sti-licenciaturas
+      - name: ISCTE - Instituto Universitário de Lisboa
+        departments: 
+          - name: Centro de Investigação em Ciências da Informação, Tecnologias e Arquitetura
+            link: http://istar.iscte-iul.pt
+      - name: ISMAI - Instituto Universitário da Maia 
+        departments: 
+          - name: Departamento de Ciências da Comunicação e Tecnologias da Informação
+            link: https://www.ismai.pt/pt/departamentos/departamento-ciencias-comunicacao-tecnologias-informacao      
+      - name: ISMAT - Instituto Superior Manuel Teixeira Gomes
+        departments: 
+          - name: Departamento de Ciências Empresariais e Tecnologias de Informação
+            link: https://www.ismat.pt/pt/ensino/licenciaturas/licenciatura-em-engenharia-informatica.html
+      - name: ISMT - Instituto Superior Miguel Torga
+        departments: 
+          - name: Informática
+            link: https://ismt.pt/ensino/oferta-educativa/licenciaturas/informatica
+      - name: Universidade Aberta
+        departments:          
+          - name: Departamento de Ciências e Tecnologia
+            link: https://portal.uab.pt/dcet
+      - name: Universidade Autónoma de Lisboa Luís de Camões
+        departments: 
+          - name: Departamento de Ciências e Tecnologias
+            link: https://autonoma.pt/departamento/ciencias-e-tecnologias
+      - name: Universidade Católica Portuguesa 
+        departments:         
+          - name: Faculdade de Filosofia e Ciências Sociais
+            link: https://ffcs.braga.ucp.pt
+      - name: Universidade da Beira Interior
+        departments: 
+          - name: Departamento de Informática
+            link: http://www.di.ubi.pt
+      - name: Universidade da Madeira
+        departments: 
+          - name: Faculdade de Ciências Exatas e da Engenharia
+            link: http://www.cee.uma.pt
+      - name: Universidade de Aveiro
+        departments: 
+          - name: Departamento de Eletrónica, Telecomunicações e Informática
+            link: https://www.ua.pt/deti
+      - name: Universidade de Coimbra
+        departments: 
+          - name: Faculdade de Ciências e Tecnologia
+            link: https://www.uc.pt/en/fctuc
+      - name: Universidade de Évora
+        departments: 
+          - name: Escola de Ciências e Tecnologia
+            link: https://www.ect.uevora.pt
+      - name: Universidade de Évora 
+        departments: 
+          - name: Instituto de Investigação e Formação Avançada
+            link: https://www.en.iifa.uevora.pt
+      - name: Universidade de Lisboa 
+        departments: 
+          - name: Faculdade de Ciências
+            link: https://ciencias.ulisboa.pt/en
+      - name: Universidade de Lisboa 
+        departments: 
+          - name: Instituto Superior de Economia e Gestão
+            link: https://www.iseg.ulisboa.pt/aquila/instituicao/ISEG/?locale=en
+      - name: Universidade de Lisboa
+        departments: 
+          - name: Instituto Superior Técnico
+            link: https://www.ulisboa.pt/en/unidade-organica/ist-tecnico-lisboa
+      - name: Universidade de Trásos-Montes e Alto Douro
+        departments: 
+          - name: Escola de Ciências e Tecnologia
+            link: https://www.utad.pt/ect/en
+      - name: Universidade do Algarve
+        departments: 
+          - name: Faculdade de Ciências e Tecnologia
+            link: https://fct.ualg.pt/pt
+      - name: Universidade do Minho
+        departments: 
+          - name: Escola de Ciências
+            link: https://www.ecum.uminho.pt/en/Pages/default.aspx
+      - name: Universidade do Minho
+        departments: 
+          - name: Escola de Engenharia
+            link: https://www.eng.uminho.pt/pt
+      - name: Universidade do Porto 
+        departments: 
+          - name: Faculdade de Ciências
+            link: https://sigarra.up.pt/fcup/pt/web_page.inicial
+      - name: Universidade do Porto 
+        departments: 
+          - name: Faculdade de Economia
+            link: https://sigarra.up.pt/fep/en/WEB_PAGE.INICIAL
+      - name: Universidade do Porto 
+        departments: 
+          - name: Faculdade de Engenharia
+            link: https://sigarra.up.pt/feup/en/WEB_PAGE.INICIAL
+      - name: Universidade dos Açores
+        departments: 
+          - name: Faculdade de Ciências e Tecnologia
+            link: https://www.uac.pt/pt-pt/institucional-faculdades-escolas#faculdade-de-ci-ncias-e-tecnologia
+      - name: Universidade Europeia
+        departments: 
+          - name: IADE - Faculdade de Design, Tecnologia e Comunicação
+            link: https://www.iade.europeia.pt/en
+      - name: Universidade Fernando Pessoa
+        departments: 
+          - name: Engenharia Informática
+            link: https://www.ufp.pt/inicio/estudar-e-investigar/licenciaturas/engenharia-informatica
+      - name: Universidade Lusíada
+        departments: 
+          - name: Engenharia Informática
+            link: https://www.lis.ulusiada.pt/pt-pt/cursos/2019-2020/1%C2%BAciclo%E2%80%93licenciaturasemestradosintegrados/engenhariainform%C3%A1tica.aspx
+      - name: Universidade Lusófona de Humanidades e Tecnologias
+        departments: 
+          - name: Escola de Comunicação, Arquitetura, Artes e Tecnologias da Informação
+            link: https://www.ulusofona.pt/school-of-communication-arts-and-technologies
+      - name: Universidade Lusófona do Porto
+        departments: 
+          - name: Faculdade de Ciências Naturais, Engenharias e Tecnologias
+            link: https://www.ulp.pt/fcnet
+      - name: Universidade Nova de Lisboa
+        departments: 
+          - name: Faculdade de Ciências e Tecnologia
+            link: https://www.fct.unl.pt/en
+      - name: Universidade Nova de Lisboa
+        departments: 
+          - name: Instituto Superior de Estatística e Gestão de Informação
+            link: https://www.novaims.unl.pt
+      - name: Universidade Portucalense Infante D. Henrique
+        departments: 
+          - name: Departamento de Ciência e Tecnologia
+            link: https://www.upt.pt/page.php?p=974
+  - title: Universities of Applied Sciences 
+    data:
+      - name: Instituto Politécnico da Guarda
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão
+            link: http://www.estg.ipg.pt
+      - name: Instituto Politécnico de Beja
+        departments: 
+          - name: Escola Superior de Tecnologia e de Gestão
+            link: https://www.ipbeja.pt/UnidadesOrganicas/ESTIG/Paginas/default.aspx
+      - name: Instituto Politécnico de Bragança 
+        departments: 
+          - name: Escola Superior de Tecnologia e de Gestão de Bragança
+            link: http://portal3.ipb.pt/index.php/en/guiaects/schools/school-of-technology-and-management
+      - name: Instituto Politécnico de Bragança 
+        departments: 
+          - name: Escola Superior de Comunicação, Administração e Turismo de Mirandela
+            link: http://www.esact.ipb.pt
+      - name: Instituto Politécnico de Castelo Branco 
+        departments: 
+          - name: Escola Superior de Tecnologia de Castelo Branco
+            link: https://www.ipcb.pt/estcb/escola-superior-de-tecnologia
+      - name: Instituto Politécnico de Coimbra 
+        departments: 
+          - name: ISEC - Instituto Superior de Engenharia de Coimbra
+            link: https://www.isec.pt/EN
+      - name: Instituto Politécnico de Coimbra 
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão de Oliveira do Hospital
+            link: https://websrv2.estgoh.ipc.pt/portal2
+      - name: Instituto Politécnico de Coimbra
+        departments: 
+          - name: Instituto Superior de Contabilidade e Administração de Coimbra
+            link: http://www.iscac.pt
+      - name: Instituto Politécnico de Leiria
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão
+            link: https://www.ipleiria.pt/estg
+      - name: Instituto Politécnico de Lisboa
+        departments: 
+          - name: ISEL - Instituto Superior de Engenharia de Lisboa
+            link: https://www.isel.pt
+      - name: Instituto Politécnico de Portalegre
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão
+            link: https://www.estgp.pt
+      - name: Instituto Politécnico de Santarém
+        departments: 
+          - name: Escola Superior de Gestão e Tecnologia de Santarém
+            link: https://siesgt.ipsantarem.pt/esgt/SI_MAIN
+      - name: Instituto Politécnico de Setúbal 
+        departments: 
+          - name: Escola Superior de Tecnologia de Setúbal
+            link: https://www.estsetubal.ips.pt
+      - name: Instituto Politécnico de Setúbal 
+        departments: 
+          - name: Escola Superior de Ciências Empresariais
+            link: https://www.esce.ips.pt
+      - name: Instituto Politécnico de Tomar 
+        departments: 
+          - name: ESTT- Escola Superior de Tecnologia de Tomar
+            link: http://portal2.ipt.pt/pt/ipt/estrutura_organica/instituto_politecnico_de_tomar/unidades_organicas/estt_escola_superior_de_tecnologia_de_tomar
+      - name: Instituto Politécnico de Tomar 
+        departments: 
+          - name: ESTA - Escola Superior de Tecnologia de Abrantes
+            link: http://portal2.ipt.pt/pt/ipt/estrutura_organica/instituto_politecnico_de_tomar/unidades_organicas/esta_escola_superior_de_tecnologia_de_abrantes
+      - name: Instituto Politécnico de Viana do Castelo
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão
+            link: http://www.estg.ipvc.pt
+      - name: Instituto Politécnico de Viseu
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão de Viseu
+            link: http://www.estgv.ipv.pt/estgv
+      - name: Instituto Politécnico do Cávado e do Ave 
+        departments: 
+          - name: Escola Superior de Tecnologia
+            link: https://est.ipca.pt
+      - name: Instituto Politécnico do Porto 
+        departments: 
+          - name: Instituto Superior de Engenharia do Porto
+            link: https://www.isep.ipp.pt
+      - name: Instituto Politécnico do Porto
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão
+            link: https://www.estg.ipp.pt/?set_language=en            
+      - name: Instituto Politécnico do Porto
+        departments: 
+          - name: Escola Superior de Media Artes e Design
+            link: https://www.esmad.ipp.pt/?set_language=en       
+      - name: Instituto Superior de Tecnologias Avançadas de Lisboa
+        link: https://www.istec.pt  
+      - name: Instituto Superior Politécnico Gaya 
+        departments: 
+          - name: Escola Superior de Ciência e Tecnologia
+            link: http://www.ispgaya.pt/site/por/page/view/school-esct
+      - name: Universidade de Aveiro 
+        departments: 
+          - name: Escola Superior de Tecnologia e Gestão de Águeda
+            link: https://www.ua.pt/estga
+      - name: Universidade do Algarve 
+        departments: 
+          - name: Instituto Superior de Engenharia
+            link: https://ise.ualg.pt/en

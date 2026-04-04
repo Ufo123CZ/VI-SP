@@ -1,0 +1,95 @@
+country: Norway
+institutions:
+  - title: Universities
+    data:
+      - name: Nord universitet
+        departments: 
+          - name: Fakultet for samfunnsvitenskap (FSV)
+            link: https://www.nord.no/en/about/faculties-and-centres/faculty-of-social-sciences/Pages/default.aspx
+      - name: Nord universitet
+        departments:
+          - name: Handelshøgskolen (HHN)
+            link: https://www.nord.no/en/about/faculties-and-centres/business-school/Pages/default.aspx
+      - name: Norges miljø- og biovitenskapelige universitet
+        departments: 
+          - name: Fakultet for realfag og teknologi
+            link: https://www.nmbu.no/en/faculty/realtek
+      - name: Norges teknisk-naturvitenskapelige universitet
+        departments: 
+          - name: Fakultet for arkitektur og design
+            link: https://www.ntnu.edu/ad
+      - name: Norges teknisk-naturvitenskapelige universitet
+        departments: 
+          - name: Fakultet for informasjonsteknologi og elektroteknikk
+            link: https://www.ntnu.edu/ie
+      - name: Norges teknisk-naturvitenskapelige universitet
+        departments: 
+          - name: Fakultet for ingeniørvitenskap
+            link: https://www.ntnu.edu/iv
+      - name: Norges teknisk-naturvitenskapelige universitet
+        departments: 
+          - name: Fakultet for medisin og helsevitenskap
+            link: https://www.ntnu.edu/mh
+      - name: OsloMet - storbyuniversitetet
+        departments: 
+          - name: Fakultet for teknologi, kunst og design (TKD)
+            link: https://www.oslomet.no/en/about/tkd
+      - name: Universitetet i Agder
+        departments: 
+          - name: Fakultet for helse- og idrettsvitenskap
+            link: https://www.uia.no/en/about-uia/faculties/faculty-of-health-and-sport-sciences
+      - name: Universitetet i Agder
+        departments: 
+          - name: Fakultet for samfunnsvitenskap
+            link: https://www.uia.no/en/about-uia/faculties/faculty-of-social-sciences
+      - name: Universitetet i Agder
+        departments: 
+          - name: Fakultet for teknologi og realfag
+            link: https://www.uia.no/en/about-uia/faculties/faculty-of-engineering-and-science
+      - name: Universitetet i Bergen
+        departments: 
+          - name: Det matematisk-naturvitenskapelige fakultet
+            link: https://www.uib.no/en/matnat            
+      - name: Universitetet i Bergen
+        departments: 
+          - name: Det samfunnsvitenskapelige fakultet
+            link: https://www.uib.no/en/svf
+      - name: Universitetet i Oslo
+        departments: 
+          - name: Det matematisk-naturvitenskapelige fakultet
+            link: https://www.mn.uio.no/english
+      - name: Universitetet i Sørøst-Norge
+        departments: 
+          - name: Fakultet for teknologi, naturvitenskap og maritime fag
+            link: https://www.usn.no/english/about/organization/faculties/faculty-of-technology-natural-sciences-and-maritime-sciences
+      - name: Universitetet i Sørøst-Norge
+        departments: 
+          - name: Handelshøyskolen
+            link: https://www.usn.no/english/about/organization/faculties/school-of-business
+      - name: Universitetet i Stavanger
+        departments: 
+          - name: Det teknisk- naturvitenskapelige fakultet
+            link: https://www.uis.no/en/about-uis/faculty-of-science-and-technology
+      - name: Universitetet i Tromsø - Norges arktiske universitet
+        departments: 
+          - name: Det helsevitenskapelige fakultet
+            link: https://en.uit.no/om/enhet/forsiden?p_dimension_id=88108
+      - name: Universitetet i Tromsø - Norges arktiske universitet
+        departments: 
+          - name: Fakultet for ingeniørvitenskap og teknologi
+            link: https://en.uit.no/om/enhet/forsiden?p_dimension_id=210108
+      - name: Universitetet i Tromsø - Norges arktiske universitet
+        departments: 
+          - name: Fakultet for naturvitenskap og teknologi
+            link: https://en.uit.no/om/enhet/forsiden?p_dimension_id=88131
+  - title: University Colleges
+    data:
+      - name: Høgskolen i Innlandet
+        link: https://eng.inn.no
+      - name: Høgskolen i Østfold
+        link: https://www.hiof.no/english
+      - name: Høyskolen Kristiania
+        link: https://www.kristiania.no/en/
+      - name: Høgskulen på Vestlandet
+        link: https://www.hvl.no/en
+

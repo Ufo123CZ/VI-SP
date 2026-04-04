@@ -1,0 +1,2115 @@
+[
+  {
+    "institution": "Universities",
+    "name": "Bergische Universität Wuppertal",
+    "departments": [
+      {
+        "name": "Fakultät für Elektrotechnik, Informationstechnik und Medientechnik",
+        "link": "http://www.fbe.uni-wuppertal.de/en.html",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Brandenburgische Technische Universität Cottbus - Senftenberg",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "https://www.b-tu.de/institut-informatik",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Carl von Ossietzky Universität Oldenburg",
+    "departments": [
+      {
+        "name": "Department für Informatik",
+        "link": "http://www.informatik.uni-oldenburg.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Christian-Albrechts-Universität zu Kiel",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "https://www.inf.uni-kiel.de/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Eberhard-Karls-Universität Tübingen",
+    "departments": [
+      {
+        "name": "Fachbereich Informatik",
+        "link": "http://www.uni-tuebingen.de/en/faculties/faculty-of-science/departments/computer-science/department.html",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Greifswald",
+    "departments": [
+      {
+        "name": "Institut für Mathematik und Informatik",
+        "link": "https://math-inf.uni-greifswald.de/en",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "FernUniversität in Hagen",
+    "departments": [
+      {
+        "name": "Fakultät für Mathematik und Informatik",
+        "link": "http://www.fernuni-hagen.de/mathinf",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Freie Universität Berlin",
+    "departments": [
+      {
+        "name": "Fachbereich Mathematik und Informatik",
+        "link": "http://www.mi.fu-berlin.de/index.html",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+    "departments": [
+      {
+        "name": "Department Informatik",
+        "link": "http://www.informatik.uni-erlangen.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Friedrich-Schiller-Universität Jena",
+    "departments": [
+      {
+        "name": "Fakultät für Mathematik und Informatik",
+        "link": "http://www.fmi.uni-jena.de/",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Georg-August-Universität Göttingen",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.uni-goettingen.de/de/138524.html",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Hasso-Plattner-Institut (Universität Potsdam)",
+    "departments": [
+      {
+        "name": "Digital Engineering Fakultät",
+        "link": "http://hpi.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Heinrich-Heine-Universität Düsseldorf",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.cs.hhu.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Helmut-Schmidt-Universität/Universität der Bundeswehr Hamburg",
+    "departments": [
+      {
+        "name": "Fakultät für Elektrotechnik",
+        "link": "http://www.hsu-hh.de/et",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Humboldt-Universität zu Berlin",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.informatik.hu-berlin.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Jacobs University Bremen",
+    "departments": [
+      {
+        "name": "Computer Science & Electrical Engineering",
+        "link": "http://www.jacobs-university.de/department/computer-science-electrical-engineering",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Johann Wolfgang Goethe-Universität, Frankfurt am Main",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www-extern.informatik.uni-frankfurt.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Johannes Gutenberg-Universität Mainz",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.phmi.uni-mainz.de/1847.php",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Julius-Maximilians-Universität Würzburg",
+    "departments": [
+      {
+        "name": "Fakultät für Mathematik und Informatik",
+        "link": "http://www.mathematik-informatik.uni-wuerzburg.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Justus-Liebig-Universität Gießen",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.uni-giessen.de/cms/fbz/fb07/fachgebiete/mathematik/informatik",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Karlsruher Institut für Technologie",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik",
+        "link": "http://www.informatik.kit.edu",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Leibniz Universität Hannover",
+    "departments": [
+      {
+        "name": "Fakultät für Elektrotechnik und Informatik",
+        "link": "http://www.inf.uni-hannover.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Ludwig-Maximilians-Universität München",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.ifi.lmu.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Martin-Luther-Universität Halle-Wittenberg",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.informatik.uni-halle.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Otto-Friedrich-Universität Bamberg",
+    "departments": [
+      {
+        "name": "Fakultät Wirtschaftsinformatik und Angewandte Informatik",
+        "link": "http://www.uni-bamberg.de/wiai",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Otto-von-Guericke-Universität Magdeburg",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik",
+        "link": "http://www.cs.uni-magdeburg.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Philipps-Universität Marburg",
+    "departments": [
+      {
+        "name": "Fachbereich Mathematik und Informatik",
+        "link": "http://www.uni-marburg.de/fb12",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Rheinische Friedrich-Wilhelms-Universität Bonn",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.informatik.uni-bonn.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Rheinisch-Westfälische Technische Hochschule Aachen",
+    "departments": [
+      {
+        "name": "Fakultät 1, Fachgruppe Informatik",
+        "link": "http://www.informatik.rwth-aachen.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Ruhr-Universität Bochum",
+    "departments": [
+      {
+        "name": "Fakultät für Elektrotechnik und Informationstechnik",
+        "link": "http://www.ei.ruhr-uni-bochum.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Ruprecht-Karls-Universität Heidelberg",
+    "departments": [
+      {
+        "name": "Informatik",
+        "link": "http://www.informatik.uni-heidelberg.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Bergakademie Freiberg",
+    "departments": [
+      {
+        "name": "Fakultät für Mathematik und Informatik",
+        "link": "http://tu-freiberg.de/fakult1",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Berlin",
+    "departments": [
+      {
+        "name": "Fakultät Elektrotechnik und Informatik",
+        "link": "http://www.eecs.tu-berlin.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Braunschweig",
+    "departments": [
+      {
+        "name": "Carl-Friedrich-Gauß-Fakultät, Informatik",
+        "link": "https://www.tu-braunschweig.de/informatik",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Chemnitz",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik",
+        "link": "http://www.tu-chemnitz.de/informatik",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Clausthal",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.in.tu-clausthal.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Darmstadt",
+    "departments": [
+      {
+        "name": "Fachbereich Informatik",
+        "link": "http://www.informatik.tu-darmstadt.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Dortmund",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik",
+        "link": "http://www.cs.tu-dortmund.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Dresden",
+    "departments": [
+      {
+        "name": "Fakultät Informatik",
+        "link": "http://tu-dresden.de/ing/informatik",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Hamburg",
+    "departments": [
+      {
+        "name": "Fachbereich Elektrotechnik, Informatik und Mathematik",
+        "link": "http://www.tu-harburg.de/tuhh/studium/studiendekanate/elektrotechnik-informatik-und-mathematik.html",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Ilmenau",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik und Automatisierung",
+        "link": "http://www.tu-ilmenau.de/ia",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität Kaiserslautern",
+    "departments": [
+      {
+        "name": "Fachbereich Informatik",
+        "link": "http://www.informatik.uni-kl.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Technische Universität München",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik",
+        "link": "http://www.in.tum.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Augsburg",
+    "departments": [
+      {
+        "name": "Fakultät für Angewandte Informatik",
+        "link": "http://www.uni-augsburg.de/fakultaeten/fai",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Bayreuth",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.ai.uni-bayreuth.de/de/index.html",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Bielefeld",
+    "departments": [
+      {
+        "name": "Technische Fakultät",
+        "link": "http://www.techfak.uni-bielefeld.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Bremen",
+    "departments": [
+      {
+        "name": "Mathematik und Informatik",
+        "link": "http://www.informatik.uni-bremen.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität der Bundeswehr München",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik",
+        "link": "https://www.unibw.de/inf",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität des Saarlandes",
+    "departments": [
+      {
+        "name": "Informatik",
+        "link": "http://informatics-campus.saarland",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Duisburg-Essen",
+    "departments": [
+      {
+        "name": "Fakultät für Ingenieurwissenschaften",
+        "link": "http://www.uni-due.de/iw/de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      },
+      {
+        "name": "Institut für Informatik und Wirtschaftsinformatik",
+        "link": "http://www.icb.uni-due.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Freiburg",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.informatik.uni-freiburg.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Hamburg",
+    "departments": [
+      {
+        "name": "Fachbereich Informatik",
+        "link": "http://www.informatik.uni-hamburg.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Hildesheim",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.uni-hildesheim.de/fb4/institute/ifi/aktuelles",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Kassel",
+    "departments": [
+      {
+        "name": "Fachbereich Elektrotechnik/Informatik",
+        "link": "http://www.uni-kassel.de/eecs",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Koblenz-Landau",
+    "departments": [
+      {
+        "name": "Fachbereich Informatik",
+        "link": "http://www.uni-koblenz-landau.de/en/campus-koblenz/fb4",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Konstanz",
+    "departments": [
+      {
+        "name": "Fachbereich Informatik und Informationswissenschaft",
+        "link": "http://www.inf.uni-konstanz.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Leipzig",
+    "departments": [
+      {
+        "name": "Fakultät für Mathematik und Informatik",
+        "link": "http://www.fmi.uni-leipzig.de/cms",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Mannheim",
+    "departments": [
+      {
+        "name": "Fakultät für Wirtschaftsinformatik und Wirtschaftsmathematik",
+        "link": "http://www.wim.uni-mannheim.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Osnabrück",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.informatik.uni-osnabrueck.de/index.php.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Paderborn",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://cs.uni-paderborn.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Passau",
+    "departments": [
+      {
+        "name": "Fakultät für Informatik und Mathematik",
+        "link": "http://www.fim.uni-passau.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Potsdam",
+    "departments": [
+      {
+        "name": "Institut für Informatik und Computational Science",
+        "link": "http://www.uni-potsdam.de/cs",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Rostock",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.informatik.uni-rostock.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Siegen",
+    "departments": [
+      {
+        "name": "Department Elektrotechnik und Informatik",
+        "link": "http://www.eti.uni-siegen.de/dekanat",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Stuttgart",
+    "departments": [
+      {
+        "name": "Fachbereich Informatik",
+        "link": "http://www.informatik.uni-stuttgart.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Trier",
+    "departments": [
+      {
+        "name": "Informatikwissenschaften",
+        "link": "http://www.uni-trier.de/index.php?id=2069",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität Ulm",
+    "departments": [
+      {
+        "name": "Fakultät für Ingenieurwissenschaften, Informatik und Psychologie",
+        "link": "http://www.uni-ulm.de/in/fakultaet",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität zu Köln",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.informatik.uni-koeln.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Universität zu Lübeck",
+    "departments": [
+      {
+        "name": "Informatik",
+        "link": "http://www.informatik.uni-luebeck.de",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities",
+    "name": "Westfälische Wilhelms-Universität Münster",
+    "departments": [
+      {
+        "name": "Institut für Informatik",
+        "link": "http://www.uni-muenster.de/Informatik",
+        "location": {
+          "lat": null,
+          "lon": null
+        }
+      }
+    ]
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "AKAD Bildungsgesellschaft (Akad University)",
+    "link": "http://www.akad.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "bbw Hochschule",
+    "link": "http://www.bbw-hochschule.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Beuth Hochschule für Technik Berlin",
+    "link": "http://www.beuth-hochschule.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Design akademie berlin - SRH Hochschule für Kommunikation und Design",
+    "link": "http://www.design-akademie-berlin.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "DIPLOMA Private Staatlich anerkannte Hochschule",
+    "link": "http://www.diploma.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Duale Hochschule Baden-Württemberg",
+    "link": "http://www.dhbw.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Ernst-Abbe-Hochschule Jena",
+    "link": "http://www.eah-jena.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Europäische Fachhochschule Rhein/Erft",
+    "link": "http://www.eufh.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Europäische Fernhochschule Hamburg",
+    "link": "http://www.euro-fh.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Aachen",
+    "link": "http://www.fh-aachen.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Bielefeld",
+    "link": "http://www.fh-bielefeld.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule der Wirtschaft (FHDW)",
+    "link": "http://www.fhdw.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule des Mittelstandes (FHM)",
+    "link": "http://www.fhm-mittelstand.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Dortmund",
+    "link": "http://www.fh-dortmund.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Dresden",
+    "link": "http://www.fh-dresden.eu",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Erfurt",
+    "link": "http://www.fh-erfurt.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule für die Wirtschaft Hannover",
+    "link": "http://www.fhdw-hannover.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Kiel",
+    "link": "http://www.fh-kiel.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Münster",
+    "link": "https://www.fh-muenster.de/index.php",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Südwestfalen",
+    "link": "http://www.fh-swf.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Wedel",
+    "link": "http://www.fh-wedel.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Fachhochschule Westküste, Hochschule für Wirtschaft und Technik",
+    "link": "http://www.fh-westkueste.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "FOM Hochschule für Oekonomie & Management",
+    "link": "http://www.fom.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Frankfurt University of Applied Sciences",
+    "link": "http://www.frankfurt-university.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Aalen - Technik und Wirtschaft",
+    "link": "http://www.hs-aalen.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Albstadt-Sigmaringen",
+    "link": "http://www.hs-albsig.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Anhalt",
+    "link": "http://www.hs-anhalt.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Bochum",
+    "link": "http://www.hochschule-bochum.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Bonn-Rhein-Sieg",
+    "link": "http://www.h-brs.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Bremen",
+    "link": "http://www.hs-bremen.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Bremerhaven",
+    "link": "http://www.hs-bremerhaven.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Darmstadt",
+    "link": "http://www.h-da.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule der Medien Stuttgart",
+    "link": "http://www.hdm-stuttgart.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule der Wirtschaft für Management",
+    "link": "http://www.hdwm.eu",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Düsseldorf",
+    "link": "http://www.hs-duesseldorf.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Emden/Leer",
+    "link": "http://www.hs-emden-leer.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Esslingen",
+    "link": "http://www.hs-esslingen.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Flensburg",
+    "link": "http://hs-flensburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Fresenius",
+    "link": "http://www.hs-fresenius.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Fulda",
+    "link": "http://www.hs-fulda.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen",
+    "link": "http://www.hawk-hhg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Ansbach",
+    "link": "http://www.hs-ansbach.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Augsburg",
+    "link": "http://www.hs-augsburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Coburg",
+    "link": "http://www.hs-coburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Hamburg",
+    "link": "http://www.haw-hamburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Kempten",
+    "link": "http://www.hochschule-kempten.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Landshut",
+    "link": "http://www.haw-landshut.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften München",
+    "link": "http://www.hm.edu",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Neu-Ulm (HNU)",
+    "link": "http://www.hs-neu-ulm.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für angewandte Wissenschaften Würzburg-Schweinfurt",
+    "link": "http://www.fhws.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Technik Stuttgart",
+    "link": "http://www.hft-stuttgart.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Technik und Wirtschaft Berlin",
+    "link": "http://www.htw-berlin.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Technik und Wirtschaft des Saarlandes",
+    "link": "http://www.htwsaar.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Technik und Wirtschaft Dresden",
+    "link": "http://www.htw-dresden.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Technik, Wirtschaft und Kultur Leipzig",
+    "link": "http://www.htwk-leipzig.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Technik, Wirtschaft und Medien Offenburg",
+    "link": "http://www.hs-offenburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Telekommunikation Leipzig",
+    "link": "http://www.hft-leipzig.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Wirtschaft und Gesellschaft Ludwigshafen",
+    "link": "https://www.hwg-lu.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Wirtschaft und Recht Berlin",
+    "link": "http://www.hwr-berlin.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule für Wirtschaft, Technik und Kultur (HWTK)",
+    "link": "http://www.hwtk.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit",
+    "link": "http://www.hs-furtwangen.de/",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Hannover",
+    "link": "http://www.hs-hannover.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Hamm-Lippstadt",
+    "link": "http://www.hshl.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Harz, Hochschule für angewandte Wissenschaften",
+    "link": "http://www.hs-harz.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Heilbronn",
+    "link": "http://www.hs-heilbronn.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Hof",
+    "link": "http://www.hof-university.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Kaiserslautern",
+    "link": "http://www.hs-kl.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Karlsruhe - Technik und Wirtschaft",
+    "link": "http://www.hs-karlsruhe.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Koblenz",
+    "link": "http://www.hs-koblenz.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Konstanz Technik, Wirtschaft und Gestaltung",
+    "link": "http://www.htwg-konstanz.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Macromedia",
+    "link": "https://creative.macromedia-fachhochschule.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Magdeburg-Stendal",
+    "link": "http://www.hs-magdeburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Mainz",
+    "link": "http://www.hs-mainz.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Mannheim",
+    "link": "http://www.hs-mannheim.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Merseburg",
+    "link": "http://www.hs-merseburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Mittweida",
+    "link": "http://www.hs-mittweida.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Niederrhein",
+    "link": "http://www.hs-niederrhein.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Nordhausen",
+    "link": "http://www.hs-nordhausen.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Osnabrück",
+    "link": "http://www.hs-osnabrueck.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht",
+    "link": "http://www.hs-pforzheim.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Ravensburg-Weingarten",
+    "link": "http://www.hs-weingarten.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Reutlingen",
+    "link": "http://www.reutlingen-university.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule RheinMain",
+    "link": "http://www.hs-rm.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Rhein-Waal",
+    "link": "http://www.hochschule-rhein-waal.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Ruhr West",
+    "link": "http://www.hochschule-ruhr-west.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Schmalkalden",
+    "link": "http://www.hs-schmalkalden.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Stralsund",
+    "link": "http://www.hochschule-stralsund.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Trier",
+    "link": "http://www.hochschule-trier.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Weihenstephan-Triesdorf",
+    "link": "http://www.hswt.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Weserbergland",
+    "link": "http://www.hsw-hameln.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Wismar - University of Applied Sciences - Technology, Business and Design",
+    "link": "http://www.hs-wismar.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Worms",
+    "link": "http://www.hs-worms.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Hochschule Zittau/Görlitz",
+    "link": "http://www.hszg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "HSBA Hamburg School of Business Administration",
+    "link": "http://www.hsba.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "IUBH Internationale Hochschule",
+    "link": "http://www.iubh.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Jade Hochschule Wilhelmshaven/Oldenburg/Elsfleth",
+    "link": "http://www.jade-hs.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Leibniz-Fachhochschule",
+    "link": "http://www.leibniz-fh.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Mediadesign Hochschule für Design und Informatik",
+    "link": "http://www.mediadesign.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "NBS Northern Business School",
+    "link": "http://www.nbs.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Nordakademie Hochschule der Wirtschaft",
+    "link": "http://www.nordakademie.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "nta Naturwissenschaftlich-Technische Akademie Prof. Dr. Grübler gGmbH, Isny",
+    "link": "http://www.nta-isny.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Ostbayerische Technische Hochschule Amberg-Weiden",
+    "link": "http://www.oth-aw.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Ostbayerische Technische Hochschule Regensburg",
+    "link": "http://www.oth-regensburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Ostfalia Hochschule für angewandte Wissenschaften - Hochschule Braunschweig/Wolfenbüttel",
+    "link": "http://www.ostfalia.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Private Hochschule für Wirtschaft und Technik Vechta/Diepholz/Oldenburg",
+    "link": "http://www.phwt.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Provadis School of International Management and Technology",
+    "link": "http://www.provadis-hochschule.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Rheinische Fachhochschule Köln",
+    "link": "http://www.rfh-koeln.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "SRH Hochschule Heidelberg",
+    "link": "http://www.hochschule-heidelberg.de/",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Aschaffenburg",
+    "link": "https://www.th-ab.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Bingen",
+    "link": "http://www.th-bingen.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Brandenburg",
+    "link": "http://www.th-brandenburg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Deggendorf",
+    "link": "http://www.th-deg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Georg Agricola zu Bochum",
+    "link": "https://www.thga.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Ingolstadt",
+    "link": "http://www.thi.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Köln",
+    "link": "http://www.th-koeln.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Lübeck",
+    "link": "https://www.th-luebeck.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Mittelhessen",
+    "link": "http://www.thm.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Nürnberg Georg Simon Ohm",
+    "link": "http://www.th-nuernberg.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Ostwestfalen-Lippe",
+    "link": "https://www.th-owl.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Rosenheim",
+    "link": "https://www.th-rosenheim.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Ulm",
+    "link": "https://studium.hs-ulm.de/en",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Technische Hochschule Wildau",
+    "link": "http://www.th-wildau.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen",
+    "link": "http://www.w-hs.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Westsächsische Hochschule Zwickau",
+    "link": "http://www.fh-zwickau.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  },
+  {
+    "institution": "Universities of Applied Sciences",
+    "name": "Wilhelm Büchner Hochschule",
+    "link": "http://www.wb-fernstudium.de",
+    "location": {
+      "lat": null,
+      "lon": null
+    }
+  }
+]

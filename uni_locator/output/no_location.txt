@@ -1,0 +1,19 @@
+Universities and departments with missing location data:
+
+Czech_Republic.json:
+  [dept]  Česká zemědělská univerzita v Praze > Provozně ekonomická fakulta
+  [dept]  České vysoké učení technické v Praze > Fakulta biomedicínského inženýrství
+  [dept]  České vysoké učení technické v Praze > Fakulta dopravní
+  [dept]  Slezská univerzita v Opavě > Filozoficko-přírodovědecká fakulta v Opavě
+  [dept]  Slezská univerzita v Opavě > Obchodně podnikatelská fakulta v Karviné
+  [dept]  Technická univerzita v Liberci > Fakulta mechatroniky, informatiky a mezioborových studií
+  [dept]  Technická univerzita v Liberci > Fakulta přírodovědně-humanitní a pedagogická
+  [dept]  Univerzita obrany v Brně > Fakulta vojenských technologií
+  [dept]  Univerzita Tomáše Bati ve Zlíně > Fakulta managementu a ekonomiky
+  [dept]  Vysoká škola chemicko-technologická v Praze > Fakulta chemicko-inženýrská
+  [dept]  Vysoká škola chemicko-technologická v Praze > Fakulta chemické technologie
+  [dept]  Vysoká škola ekonomická v Praze > Fakulta informatiky a statistiky
+  [uni]   Akademie HUSPOL s.r.o.
+  [uni]   Moravská vysoká škola Olomouc o.p.s.
+  [uni]   Unicorn vysoká škola s.r.o.
+  [uni]   Vysoká škola finanční a správní a.s.
