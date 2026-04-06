@@ -43,8 +43,8 @@
         "name": "Dabaszinātņu un matemātikas fakultāte",
         "link": "http://du.lv/fakultates/dabaszinatnu-un-matematikas-fakultate",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 55.8699802,
+          "lon": 26.5076567
         }
       }
     ]
@@ -71,8 +71,8 @@
         "name": "Datorikas fakultāte",
         "link": "http://www.df.lu.lv",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 56.950744,
+          "lon": 24.1160594
         }
       }
     ]
@@ -85,8 +85,8 @@
         "name": "Dabas un inženierzinātņu fakultāte",
         "link": "http://dif.liepu.lv",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 56.5085291,
+          "lon": 21.0068064
         }
       }
     ]
@@ -99,8 +99,8 @@
         "name": "Inženieru fakultāte",
         "link": "https://www.rta.lv/engineering_faculty",
         "location": {
-          "lat": 56.5134909,
-          "lon": 27.333082
+          "lat": 56.5124788,
+          "lon": 27.3324822
         }
       }
     ]
@@ -113,16 +113,16 @@
         "name": "Datorzinātnes un informācijas tehnoloģijas fakultāte",
         "link": "https://www.rtu.lv/en/university/structure-and-administration/faculties/computer-science-and-information-technology",
         "location": {
-          "lat": 56.9452666,
-          "lon": 24.0807803
+          "lat": 56.9526418,
+          "lon": 24.0806797
         }
       },
       {
         "name": "Elektronikas un telekomunikāciju fakultāte",
         "link": "https://www.rtu.lv/en/university/structure-and-administration/faculties/electronics-and-telecommunications",
         "location": {
-          "lat": 56.9514224,
-          "lon": 24.0801132
+          "lat": 56.9526418,
+          "lon": 24.0806797
         }
       }
     ]
@@ -135,8 +135,8 @@
         "name": "Informācijas tehnoloģiju fakultāte",
         "link": "https://www.venta.lv/en/faculty/faculty-of-information-technologies",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 57.3848169,
+          "lon": 21.5461566
         }
       }
     ]
@@ -149,8 +149,8 @@
         "name": "Inženierzinātņu fakultāte",
         "link": "https://va.lv/lv/taxonomy/term/28",
         "location": {
-          "lat": 56.9529098,
-          "lon": 24.0806469
+          "lat": 57.5349412,
+          "lon": 25.4240826
         }
       }
     ]

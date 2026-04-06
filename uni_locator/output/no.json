@@ -7,16 +7,16 @@
         "name": "Fakultet for samfunnsvitenskap (FSV)",
         "link": "https://www.nord.no/en/about/faculties-and-centres/faculty-of-social-sciences/Pages/default.aspx",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 67.289197,
+          "lon": 14.5604308
         }
       },
       {
         "name": "Handelshøgskolen (HHN)",
         "link": "https://www.nord.no/en/about/faculties-and-centres/business-school/Pages/default.aspx",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 67.289197,
+          "lon": 14.5604308
         }
       }
     ]
@@ -29,8 +29,8 @@
         "name": "Fakultet for realfag og teknologi",
         "link": "https://www.nmbu.no/en/faculty/realtek",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 59.667874,
+          "lon": 10.7617344
         }
       }
     ]
@@ -43,32 +43,32 @@
         "name": "Fakultet for arkitektur og design",
         "link": "https://www.ntnu.edu/ad",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 63.4086108,
+          "lon": 10.4687213
         }
       },
       {
         "name": "Fakultet for informasjonsteknologi og elektroteknikk",
         "link": "https://www.ntnu.edu/ie",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 63.4086108,
+          "lon": 10.4687213
         }
       },
       {
         "name": "Fakultet for ingeniørvitenskap",
         "link": "https://www.ntnu.edu/iv",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 63.4086108,
+          "lon": 10.4687213
         }
       },
       {
         "name": "Fakultet for medisin og helsevitenskap",
         "link": "https://www.ntnu.edu/mh",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 63.4086108,
+          "lon": 10.4687213
         }
       }
     ]
@@ -81,8 +81,8 @@
         "name": "Fakultet for teknologi, kunst og design (TKD)",
         "link": "https://www.oslomet.no/en/about/tkd",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 59.9219172,
+          "lon": 10.7332963
         }
       }
     ]
@@ -95,24 +95,24 @@
         "name": "Fakultet for helse- og idrettsvitenskap",
         "link": "https://www.uia.no/en/about-uia/faculties/faculty-of-health-and-sport-sciences",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 58.1630985,
+          "lon": 8.0014426
         }
       },
       {
         "name": "Fakultet for samfunnsvitenskap",
         "link": "https://www.uia.no/en/about-uia/faculties/faculty-of-social-sciences",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 58.1630985,
+          "lon": 8.0014426
         }
       },
       {
         "name": "Fakultet for teknologi og realfag",
         "link": "https://www.uia.no/en/about-uia/faculties/faculty-of-engineering-and-science",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 58.1630985,
+          "lon": 8.0014426
         }
       }
     ]
@@ -125,16 +125,16 @@
         "name": "Det matematisk-naturvitenskapelige fakultet",
         "link": "https://www.uib.no/en/matnat",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 60.3809342,
+          "lon": 5.3313021
         }
       },
       {
         "name": "Det samfunnsvitenskapelige fakultet",
         "link": "https://www.uib.no/en/svf",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 60.3809342,
+          "lon": 5.3313021
         }
       }
     ]
@@ -147,8 +147,8 @@
         "name": "Det matematisk-naturvitenskapelige fakultet",
         "link": "https://www.mn.uio.no/english",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 59.9414173,
+          "lon": 10.7227683
         }
       }
     ]
@@ -161,16 +161,16 @@
         "name": "Fakultet for teknologi, naturvitenskap og maritime fag",
         "link": "https://www.usn.no/english/about/organization/faculties/faculty-of-technology-natural-sciences-and-maritime-sciences",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 59.4088235,
+          "lon": 9.0594697
         }
       },
       {
         "name": "Handelshøyskolen",
         "link": "https://www.usn.no/english/about/organization/faculties/school-of-business",
         "location": {
-          "lat": 60.423559,
-          "lon": 5.30453
+          "lat": 59.4088235,
+          "lon": 9.0594697
         }
       }
     ]
@@ -183,8 +183,8 @@
         "name": "Det teknisk- naturvitenskapelige fakultet",
         "link": "https://www.uis.no/en/about-uis/faculty-of-science-and-technology",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 58.9377152,
+          "lon": 5.6965347
         }
       }
     ]
@@ -197,24 +197,24 @@
         "name": "Det helsevitenskapelige fakultet",
         "link": "https://en.uit.no/om/enhet/forsiden?p_dimension_id=88108",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 69.6819069,
+          "lon": 18.9724906
         }
       },
       {
         "name": "Fakultet for ingeniørvitenskap og teknologi",
         "link": "https://en.uit.no/om/enhet/forsiden?p_dimension_id=210108",
         "location": {
-          "lat": 63.4169524,
-          "lon": 10.4079125
+          "lat": 69.6819069,
+          "lon": 18.9724906
         }
       },
       {
         "name": "Fakultet for naturvitenskap og teknologi",
         "link": "https://en.uit.no/om/enhet/forsiden?p_dimension_id=88131",
         "location": {
-          "lat": 63.4157063,
-          "lon": 10.4067238
+          "lat": 69.6819069,
+          "lon": 18.9724906
         }
       }
     ]

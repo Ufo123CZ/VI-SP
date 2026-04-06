@@ -21,8 +21,8 @@
         "name": "Centro de Investigação em Ciências da Informação, Tecnologias e Arquitetura",
         "link": "http://istar.iscte-iul.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.7486143,
+          "lon": -9.1540202
         }
       }
     ]
@@ -63,8 +63,8 @@
         "name": "Informática",
         "link": "https://ismt.pt/ensino/oferta-educativa/licenciaturas/informatica",
         "location": {
-          "lat": -34.9033513,
-          "lon": -57.9358019
+          "lat": null,
+          "lon": null
         }
       }
     ]
@@ -77,8 +77,8 @@
         "name": "Departamento de Ciências e Tecnologia",
         "link": "https://portal.uab.pt/dcet",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.7181216,
+          "lon": -9.1523843
         }
       }
     ]
@@ -91,8 +91,8 @@
         "name": "Departamento de Ciências e Tecnologias",
         "link": "https://autonoma.pt/departamento/ciencias-e-tecnologias",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.7242569,
+          "lon": -9.1456613
         }
       }
     ]
@@ -105,8 +105,8 @@
         "name": "Faculdade de Filosofia e Ciências Sociais",
         "link": "https://ffcs.braga.ucp.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 41.5546582,
+          "lon": -8.4208438
         }
       }
     ]
@@ -119,8 +119,8 @@
         "name": "Departamento de Informática",
         "link": "http://www.di.ubi.pt",
         "location": {
-          "lat": -25.4506532,
-          "lon": -49.2317672
+          "lat": 40.2677263,
+          "lon": -7.4944365
         }
       }
     ]
@@ -133,8 +133,8 @@
         "name": "Faculdade de Ciências Exatas e da Engenharia",
         "link": "http://www.cee.uma.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 32.6589053,
+          "lon": -16.9246509
         }
       }
     ]
@@ -147,8 +147,8 @@
         "name": "Departamento de Eletrónica, Telecomunicações e Informática",
         "link": "https://www.ua.pt/deti",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 40.6320293,
+          "lon": -8.6597957
         }
       }
     ]
@@ -161,8 +161,8 @@
         "name": "Faculdade de Ciências e Tecnologia",
         "link": "https://www.uc.pt/en/fctuc",
         "location": {
-          "lat": 22.1323955,
-          "lon": 113.5431347
+          "lat": 40.1861497,
+          "lon": -8.4152502
         }
       }
     ]
@@ -175,16 +175,16 @@
         "name": "Escola de Ciências e Tecnologia",
         "link": "https://www.ect.uevora.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.5679436,
+          "lon": -7.9106167
         }
       },
       {
         "name": "Instituto de Investigação e Formação Avançada",
         "link": "https://www.en.iifa.uevora.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.5679436,
+          "lon": -7.9106167
         }
       }
     ]
@@ -241,8 +241,8 @@
         "name": "Faculdade de Ciências e Tecnologia",
         "link": "https://fct.ualg.pt/pt",
         "location": {
-          "lat": 22.1323955,
-          "lon": 113.5431347
+          "lat": 37.027636,
+          "lon": -7.9223437
         }
       }
     ]
@@ -263,8 +263,8 @@
         "name": "Escola de Engenharia",
         "link": "https://www.eng.uminho.pt/pt",
         "location": {
-          "lat": 41.4533882,
-          "lon": -8.2890056
+          "lat": 41.5584713,
+          "lon": -8.3979669
         }
       }
     ]
@@ -307,8 +307,8 @@
         "name": "Faculdade de Ciências e Tecnologia",
         "link": "https://www.uac.pt/pt-pt/institucional-faculdades-escolas#faculdade-de-ci-ncias-e-tecnologia",
         "location": {
-          "lat": 22.1323955,
-          "lon": 113.5431347
+          "lat": 37.746316,
+          "lon": -25.6629189
         }
       }
     ]
@@ -321,8 +321,8 @@
         "name": "IADE - Faculdade de Design, Tecnologia e Comunicação",
         "link": "https://www.iade.europeia.pt/en",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.7601003,
+          "lon": -9.1939896
         }
       }
     ]
@@ -335,8 +335,8 @@
         "name": "Engenharia Informática",
         "link": "https://www.ufp.pt/inicio/estudar-e-investigar/licenciaturas/engenharia-informatica",
         "location": {
-          "lat": 38.7552245,
-          "lon": -9.1579699
+          "lat": 41.1732515,
+          "lon": -8.6111095
         }
       }
     ]
@@ -349,8 +349,8 @@
         "name": "Engenharia Informática",
         "link": "https://www.lis.ulusiada.pt/pt-pt/cursos/2019-2020/1%C2%BAciclo%E2%80%93licenciaturasemestradosintegrados/engenhariainform%C3%A1tica.aspx",
         "location": {
-          "lat": 38.7552245,
-          "lon": -9.1579699
+          "lat": 41.4103181,
+          "lon": -8.5230802
         }
       }
     ]
@@ -363,8 +363,8 @@
         "name": "Escola de Comunicação, Arquitetura, Artes e Tecnologias da Informação",
         "link": "https://www.ulusofona.pt/school-of-communication-arts-and-technologies",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.7581164,
+          "lon": -9.1520127
         }
       }
     ]
@@ -377,8 +377,8 @@
         "name": "Faculdade de Ciências Naturais, Engenharias e Tecnologias",
         "link": "https://www.ulp.pt/fcnet",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 41.1430574,
+          "lon": -8.6076974
         }
       }
     ]
@@ -391,16 +391,16 @@
         "name": "Faculdade de Ciências e Tecnologia",
         "link": "https://www.fct.unl.pt/en",
         "location": {
-          "lat": 22.1323955,
-          "lon": 113.5431347
+          "lat": 38.7328407,
+          "lon": -9.1602002
         }
       },
       {
         "name": "Instituto Superior de Estatística e Gestão de Informação",
         "link": "https://www.novaims.unl.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.7328407,
+          "lon": -9.1602002
         }
       }
     ]
@@ -413,8 +413,8 @@
         "name": "Departamento de Ciência e Tecnologia",
         "link": "https://www.upt.pt/page.php?p=974",
         "location": {
-          "lat": -31.7674959,
-          "lon": -60.4585327
+          "lat": 41.1803097,
+          "lon": -8.6070399
         }
       }
     ]
@@ -436,8 +436,8 @@
         "name": "Escola Superior de Tecnologia e Gestão",
         "link": "http://www.estg.ipg.pt",
         "location": {
-          "lat": 39.7342381,
-          "lon": -8.8216654
+          "lat": 40.5411258,
+          "lon": -7.2835561
         }
       }
     ]
@@ -450,8 +450,8 @@
         "name": "Escola Superior de Tecnologia e de Gestão",
         "link": "https://www.ipbeja.pt/UnidadesOrganicas/ESTIG/Paginas/default.aspx",
         "location": {
-          "lat": 38.016164,
-          "lon": -7.8756699
+          "lat": 38.0134675,
+          "lon": -7.8741378
         }
       }
     ]
@@ -464,16 +464,16 @@
         "name": "Escola Superior de Tecnologia e de Gestão de Bragança",
         "link": "http://portal3.ipb.pt/index.php/en/guiaects/schools/school-of-technology-and-management",
         "location": {
-          "lat": 41.4781843,
-          "lon": -7.1785079
+          "lat": 41.7966499,
+          "lon": -6.7681158
         }
       },
       {
         "name": "Escola Superior de Comunicação, Administração e Turismo de Mirandela",
         "link": "http://www.esact.ipb.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 41.7966499,
+          "lon": -6.7681158
         }
       }
     ]
@@ -486,8 +486,8 @@
         "name": "Escola Superior de Tecnologia de Castelo Branco",
         "link": "https://www.ipcb.pt/estcb/escola-superior-de-tecnologia",
         "location": {
-          "lat": 39.8201994,
-          "lon": -7.5124986
+          "lat": 39.8218772,
+          "lon": -7.4983458
         }
       }
     ]
@@ -500,24 +500,24 @@
         "name": "ISEC - Instituto Superior de Engenharia de Coimbra",
         "link": "https://www.isec.pt/EN",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 40.2126739,
+          "lon": -8.4558872
         }
       },
       {
         "name": "Escola Superior de Tecnologia e Gestão de Oliveira do Hospital",
         "link": "https://websrv2.estgoh.ipc.pt/portal2",
         "location": {
-          "lat": 40.3608302,
-          "lon": -7.8610718
+          "lat": 40.2126739,
+          "lon": -8.4558872
         }
       },
       {
         "name": "Instituto Superior de Contabilidade e Administração de Coimbra",
         "link": "http://www.iscac.pt",
         "location": {
-          "lat": 40.209627,
-          "lon": -8.4528721
+          "lat": 40.2126739,
+          "lon": -8.4558872
         }
       }
     ]
@@ -530,8 +530,8 @@
         "name": "Escola Superior de Tecnologia e Gestão",
         "link": "https://www.ipleiria.pt/estg",
         "location": {
-          "lat": 39.7342381,
-          "lon": -8.8216654
+          "lat": 39.7372845,
+          "lon": -8.8112835
         }
       }
     ]
@@ -544,8 +544,8 @@
         "name": "ISEL - Instituto Superior de Engenharia de Lisboa",
         "link": "https://www.isel.pt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 38.7493316,
+          "lon": -9.1935656
         }
       }
     ]
@@ -558,8 +558,8 @@
         "name": "Escola Superior de Tecnologia e Gestão",
         "link": "https://www.estgp.pt",
         "location": {
-          "lat": 39.7342381,
-          "lon": -8.8216654
+          "lat": 39.2914746,
+          "lon": -7.4331014
         }
       }
     ]
@@ -572,8 +572,8 @@
         "name": "Escola Superior de Gestão e Tecnologia de Santarém",
         "link": "https://siesgt.ipsantarem.pt/esgt/SI_MAIN",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 39.2217088,
+          "lon": -8.6876128
         }
       }
     ]
@@ -586,16 +586,16 @@
         "name": "Escola Superior de Tecnologia de Setúbal",
         "link": "https://www.estsetubal.ips.pt",
         "location": {
-          "lat": 38.5217797,
-          "lon": -8.8388042
+          "lat": 38.5208724,
+          "lon": -8.8389454
         }
       },
       {
         "name": "Escola Superior de Ciências Empresariais",
         "link": "https://www.esce.ips.pt",
         "location": {
-          "lat": 38.522766,
-          "lon": -8.8412849
+          "lat": 38.5208724,
+          "lon": -8.8389454
         }
       }
     ]
@@ -608,16 +608,16 @@
         "name": "ESTT- Escola Superior de Tecnologia de Tomar",
         "link": "http://portal2.ipt.pt/pt/ipt/estrutura_organica/instituto_politecnico_de_tomar/unidades_organicas/estt_escola_superior_de_tecnologia_de_tomar",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 39.5994484,
+          "lon": -8.3897311
         }
       },
       {
         "name": "ESTA - Escola Superior de Tecnologia de Abrantes",
         "link": "http://portal2.ipt.pt/pt/ipt/estrutura_organica/instituto_politecnico_de_tomar/unidades_organicas/esta_escola_superior_de_tecnologia_de_abrantes",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 39.5994484,
+          "lon": -8.3897311
         }
       }
     ]
@@ -630,8 +630,8 @@
         "name": "Escola Superior de Tecnologia e Gestão",
         "link": "http://www.estg.ipvc.pt",
         "location": {
-          "lat": 39.7342381,
-          "lon": -8.8216654
+          "lat": 41.6921486,
+          "lon": -8.8345475
         }
       }
     ]
@@ -644,8 +644,8 @@
         "name": "Escola Superior de Tecnologia e Gestão de Viseu",
         "link": "http://www.estgv.ipv.pt/estgv",
         "location": {
-          "lat": 40.6449509,
-          "lon": -7.9206799
+          "lat": 40.646512,
+          "lon": -7.9196474
         }
       }
     ]
@@ -658,8 +658,8 @@
         "name": "Escola Superior de Tecnologia",
         "link": "https://est.ipca.pt",
         "location": {
-          "lat": 41.5379692,
-          "lon": -8.6274961
+          "lat": 41.5365259,
+          "lon": -8.6270936
         }
       }
     ]
@@ -672,24 +672,24 @@
         "name": "Instituto Superior de Engenharia do Porto",
         "link": "https://www.isep.ipp.pt",
         "location": {
-          "lat": 41.1785155,
-          "lon": -8.6078359
+          "lat": 41.1804181,
+          "lon": -8.5969974
         }
       },
       {
         "name": "Escola Superior de Tecnologia e Gestão",
         "link": "https://www.estg.ipp.pt/?set_language=en",
         "location": {
-          "lat": 39.7342381,
-          "lon": -8.8216654
+          "lat": 41.1804181,
+          "lon": -8.5969974
         }
       },
       {
         "name": "Escola Superior de Media Artes e Design",
         "link": "https://www.esmad.ipp.pt/?set_language=en",
         "location": {
-          "lat": 41.3665682,
-          "lon": -8.7386579
+          "lat": 41.1804181,
+          "lon": -8.5969974
         }
       }
     ]
@@ -702,8 +702,8 @@
         "name": "Escola Superior de Ciência e Tecnologia",
         "link": "http://www.ispgaya.pt/site/por/page/view/school-esct",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 41.1199016,
+          "lon": -8.6235077
         }
       }
     ]
@@ -730,8 +730,8 @@
         "name": "Instituto Superior de Engenharia",
         "link": "https://ise.ualg.pt/en",
         "location": {
-          "lat": 37.0277948,
-          "lon": -7.922302
+          "lat": 37.027636,
+          "lon": -7.9223437
         }
       }
     ]

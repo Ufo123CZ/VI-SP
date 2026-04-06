@@ -90,6 +90,11 @@ const fetchUniversities = async () => {
       const lat = school.lat || (school.center && school.center.lat);
       const lon = school.lon || (school.center && school.center.lon);
 
+      // if name = Univerzita Pardubice - Fakulta elektrotechniky a informatiky print lat an lon
+      if (school.tags && school.tags.name === "Univerzita Pardubice - Fakulta elektrotechniky a informatiky") {
+        console.log(`Found ${school.tags.name} at (${lat}, ${lon})`);
+      }
+
       if (lat && lon) {
         const schoolName = school.tags && school.tags.name ? school.tags.name : "Unknown University";
 
@@ -301,7 +306,7 @@ onMounted(async () => {
   // await fetchAndDrawBorders();
 
   // File loading approach
-  await fetchAndDrawBorders()
+  // await fetchAndDrawBorders()
 
   const unis = await loadAllUniversities();
   placeUniversityMarkers(unis);

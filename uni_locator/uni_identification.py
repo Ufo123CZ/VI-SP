@@ -2,9 +2,11 @@ import yaml
 import json
 import os
 
+from country_codes import country_meta
+
 def build_country(data):
     output = []
-
+    
     for institution_type in data.get("institutions", []):
         title = institution_type.get("title", "")
         merged = {}
@@ -43,15 +45,15 @@ def get_country_data(input_file_path, output_dir):
     with open(input_file_path, 'r', encoding='utf-8') as input_file:
         data = yaml.safe_load(input_file)
 
-    outputfile = build_country(data)
-    country_name = data.get("country", "unknown").replace(" ", "_")
+    output_file_body = build_country(data)
+    country_name = data.get("country", "unknown")
+    country_code = country_meta(country_name).get("iso", country_name)
 
-    output_file_path = os.path.join(output_dir, country_name + ".json")
+    output_file_path = os.path.join(output_dir, country_code + ".json")
 
     with open(output_file_path, 'w', encoding='utf-8') as output_file:
-        json.dump(outputfile, output_file, ensure_ascii=False, indent=2)
+        json.dump(output_file_body, output_file, ensure_ascii=False, indent=2)
         
-
     print(f"Processed {input_file_path} -> {output_file_path}")
     print(f"Identified universities in {country_name} and saved to {output_file_path}")
 

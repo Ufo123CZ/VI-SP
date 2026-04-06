@@ -13,10 +13,10 @@ if __name__ == "__main__":
 
     input_files = [
         os.path.join(DATA_DIR, "czech_republic.yml"),
-        # os.path.join(DATA_DIR, "germany.yml"),
-        # os.path.join(DATA_DIR, "norway.yml"),
-        # os.path.join(DATA_DIR, "portugal.yml"),
-        # os.path.join(DATA_DIR, "latvia.yml"),
+        os.path.join(DATA_DIR, "germany.yml"),
+        os.path.join(DATA_DIR, "norway.yml"),
+        os.path.join(DATA_DIR, "portugal.yml"),
+        os.path.join(DATA_DIR, "latvia.yml"),
     ]
 
     output_files = []
@@ -34,7 +34,7 @@ if __name__ == "__main__":
         # clear the no_location.txt file
         with open(no_loc_file, 'w', encoding='utf-8') as f:
             f.write("Universities and departments with missing location data:\n")
-
+            
         for output_file in output_files:
             fill_location_data(output_file, no_loc_file)
         print("All location data has been filled.")    

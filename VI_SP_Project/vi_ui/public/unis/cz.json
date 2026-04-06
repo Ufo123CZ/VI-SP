@@ -7,8 +7,8 @@
         "name": "Provozně ekonomická fakulta",
         "link": "https://www.pef.czu.cz/en",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.1311578,
+          "lon": 14.3732238
         }
       }
     ]
@@ -21,24 +21,24 @@
         "name": "Fakulta biomedicínského inženýrství",
         "link": "https://www.fbmi.cvut.cz",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.0765822,
+          "lon": 14.4175026
         }
       },
       {
         "name": "Fakulta dopravní",
         "link": "https://www.fd.cvut.cz/english",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.0670512,
+          "lon": 14.4241608
         }
       },
       {
         "name": "Fakulta elektrotechnická",
         "link": "https://www.fel.cvut.cz/en",
         "location": {
-          "lat": 49.7240271,
-          "lon": 13.3505164
+          "lat": 50.1026303,
+          "lon": 14.3929788
         }
       },
       {
@@ -59,16 +59,16 @@
         "name": "Ekonomická fakulta",
         "link": "https://www.ef.jcu.cz/?set_language=en",
         "location": {
-          "lat": 49.8327978,
-          "lon": 18.1617967
+          "lat": null,
+          "lon": null
         }
       },
       {
         "name": "Přírodovědecká fakulta",
         "link": "https://www.prf.jcu.cz/en",
         "location": {
-          "lat": 48.7200758,
-          "lon": 21.2518043
+          "lat": null,
+          "lon": null
         }
       }
     ]
@@ -81,24 +81,24 @@
         "name": "Ekonomicko-správní fakulta",
         "link": "https://www.econ.muni.cz/en",
         "location": {
-          "lat": 49.1934783,
-          "lon": 16.5772569
+          "lat": 49.1634183,
+          "lon": 16.7267575
         }
       },
       {
         "name": "Fakulta informatiky",
         "link": "https://www.fi.muni.cz",
         "location": {
-          "lat": 48.151946,
-          "lon": 17.0691166
+          "lat": 49.1634183,
+          "lon": 16.7267575
         }
       },
       {
         "name": "Přírodovědecká fakulta",
         "link": "https://www.sci.muni.cz",
         "location": {
-          "lat": 48.7200758,
-          "lon": 21.2518043
+          "lat": 49.1634183,
+          "lon": 16.7267575
         }
       }
     ]
@@ -111,8 +111,8 @@
         "name": "Provozně ekonomická fakulta",
         "link": "http://www.pef.mendelu.cz/en",
         "location": {
-          "lat": 50.1311578,
-          "lon": 14.3732238
+          "lat": 49.2095665,
+          "lon": 16.6142751
         }
       }
     ]
@@ -161,24 +161,24 @@
         "name": "Ekonomická fakulta",
         "link": "http://www.ef.tul.cz/en",
         "location": {
-          "lat": 49.8327978,
-          "lon": 18.1617967
+          "lat": 50.7682012,
+          "lon": 15.063048
         }
       },
       {
         "name": "Fakulta mechatroniky, informatiky a mezioborových studií",
         "link": "https://www.fm.tul.cz/en",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.7682012,
+          "lon": 15.063048
         }
       },
       {
         "name": "Fakulta přírodovědně-humanitní a pedagogická",
         "link": "https://www.fp.tul.cz",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.7682012,
+          "lon": 15.063048
         }
       }
     ]
@@ -199,8 +199,8 @@
         "name": "Přírodovědecká fakulta",
         "link": "https://www.uhk.cz/en-GB/PRF",
         "location": {
-          "lat": 48.7200758,
-          "lon": 21.2518043
+          "lat": 50.2093126,
+          "lon": 15.8264709
         }
       }
     ]
@@ -213,8 +213,8 @@
         "name": "Přírodovědecká fakulta",
         "link": "http://sci.ujep.cz/faculty-of-science.html",
         "location": {
-          "lat": 48.7200758,
-          "lon": 21.2518043
+          "lat": 50.6751297,
+          "lon": 14.0360361
         }
       }
     ]
@@ -227,24 +227,24 @@
         "name": "Matematicko-fyzikální fakulta",
         "link": "https://www.mff.cuni.cz/en",
         "location": {
-          "lat": 50.1158852,
-          "lon": 14.4497963
+          "lat": 50.0888947,
+          "lon": 14.4162757
         }
       },
       {
         "name": "Přírodovědecká fakulta",
         "link": "https://www.natur.cuni.cz/eng",
         "location": {
-          "lat": 48.1496233,
-          "lon": 17.0708799
+          "lat": 50.0888947,
+          "lon": 14.4162757
         }
       },
       {
         "name": "2. lékařská fakulta",
         "link": "https://www.lf2.cuni.cz/en",
         "location": {
-          "lat": 50.074038,
-          "lon": 14.3410805
+          "lat": 50.0888947,
+          "lon": 14.4162757
         }
       }
     ]
@@ -257,8 +257,8 @@
         "name": "Fakulta vojenských technologií",
         "link": "https://www.unob.cz/fvt",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 49.207947,
+          "lon": 16.5964797
         }
       }
     ]
@@ -271,8 +271,8 @@
         "name": "Přírodovědecká fakulta",
         "link": "https://www.prf.upol.cz/en",
         "location": {
-          "lat": 48.7200758,
-          "lon": 21.2518043
+          "lat": 49.5922405,
+          "lon": 17.2632905
         }
       }
     ]
@@ -285,8 +285,8 @@
         "name": "Fakulta ekonomicko-správní",
         "link": "https://fes.upce.cz/en",
         "location": {
-          "lat": 49.1934783,
-          "lon": 16.5772569
+          "lat": 50.0486642,
+          "lon": 15.77044
         }
       },
       {
@@ -315,8 +315,8 @@
         "name": "Fakulta managementu a ekonomiky",
         "link": "https://fame.utb.cz/en",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 49.2225922,
+          "lon": 17.6648013
         }
       }
     ]
@@ -329,16 +329,16 @@
         "name": "Ekonomická fakulta",
         "link": "https://www.ekf.vsb.cz/en",
         "location": {
-          "lat": 49.8327978,
-          "lon": 18.1617967
+          "lat": 49.8332605,
+          "lon": 18.161631
         }
       },
       {
         "name": "Fakulta elektrotechniky a informatiky",
         "link": "https://www.fei.vsb.cz/en",
         "location": {
-          "lat": 48.7306729,
-          "lon": 21.2458715
+          "lat": 49.8332605,
+          "lon": 18.161631
         }
       }
     ]
@@ -351,16 +351,16 @@
         "name": "Fakulta chemicko-inženýrská",
         "link": "https://fchi.vscht.cz/?jazyk=en",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.102222,
+          "lon": 14.39063
         }
       },
       {
         "name": "Fakulta chemické technologie",
         "link": "https://fcht.vscht.cz/?jazyk=en",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.102222,
+          "lon": 14.39063
         }
       }
     ]
@@ -373,8 +373,8 @@
         "name": "Fakulta informatiky a statistiky",
         "link": "https://fis.vse.cz/english",
         "location": {
-          "lat": null,
-          "lon": null
+          "lat": 50.0832942,
+          "lon": 14.4415875
         }
       }
     ]
@@ -395,8 +395,8 @@
         "name": "Fakulta informačních technologií",
         "link": "https://www.fit.vutbr.cz",
         "location": {
-          "lat": 50.1050066,
-          "lon": 14.389523
+          "lat": 49.2268877,
+          "lon": 16.5968561
         }
       },
       {
