@@ -306,7 +306,7 @@ onMounted(async () => {
   // await fetchAndDrawBorders();
 
   // File loading approach
-  // await fetchAndDrawBorders()
+  await fetchAndDrawBorders()
 
   const unis = await loadAllUniversities();
   placeUniversityMarkers(unis);
