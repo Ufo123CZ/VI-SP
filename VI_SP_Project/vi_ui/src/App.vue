@@ -55,7 +55,7 @@ const fetchDrawBordersAndPlaceMarkers = async () => {
   const fileNames: string[] = await manifestResponse.json();
 
   for (const fileName of fileNames) {
-    const countryCode = fileName.split('.')[0]; // "cz.geojson" -> "cz"
+    const countryCode = fileName.replace('.geo.json', ''); // "cz.geojson" -> "cz"
 
     try {
       // Load border
