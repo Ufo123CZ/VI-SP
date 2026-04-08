@@ -25,7 +25,6 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const mapContainer = ref<HTMLElement | null>(null);
 let map: L.Map | null = null;
 
-// --- these were missing! ---
 const countryClusterGroups: Record<string, L.MarkerClusterGroup> = {};
 
 type Department = {
@@ -48,27 +47,32 @@ type University = {
   departments?: Department[];
 };
 
-const fetchDrawBordersAndPlaceMarkers = async () => {
-  if (!map) return;
+const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
+  bordersLayer: L.LayerGroup;
+  markersLayer: L.LayerGroup;
+}> => {
+  const bordersLayer = L.layerGroup();
+  const markersLayer = L.layerGroup();
+
+  if (!map) return { bordersLayer, markersLayer };
 
   const manifestResponse = await fetch('/borders/manifest.json');
   const fileNames: string[] = await manifestResponse.json();
 
   for (const fileName of fileNames) {
-    const countryCode = fileName.replace('.geo.json', ''); // "cz.geojson" -> "cz"
+    const countryCode = fileName.replace('.geo.json', '');
 
     try {
-      // Load border
       const borderResponse = await fetch(`/borders/${fileName}`);
       const geojsonData = await borderResponse.json();
 
       // Create cluster group for this country
       const clusterGroup = L.markerClusterGroup({ maxClusterRadius: 50 });
       countryClusterGroups[countryCode] = clusterGroup;
-      map!.addLayer(clusterGroup);
+      markersLayer.addLayer(clusterGroup); // add to group, not map directly
 
       // Draw border
-      L.geoJSON(geojsonData, {
+      const borderGeoJson = L.geoJSON(geojsonData, {
         style: { color: '#3388ff', weight: 2, fillOpacity: 0.1, fillColor: '#3388ff' },
         onEachFeature: (feature: any, layer: L.Layer) => {
           const countryName = feature.properties.NAME || feature.properties.name || "Unknown Country";
@@ -80,18 +84,17 @@ const fetchDrawBordersAndPlaceMarkers = async () => {
             (e.target as L.Path).setStyle({ fillOpacity: 0.1 });
           });
         }
-      }).addTo(map!);
+      });
+      bordersLayer.addLayer(borderGeoJson); // add to group, not map directly
 
     } catch (error) {
       console.error(`Error loading border file ${fileName}:`, error);
-      continue; // skip to next country if border fails
+      continue;
     }
 
-    // Load and place universities for this country
     try {
       const unisResponse = await fetch(`/unis/${countryCode}.json`);
       const unis: University[] = await unisResponse.json();
-
       const clusterGroup = countryClusterGroups[countryCode];
 
       unis.forEach((uni) => {
@@ -123,13 +126,66 @@ const fetchDrawBordersAndPlaceMarkers = async () => {
   }
 
   console.log("All countries loaded!");
+  return { bordersLayer, markersLayer };
+};
+
+const setLegend = () => {
+  if (!map) return;
+
+  const legend = new L.Control({ position: 'bottomright' });
+
+  legend.onAdd = (): HTMLElement => {
+    const div = L.DomUtil.create('div');
+    div.innerHTML = `
+      <div style="
+        background: white;
+        padding: 10px 14px;
+        border-radius: 8px;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+        font-size: 13px;
+        line-height: 24px;
+      ">
+        <b style="display:block; margin-bottom:6px;">Legend</b>
+
+        <div>
+          <span style="
+            display:inline-block; width:16px; height:16px;
+            background:#3388ff; opacity:0.4;
+            border: 2px solid #3388ff;
+            vertical-align:middle; margin-right:6px;
+          "></span>
+          Country border
+        </div>
+
+        <div>
+          <img src="${icon}" style="width:13px; height:20px; vertical-align:middle; margin-right:6px;">
+          University
+        </div>
+
+        <div>
+          <span style="
+            display:inline-block; width:20px; height:20px;
+            background:#3388ff; color:white;
+            border-radius:50%; text-align:center;
+            font-size:11px; line-height:20px;
+            vertical-align:middle; margin-right:6px;
+          ">3</span>
+          University cluster
+        </div>
+
+      </div>
+    `;
+    return div;
+  };
+
+  legend.addTo(map);
 };
 
 onMounted(async () => {
   if (!mapContainer.value) return;
 
   const europeBounds = L.latLngBounds(
-      L.latLng(34.0, -15.0),
+      L.latLng(24.0, -35.0),
       L.latLng(72.0, 45.0)
   );
 
@@ -141,11 +197,33 @@ onMounted(async () => {
 
   map.fitBounds(europeBounds);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  await fetchDrawBordersAndPlaceMarkers();
+  const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; Esri'
+  });
+
+  const { bordersLayer, markersLayer } = await fetchDrawBordersAndPlaceMarkers();
+
+  // add both layers to map by default
+  bordersLayer.addTo(map);
+  markersLayer.addTo(map);
+
+  // layer control to toggle them
+  L.control.layers(
+      {
+        'Street': osmLayer,
+        'Satellite': satelliteLayer,
+      },
+      {
+        'Borders': bordersLayer,
+        'Universities': markersLayer,
+      }
+  ).addTo(map);
+
+  setLegend();
 });
 
 onUnmounted(() => {
