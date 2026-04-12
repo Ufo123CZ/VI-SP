@@ -1,0 +1,541 @@
+{
+    "Universidade Nova de Lisboa": {
+        "country": "Portugal",
+        "country_population": 10347892,
+        "institution_type": "(RU)",
+        "data": [
+            {
+                "level": "Bachelor",
+                "category": "First-year students",
+                "stats_2023_2024": {
+                    "total": 305,
+                    "female": 61,
+                    "female_percentage": 20.0,
+                    "programmes": "Engenharia Informática, Ciência de Dados"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 1304,
+                    "female": 209,
+                    "female_percentage": 16.027607361963188,
+                    "programmes": "Engenharia Informática, Ciência de Dados"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 306,
+                    "female": 49,
+                    "female_percentage": 16.013071895424837,
+                    "programmes": "Engenharia Informática, Ciência de Dados, Ciência e Engenharia Informática"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 106,
+                    "female": 20,
+                    "female_percentage": 18.867924528301888,
+                    "programmes": "Engenharia Informática, Análise e Engenharia de Big Data"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 19,
+                    "female": 3,
+                    "female_percentage": 15.789473684210526,
+                    "programmes": "Engenharia Informática, Análise e Engenharia de Big Data"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 46,
+                    "female": 7,
+                    "female_percentage": 15.217391304347828,
+                    "programmes": "Informática"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 1,
+                    "female": 0,
+                    "female_percentage": 0.0,
+                    "programmes": "Informática"
+                }
+            }
+        ]
+    },
+    "University of Porto": {
+        "country": "Portugal",
+        "country_population": 10347892,
+        "institution_type": "(RU)",
+        "data": [
+            {
+                "level": "Bachelor",
+                "category": "First-year students",
+                "stats_2023_2024": {
+                    "total": 524,
+                    "female": 129,
+                    "female_percentage": 24.61832061068702,
+                    "programmes": "Ciência de Computadores, Engenharia Informática e Computação, Inteligência Artificial e Ciência de Dados"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 1732,
+                    "female": 364,
+                    "female_percentage": 21.016166281755197,
+                    "programmes": "Ciência de Computadores, Engenharia Informática e Computação, Inteligência Artificial e Ciência de Dados"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 367,
+                    "female": 65,
+                    "female_percentage": 17.71117166212534,
+                    "programmes": "Ciência de Computadores, Engenharia Informática e Computação, Inteligência Artificial e Ciência de Dados"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 702,
+                    "female": 169,
+                    "female_percentage": 24.074074074074073,
+                    "programmes": "Ciência de Computadores, Ciência de Dados (Data Science), Engenharia de Redes e Sistemas Informáticos, Engenharia de Software, Engenharia Informática e Computação, Segurança Informática"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 211,
+                    "female": 46,
+                    "female_percentage": 21.80094786729858,
+                    "programmes": "Ciência de Computadores, Ciência de Dados (Data Science), Engenharia de Redes e Sistemas Informáticos, Engenharia de Software, Engenharia Informática e Computação, Segurança Informática, Modelação, Análise de Dados e Sistemas de Apoio à Decisão"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 190,
+                    "female": 39,
+                    "female_percentage": 20.526315789473685,
+                    "programmes": "Ciência de Computadores, Engenharia Informática, Informática"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 17,
+                    "female": 2,
+                    "female_percentage": 11.76470588235294,
+                    "programmes": "Ciência de Computadores, Engenharia Informática, Informática"
+                }
+            }
+        ]
+    },
+    "University of Lisbon": {
+        "country": "Portugal",
+        "country_population": 10347892,
+        "institution_type": "(RU)",
+        "data": [
+            {
+                "level": "Bachelor",
+                "category": "First-year students",
+                "stats_2023_2024": {
+                    "total": 517,
+                    "female": 85,
+                    "female_percentage": 16.44100580270793,
+                    "programmes": "Engenharia Informática, Engenharia Informática e de Computadores, Tecnologias de Informação"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 1917,
+                    "female": 295,
+                    "female_percentage": 15.388628064684404,
+                    "programmes": "Engenharia Informática, Engenharia Informática e de Computadores, Tecnologias de Informação"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 442,
+                    "female": 68,
+                    "female_percentage": 15.384615384615385,
+                    "programmes": "Engenharia Informática, Engenharia Informática e de Computadores, Tecnologias de Informação"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 990,
+                    "female": 192,
+                    "female_percentage": 19.393939393939394,
+                    "programmes": "Engenharia Informática, Segurança Informática, Ciência de Dados, Informática, Gestão de Sistemas de Informação, Engenharia Informática e de Computadores, Modelação, Análise de Dados e Sistemas de Apoio à Decisão"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 344,
+                    "female": 59,
+                    "female_percentage": 17.151162790697676,
+                    "programmes": "Engenharia Informática, Informática, Segurança Informática, Ciência de Dados, Engenharia Informática e de Computadores"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 224,
+                    "female": 59,
+                    "female_percentage": 26.339285714285715,
+                    "programmes": "Engenharia Computacional, Informática, Segurança Informática, Engenharia Informática e de Computadores"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 21,
+                    "female": 6,
+                    "female_percentage": 28.57142857142857,
+                    "programmes": "Informática, Engenharia Informática e de Computadores"
+                }
+            }
+        ]
+    },
+    "Instituto Politécnico de Leiria": {
+        "country": "Portugal",
+        "country_population": 10347892,
+        "institution_type": "(UAS)",
+        "data": [
+            {
+                "level": "Bachelor",
+                "category": "First-year students",
+                "stats_2023_2024": {
+                    "total": 296,
+                    "female": 29,
+                    "female_percentage": 9.797297297297296,
+                    "programmes": "Engenharia Informática"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 905,
+                    "female": 72,
+                    "female_percentage": 7.955801104972375,
+                    "programmes": "Engenharia Informática"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 150,
+                    "female": 8,
+                    "female_percentage": 5.333333333333334,
+                    "programmes": "Engenharia Informática"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 153,
+                    "female": 35,
+                    "female_percentage": 22.875816993464053,
+                    "programmes": "Ciência de Dados, Cibersegurança e Informática Forense, Engenharia Informática - Computação Móvel"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 31,
+                    "female": 4,
+                    "female_percentage": 12.903225806451612,
+                    "programmes": "Ciência de Dados, Cibersegurança e Informática Forense, Engenharia Informática - Computação Móvel"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 0,
+                    "female": 0,
+                    "female_percentage": 0.0,
+                    "programmes": NaN
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 0,
+                    "female": 0,
+                    "female_percentage": 0.0,
+                    "programmes": NaN
+                }
+            }
+        ]
+    },
+    "Norwegian University of Science and Technology": {
+        "country": "Norway",
+        "country_population": 5627400,
+        "institution_type": "(RU)",
+        "data": [
+            {
+                "level": "Bachelor",
+                "category": "First-year students",
+                "stats_2023_2024": {
+                    "total": 725,
+                    "female": 220,
+                    "female_percentage": 30.344827586206897,
+                    "programmes": "Digital forretningsutvikling, Digital infrastruktur og cybersikkerhet, Informasjonsbehandling, Informatikk, Informatikk med spesialisering i drift av datasystemer, Data, Programmering, Webutvikling, Datateknologi, Ingeniørvitenskap og IKT, Interaksjonsdesign"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 3490,
+                    "female": 1040,
+                    "female_percentage": 29.799426934097422,
+                    "programmes": "Data, IT-drift og informasjonssikkerhet, Datateknologi, Digital forretningsutvikling, Digital infrastruktur og cybersikkerhet, Informasjonsbehandling, Informatikk,Ingeniørvitenskap og IKT, Interaksjonsdesign, Kommunikasjonsteknologi og digital sikkerhet, Programmering, Webutvikling"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 715,
+                    "female": 190,
+                    "female_percentage": 26.573426573426573,
+                    "programmes": "Digital forretningsutvikling, Digital infrastruktur og cybersikkerhet, Informasjonsbehandling, Data, IT-drift og informasjonssikkerhet, Programmering, Webutvikling, Datateknologi, Informatikk, Ingeniørvitenskap og IKT, Interaksjonsdesign, Kommunikasjonsteknologi og digital sikkerhet"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 1105,
+                    "female": 335,
+                    "female_percentage": 30.316742081447963,
+                    "programmes": "Applied Computer Science, Computational Colour and Spectral Imaging, Datateknologi, Digital Infrastructure and Cyber Security, Embedded Computing Systems,Helseinformatikk, Informatikk, Informatics, Information Security, Digital samhandling, Medier, kommunikasjon og informasjonsteknologi,Security and Cloud Computing, Simulering og visualisering"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 340,
+                    "female": 75,
+                    "female_percentage": 22.058823529411764,
+                    "programmes": "Applied Computer Science, Computational Colour and Spectral Imaging, Datateknologi, Digital Infrastructure and Cyber Security, Information Security, Helseinformatikk, Informatics, Ingeniørvitenskap og IKT,  Interaction Design, Digital samhandling, Security and Cloud Computing"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 275,
+                    "female": 95,
+                    "female_percentage": 34.54545454545455,
+                    "programmes": "Datateknologi og informatikk, Informasjonsteknologi, Teknisk kybernetikk, Informasjonssikkerhet og kommunikasjonsteknologi, Information Security, Telematikk"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 41,
+                    "female": 15,
+                    "female_percentage": 36.58536585365854,
+                    "programmes": "Datateknologi og informatikk, Informasjonsteknologi, Informasjonssikkerhet og kommunikasjonsteknologi, Information Security"
+                }
+            }
+        ]
+    },
+    "UiT The Arctic University of Norway": {
+        "country": "Norway",
+        "country_population": 5627400,
+        "institution_type": "(RU)",
+        "data": [
+            {
+                "level": "Bachelor",
+                "category": "First-year students",
+                "stats_2023_2024": {
+                    "total": 105,
+                    "female": 25,
+                    "female_percentage": 23.809523809523807,
+                    "programmes": "Datateknikk, Informatikk, Kunstig intelligens"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 600,
+                    "female": 115,
+                    "female_percentage": 19.166666666666668,
+                    "programmes": "Datateknikk, Informatikk,Kunstig intelligens"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 90,
+                    "female": 15,
+                    "female_percentage": 16.666666666666664,
+                    "programmes": "Datateknikk, Informatikk"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 70,
+                    "female": 15,
+                    "female_percentage": 21.428571428571427,
+                    "programmes": "Applied Computer Science, Computer Science"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 10,
+                    "female": 0,
+                    "female_percentage": 0.0,
+                    "programmes": "Computer Science"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 40,
+                    "female": 10,
+                    "female_percentage": 25.0,
+                    "programmes": "Datateknologi, Informatikk"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 2,
+                    "female": 0,
+                    "female_percentage": 0.0,
+                    "programmes": "Informatikk"
+                }
+            }
+        ]
+    },
+    "University of Oslo": {
+        "country": "Norway",
+        "country_population": 5627400,
+        "institution_type": "(RU)",
+        "data": [
+            {
+                "level": "Bachelor",
+                "category": "First-year students",
+                "stats_2023_2024": {
+                    "total": 420,
+                    "female": 165,
+                    "female_percentage": 39.285714285714285,
+                    "programmes": "Elektronikk, informatikk og teknologi, Informatikk, Matematikk med informatikk"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 1680,
+                    "female": 600,
+                    "female_percentage": 35.714285714285715,
+                    "programmes": "Elektronikk, informatikk og teknologi, Informatikk, Matematikk med informatikk"
+                }
+            },
+            {
+                "level": "Bachelor",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 290,
+                    "female": 110,
+                    "female_percentage": 37.93103448275862,
+                    "programmes": "Elektronikk, informatikk og teknologi, Informatikk, Matematikk med informatikk"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 855,
+                    "female": 235,
+                    "female_percentage": 27.485380116959064,
+                    "programmes": "Computational Science, Data Science, Elektronikk, informatikk og teknologi,Forvaltningsinformatikk, Informatikk"
+                }
+            },
+            {
+                "level": "Master",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 280,
+                    "female": 65,
+                    "female_percentage": 23.214285714285715,
+                    "programmes": "Computational Science, Data Science, Elektronikk, informatikk og teknologi, Informatikk"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Students all semesters",
+                "stats_2023_2024": {
+                    "total": 220,
+                    "female": 85,
+                    "female_percentage": 38.63636363636363,
+                    "programmes": "Informatikk"
+                }
+            },
+            {
+                "level": "PhD",
+                "category": "Degrees awarded",
+                "stats_2023_2024": {
+                    "total": 26,
+                    "female": 10,
+                    "female_percentage": 38.46153846153847,
+                    "programmes": "Informatikk"
+                }
+            }
+        ]
+    }
+}
