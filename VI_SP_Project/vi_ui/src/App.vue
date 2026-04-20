@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted, onUnmounted, ref} from 'vue';
+import {onMounted, onUnmounted, ref, computed} from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -20,12 +20,31 @@ const DefaultIcon = L.icon({
   popupAnchor: [1, -34]
 });
 L.Marker.prototype.options.icon = DefaultIcon;
+
+const RedIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+  shadowUrl: iconShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34]
+});
 // -------------------------
 
 const mapContainer = ref<HTMLElement | null>(null);
 let map: L.Map | null = null;
 
+// Marker management
+const markerRegistry: Map<string, L.Marker> = new Map();
+let highlightedMarker: L.Marker | null = null;
+
+// Store country-specific cluster groups and university data
 const countryClusterGroups: Record<string, L.MarkerClusterGroup> = {};
+const universitiesData = ref<Record<string, University[]>>({});
+const availableCountries = ref<string[]>([]);
+
+// Search state
+const searchQuery = ref('');
+const selectedCountry = ref<string>('all');
 
 type Department = {
   name: string;
@@ -47,14 +66,84 @@ type University = {
   departments?: Department[];
 };
 
+type SearchResult = {
+  countryCode: string;
+  uni: University;
+  dept?: Department;
+};
+
+const highlightMarker = (marker: L.Marker) => {
+  if (highlightedMarker && highlightedMarker !== marker) {
+    highlightedMarker.setIcon(DefaultIcon);
+  }
+  marker.setIcon(RedIcon);
+  highlightedMarker = marker;
+};
+
+// Computed search results
+const searchResults = computed((): SearchResult[] => {
+  const query = searchQuery.value.trim().toLowerCase();
+  if (!query) return [];
+
+  const results: SearchResult[] = [];
+
+  for (const [countryCode, unis] of Object.entries(universitiesData.value)) {
+    if (selectedCountry.value !== 'all' && selectedCountry.value !== countryCode) continue;
+
+    unis.forEach((uni) => {
+      if (uni.departments && uni.departments.length > 0) {
+        uni.departments.forEach((dept) => {
+          if (
+              uni.name.toLowerCase().includes(query) ||
+              dept.name.toLowerCase().includes(query)
+          ) {
+            results.push({ countryCode, uni, dept });
+          }
+        });
+      } else {
+        if (uni.name.toLowerCase().includes(query)) {
+          results.push({ countryCode, uni });
+        }
+      }
+    });
+  }
+
+  return results.slice(0, 20); // cap at 20 results
+});
+
+const flyToResult = (result: SearchResult) => {
+  if (!map) return;
+
+  const location = result.dept?.location ?? result.uni.location;
+  const lat = location?.lat;
+  const lon = location?.lon;
+
+  if (lat && lon) {
+    map.flyTo([lat, lon], 17, {
+      animate: true,
+      duration: 0.8,
+    });
+
+    map.once('moveend', () => {
+      const marker = markerRegistry.get(`${lat},${lon}`);
+      if (marker) {
+        highlightMarker(marker);
+        marker.openPopup();
+      }
+    });
+  }
+
+  searchQuery.value = '';
+};
+
 const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
-  bordersLayer: L.LayerGroup;
-  markersLayer: L.LayerGroup;
+  countryLayers: Record<string, { borders: L.LayerGroup; markers: L.LayerGroup }>;
 }> => {
   const bordersLayer = L.layerGroup();
   const markersLayer = L.layerGroup();
+  const countryLayers: Record<string, { borders: L.LayerGroup; markers: L.LayerGroup }> = {};
 
-  if (!map) return { bordersLayer, markersLayer };
+  if (!map) return { countryLayers };
 
   const manifestResponse = await fetch('/borders/manifest.json');
   const fileNames: string[] = await manifestResponse.json();
@@ -62,18 +151,22 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
   for (const fileName of fileNames) {
     const countryCode = fileName.replace('.geo.json', '');
 
+    // per-country layer groups
+    const countryBordersLayer = L.layerGroup();
+    const countryMarkersLayer = L.layerGroup();
+    countryLayers[countryCode] = { borders: countryBordersLayer, markers: countryMarkersLayer };
+
     try {
       const borderResponse = await fetch(`/borders/${fileName}`);
       const geojsonData = await borderResponse.json();
 
-      // Create cluster group for this country
       const clusterGroup = L.markerClusterGroup({ maxClusterRadius: 50 });
       countryClusterGroups[countryCode] = clusterGroup;
-      markersLayer.addLayer(clusterGroup); // add to group, not map directly
+      countryMarkersLayer.addLayer(clusterGroup); // into country layer
+      markersLayer.addLayer(countryMarkersLayer); // into global layer
 
-      // Draw border
       const borderGeoJson = L.geoJSON(geojsonData, {
-        style: { color: '#3388ff', weight: 2, fillOpacity: 0.1, fillColor: '#3388ff' },
+        style: { color: '#76aefd', weight: 2, fillOpacity: 0.1, fillColor: '#5ea1ff' },
         onEachFeature: (feature: any, layer: L.Layer) => {
           const countryName = feature.properties.NAME || feature.properties.name || "Unknown Country";
           layer.bindPopup(`<b>${countryName}</b>`);
@@ -85,7 +178,8 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
           });
         }
       });
-      bordersLayer.addLayer(borderGeoJson); // add to group, not map directly
+      countryBordersLayer.addLayer(borderGeoJson); // into country layer
+      bordersLayer.addLayer(countryBordersLayer);  // into global layer
 
     } catch (error) {
       console.error(`Error loading border file ${fileName}:`, error);
@@ -97,36 +191,41 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
       const unis: University[] = await unisResponse.json();
       const clusterGroup = countryClusterGroups[countryCode];
 
+      universitiesData.value[countryCode] = unis;
+      availableCountries.value.push(countryCode);
+
       unis.forEach((uni) => {
         if (uni.departments && uni.departments.length > 0) {
           uni.departments.forEach((dept) => {
             const lat = dept.location?.lat;
             const lon = dept.location?.lon;
             if (lat && lon) {
-              L.marker([lat, lon])
+              const marker = L.marker([lat, lon])
                   .bindPopup(`<b>${uni.name}</b><br/><span>${dept.name}</span>`)
                   .addTo(clusterGroup);
+              markerRegistry.set(`${lat},${lon}`, marker);
+              marker.on('click', () => highlightMarker(marker));
             }
           });
         } else {
           const lat = uni.location?.lat;
           const lon = uni.location?.lon;
           if (lat && lon) {
-            L.marker([lat, lon])
+            const marker = L.marker([lat, lon])
                 .bindPopup(`<b>${uni.name}</b>`)
                 .addTo(clusterGroup);
+            markerRegistry.set(`${lat},${lon}`, marker);
+            marker.on('click', () => highlightMarker(marker));
           }
         }
       });
 
-      console.log(`Loaded universities for ${countryCode}`);
     } catch (error) {
       console.error(`No universities file found for ${countryCode}`);
     }
   }
 
-  console.log("All countries loaded!");
-  return { bordersLayer, markersLayer };
+  return { countryLayers };
 };
 
 const setLegend = () => {
@@ -146,7 +245,6 @@ const setLegend = () => {
         line-height: 24px;
       ">
         <b style="display:block; margin-bottom:6px;">Legend</b>
-
         <div>
           <span style="
             display:inline-block; width:16px; height:16px;
@@ -156,12 +254,10 @@ const setLegend = () => {
           "></span>
           Country border
         </div>
-
         <div>
           <img src="${icon}" style="width:13px; height:20px; vertical-align:middle; margin-right:6px;">
           University
         </div>
-
         <div>
           <span style="
             display:inline-block; width:20px; height:20px;
@@ -172,7 +268,6 @@ const setLegend = () => {
           ">3</span>
           University cluster
         </div>
-
       </div>
     `;
     return div;
@@ -192,8 +287,12 @@ onMounted(async () => {
   map = L.map(mapContainer.value, {
     maxBounds: europeBounds,
     maxBoundsViscosity: 1.0,
-    minZoom: 4
+    minZoom: 4,
+    zoomControl: false, // disable default position
   });
+
+  // re-add it at bottom left
+  L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
   map.fitBounds(europeBounds);
 
@@ -205,24 +304,27 @@ onMounted(async () => {
     attribution: '&copy; Esri'
   });
 
-  const { bordersLayer, markersLayer } = await fetchDrawBordersAndPlaceMarkers();
+  const { countryLayers } = await fetchDrawBordersAndPlaceMarkers();
 
-  // add both layers to map by default
-  bordersLayer.addTo(map);
-  markersLayer.addTo(map);
+  // build per-country overlays
+  const overlays: Record<string, L.Layer> = {};
+  const countryGroupLayers: L.LayerGroup[] = [];
 
-  // layer control to toggle them
+  for (const [countryCode, layers] of Object.entries(countryLayers)) {
+    const code = countryCode.toUpperCase();
+    const countryGroup = L.layerGroup([layers.borders, layers.markers]);
+    overlays[code] = countryGroup;
+    countryGroupLayers.push(countryGroup);
+  }
+
+  // add all to map by default = all checked
+  countryGroupLayers.forEach(layer => layer.addTo(map!));
+
   L.control.layers(
-      {
-        'Street': osmLayer,
-        'Satellite': satelliteLayer,
-      },
-      {
-        'Borders': bordersLayer,
-        'Universities': markersLayer,
-      }
+      { 'Street': osmLayer, 'Satellite': satelliteLayer },
+      overlays,
+      { position: 'bottomleft' }
   ).addTo(map);
-
   setLegend();
 });
 
@@ -235,7 +337,106 @@ onUnmounted(() => {
 
 <template>
   <main>
-    <div ref="mapContainer" style="height: 100vh; width: 100vw; display: block;"></div>
+    <!-- Search header -->
+    <div style="
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: white;
+      padding: 10px 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    ">
+      <!-- Country filter -->
+      <select
+          v-model="selectedCountry"
+          style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 13px;"
+      >
+        <option value="all">All countries</option>
+        <option v-for="code in availableCountries" :key="code" :value="code">
+          {{ code.toUpperCase() }}
+        </option>
+      </select>
+
+      <!-- Search input -->
+      <div style="position: relative; flex: 1;">
+        <input
+            v-model="searchQuery"
+            type="text"
+            placeholder="Search universities..."
+            style="
+            width: 100%;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+            box-sizing: border-box;
+          "
+        />
+
+        <!-- Results dropdown -->
+        <div
+            v-if="searchResults.length > 0"
+            style="
+            position: absolute;
+            top: 100%; left: 0; right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+          "
+        >
+          <div
+              v-for="(result, i) in searchResults"
+              :key="i"
+              @click="flyToResult(result)"
+              style="
+              padding: 8px 12px;
+              cursor: pointer;
+              border-bottom: 1px solid #f0f0f0;
+              font-size: 13px;
+            "
+              onmouseover="this.style.background='#f5f5f5'"
+              onmouseout="this.style.background='white'"
+          >
+            <div style="font-weight: 600;">{{ result.uni.name }}</div>
+            <div style="color: #666; font-size: 11px;">
+              {{ result.dept?.name ?? result.uni.institution }} · {{ result.countryCode.toUpperCase() }}
+            </div>
+          </div>
+        </div>
+
+        <!-- No results -->
+        <div
+            v-else-if="searchQuery.trim().length > 0"
+            style="
+            position: absolute;
+            top: 100%; left: 0; right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 4px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: #999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+          "
+        >
+          No results found
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Map pushed down by header height -->
+    <div ref="mapContainer" style="height: 100vh; width: 100vw; padding-top: 50px; box-sizing: border-box; display: block;"></div>
   </main>
 </template>
 
