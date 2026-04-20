@@ -166,7 +166,7 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
       markersLayer.addLayer(countryMarkersLayer); // into global layer
 
       const borderGeoJson = L.geoJSON(geojsonData, {
-        style: { color: '#76aefd', weight: 2, fillOpacity: 0.1, fillColor: '#5ea1ff' },
+        style: { color: '#8abcff', weight: 2, fillOpacity: 0.1, fillColor: '#5ea1ff' },
         onEachFeature: (feature: any, layer: L.Layer) => {
           const countryName = feature.properties.NAME || feature.properties.name || "Unknown Country";
           layer.bindPopup(`<b>${countryName}</b>`);

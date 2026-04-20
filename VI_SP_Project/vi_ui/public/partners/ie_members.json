@@ -1,0 +1,1039 @@
+[
+  {
+    "country": "Austria",
+    "country_code": "at",
+    "partners": [
+      {
+        "uni_name": "Johannes Kepler University Linz (Federated Member):",
+        "dept_name": "",
+        "link": ""
+      },
+      {
+        "uni_name": "TU Wien,",
+        "dept_name": "Faculty of Informatics",
+        "link": "http://www.informatik.tuwien.ac.at/"
+      },
+      {
+        "uni_name": "University of Klagenfurt,",
+        "dept_name": "Faculty of Technical Sciences",
+        "link": "https://www.aau.at/en/tewi/"
+      }
+    ]
+  },
+  {
+    "country": "Azerbaijan",
+    "country_code": "az",
+    "partners": [
+      {
+        "uni_name": "Azerbaijan Technical University,",
+        "dept_name": "Department of Computer Technologies",
+        "link": "https://aztu.edu.az/en"
+      }
+    ]
+  },
+  {
+    "country": "Belgium",
+    "country_code": "be",
+    "partners": [
+      {
+        "uni_name": "KU Leuven,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://wms.cs.kuleuven.be/cs/english"
+      },
+      {
+        "uni_name": "Université catholique de Louvain,",
+        "dept_name": "Computer Science Department (INGI)",
+        "link": "https://www.uclouvain.be/en/research-institutes/icteam/ingi"
+      },
+      {
+        "uni_name": "University of Liège,",
+        "dept_name": "Montefiore Institute",
+        "link": "https://www.montefiore.uliege.be/cms/c_3482888/en/montefiore-institute?id=c_3482888"
+      },
+      {
+        "uni_name": "University of Mons,",
+        "dept_name": "INFORTECH Research Institute",
+        "link": "https://www.umons.ac.be/infortech"
+      },
+      {
+        "uni_name": "University of Namur,",
+        "dept_name": "Faculty of Computer Science",
+        "link": "https://www.unamur.be/en/it"
+      },
+      {
+        "uni_name": "Vrije Universiteit Brussel,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.vub.be/en/about-vub/faculties-institutes-and-campuses/our-faculties/sciences-and-bioengineering-sciences/departments-and-research-groups#paragraph-168896"
+      }
+    ]
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "country_code": "ba",
+    "partners": [
+      {
+        "uni_name": "University of Mostar,",
+        "dept_name": "Center for Information Technologies (SUMIT)",
+        "link": "https://sumit.sum.ba/#"
+      }
+    ]
+  },
+  {
+    "country": "Bulgaria",
+    "country_code": "bg",
+    "partners": [
+      {
+        "uni_name": "Sofia University,",
+        "dept_name": "Faculty of Mathematics and Informatics",
+        "link": "https://www.fmi.uni-sofia.bg/en/"
+      },
+      {
+        "uni_name": "Technical University of Sofia,",
+        "dept_name": "Faculty of Applied Mathematics and Informatics, Department of Informatics",
+        "link": "https://fpmi.bg/cms/about-us/"
+      }
+    ]
+  },
+  {
+    "country": "Cyprus",
+    "country_code": "cy",
+    "partners": [
+      {
+        "uni_name": "University of Cyprus,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.cs.ucy.ac.cy/"
+      },
+      {
+        "uni_name": "Neapolis University Pafos,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.nup.ac.cy/department-of-computer-science/"
+      }
+    ]
+  },
+  {
+    "country": "Czechia",
+    "country_code": "cz",
+    "partners": [
+      {
+        "uni_name": "Czech Technical University in Prague,",
+        "dept_name": "Faculty of Information Technology",
+        "link": "http://www.fit.cvut.cz/en"
+      },
+      {
+        "uni_name": "Masaryk University,",
+        "dept_name": "Faculty of Informatics",
+        "link": "http://www.fi.muni.cz/"
+      },
+      {
+        "uni_name": "University of West Bohemia,",
+        "dept_name": "Department of Computer Science and Engineering",
+        "link": "https://www.kiv.zcu.cz/en/index.html"
+      }
+    ]
+  },
+  {
+    "country": "Denmark",
+    "country_code": "dk",
+    "partners": [
+      {
+        "uni_name": "Aalborg University,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.cs.aau.dk/"
+      },
+      {
+        "uni_name": "Aarhus University,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://cs.au.dk/"
+      },
+      {
+        "uni_name": "",
+        "dept_name": "IT University of Copenhagen",
+        "link": "https://en.itu.dk/"
+      },
+      {
+        "uni_name": "University of Copenhagen,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://di.ku.dk/english/"
+      },
+      {
+        "uni_name": "University of Southern Denmark,",
+        "dept_name": "Department of Mathematics and Computer Science",
+        "link": "https://www.sdu.dk/en/Om_SDU/Institutter_centre/Imada_matematik_og_datalogi"
+      }
+    ]
+  },
+  {
+    "country": "Estonia",
+    "country_code": "ee",
+    "partners": [
+      {
+        "uni_name": "Tallinn University,",
+        "dept_name": "School of Digital Technologies",
+        "link": "https://www.tlu.ee/en/dt"
+      },
+      {
+        "uni_name": "Tallinn University of Technology,",
+        "dept_name": "School of Information Technologies",
+        "link": "https://taltech.ee/en/school-of-information-technologies"
+      },
+      {
+        "uni_name": "University of Tartu,",
+        "dept_name": "Institute of Computer Science",
+        "link": "http://www.cs.ut.ee/en"
+      }
+    ]
+  },
+  {
+    "country": "Finland",
+    "country_code": "fi",
+    "partners": [
+      {
+        "uni_name": "Aalto University,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://cs.aalto.fi/en/"
+      },
+      {
+        "uni_name": "University of Helsinki,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://www.cs.helsinki.fi/en"
+      }
+    ]
+  },
+  {
+    "country": "France",
+    "country_code": "fr",
+    "partners": [
+      {
+        "uni_name": "- Federation Informatique de Lyon (Federated Member)",
+        "dept_name": "FIL",
+        "link": "https://fil.cnrs.fr/"
+      },
+      {
+        "uni_name": "Institut Polytechnique de Paris,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.polytechnique.edu/en/department-of-computer-science"
+      },
+      {
+        "uni_name": "",
+        "dept_name": "Inria - National Institute for Research in Digital Science and Technology",
+        "link": "http://www.inria.fr/en/"
+      },
+      {
+        "uni_name": "(IRIT)",
+        "dept_name": "Institut de Recherche en Informatique de Toulouse",
+        "link": "https://www.irit.fr/en/home/"
+      },
+      {
+        "uni_name": "Université de Lorraine,",
+        "dept_name": "Laboratoire Lorrain de recherche en informatique et ses applications (LORIA)",
+        "link": "https://www.loria.fr/en/"
+      },
+      {
+        "uni_name": "Université de Montpellier - CNRS,",
+        "dept_name": "Laboratoire d'Informatique, de Robotique, de Micro-électronique de Montpellier (LIRMM)",
+        "link": "https://www.lirmm.fr"
+      },
+      {
+        "uni_name": "University of Nantes, Laboratory of Digital Sciences of Nantes,",
+        "dept_name": "LS2N",
+        "link": "https://www.ls2n.fr/?lang=en"
+      },
+      {
+        "uni_name": "Université de Rennes,",
+        "dept_name": "Institut de Recherche en Informatique et Systèmes Aléatoires (IRISA)",
+        "link": "https://www.irisa.fr/en"
+      }
+    ]
+  },
+  {
+    "country": "Georgia",
+    "country_code": "ge",
+    "partners": [
+      {
+        "uni_name": "Ivane Javakhishvili Tbilisi State University,",
+        "dept_name": "Department of Computer Science, the Faculty of Exact and Natural Sciences",
+        "link": "https://computing.tsu.ge/en"
+      }
+    ]
+  },
+  {
+    "country": "Germany",
+    "country_code": "de",
+    "partners": [
+      {
+        "uni_name": "Christian Albrecths Universität zu Kiel.",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.inf.uni-kiel.de/en"
+      },
+      {
+        "uni_name": "",
+        "dept_name": "Hasso Plattner Institute",
+        "link": "http://hpi.de/en.html"
+      },
+      {
+        "uni_name": "Karlsruhe Institute of Technology (KIT),",
+        "dept_name": "Department of Informatics",
+        "link": "http://www.informatik.kit.edu/english/index.php"
+      },
+      {
+        "uni_name": "Otto von Guericke University Magdeburg,",
+        "dept_name": "Faculty of Computer Science",
+        "link": "http://www.cs.ovgu.de/inf/en/"
+      },
+      {
+        "uni_name": "Paderborn University,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://cs.uni-paderborn.de/en/"
+      },
+      {
+        "uni_name": "RWTH Aachen University,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.informatik.rwth-aachen.de/cms/~mxz/informatik/?lidx=1"
+      },
+      {
+        "uni_name": "(Federated Member):",
+        "dept_name": "Saarland Informatics Campus",
+        "link": "https://saarland-informatics-campus.de/en/"
+      },
+      {
+        "uni_name": "Technische Hochschule Ostwestfalen-Lippe,",
+        "dept_name": "Institute Industrial IT",
+        "link": "https://www.th-owl.de/init/en/"
+      },
+      {
+        "uni_name": "Technical University of Darmstadt,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.informatik.tu-darmstadt.de/fb20/index.en.jsp"
+      },
+      {
+        "uni_name": "Technical University of Munich,",
+        "dept_name": "School of Computation, Information and Technology",
+        "link": "https://www.cit.tum.de/cit/startseite/"
+      },
+      {
+        "uni_name": "Technische Universität Berlin,",
+        "dept_name": "Faculty of Electrical Engineering and Computer Science",
+        "link": "https://www.tu.berlin/en/eecs"
+      },
+      {
+        "uni_name": "Technische Universität Dresden,",
+        "dept_name": "Faculty of Computer Science",
+        "link": "https://tu-dresden.de/ing/informatik?set_language=en"
+      },
+      {
+        "uni_name": "Universität Hamburg,",
+        "dept_name": "Department of Informatics",
+        "link": "https://www.inf.uni-hamburg.de/en.html"
+      },
+      {
+        "uni_name": "University of Bamberg,",
+        "dept_name": "Faculty of Information Systems and Applied Computer Sciences",
+        "link": "https://www.uni-bamberg.de/en/wiai/"
+      },
+      {
+        "uni_name": "University of Duisburg-Essen,",
+        "dept_name": "Institute for Computer Science and Business Information Systems",
+        "link": "https://www.icb.wiwi.uni-due.de/en/"
+      },
+      {
+        "uni_name": "University of Mannheim,",
+        "dept_name": "School of Business Informatics and Mathematics",
+        "link": "https://www.wim.uni-mannheim.de/en/"
+      },
+      {
+        "uni_name": "University of Münster,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://cs.uni-muenster.de"
+      },
+      {
+        "uni_name": "University of Stuttgart,",
+        "dept_name": "Faculty of Computer Science Electrical Engineering and Information Technology",
+        "link": "http://www.f-iei.uni-stuttgart.de/index.en.html"
+      }
+    ]
+  },
+  {
+    "country": "Greece",
+    "country_code": "gr",
+    "partners": [
+      {
+        "uni_name": "Aristotle University of Thessaloniki,",
+        "dept_name": "School of Informatics",
+        "link": "https://www.csd.auth.gr/en/"
+      },
+      {
+        "uni_name": "Athens University of Economics and Business,",
+        "dept_name": "Department of Management Science and Technology",
+        "link": "https://www.dept.aueb.gr/en/dmst"
+      },
+      {
+        "uni_name": "University of Crete,",
+        "dept_name": "Computer Science Department",
+        "link": "https://www.csd.uoc.gr/CSD/index.jsp?lang=en"
+      }
+    ]
+  },
+  {
+    "country": "Hungary",
+    "country_code": "hu",
+    "partners": [
+      {
+        "uni_name": "Eötvös Loránd University,",
+        "dept_name": "Faculty of Informatics",
+        "link": "https://www.inf.elte.hu/en/"
+      },
+      {
+        "uni_name": "University of Szeged,",
+        "dept_name": "Institute of Informatics",
+        "link": "http://www.inf.u-szeged.hu/en"
+      }
+    ]
+  },
+  {
+    "country": "Iceland",
+    "country_code": "is",
+    "partners": [
+      {
+        "uni_name": "Reykjavik University,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://en.ru.is/st/dcs/"
+      }
+    ]
+  },
+  {
+    "country": "Ireland",
+    "country_code": "ie",
+    "partners": [
+      {
+        "uni_name": "NUI Galway,",
+        "dept_name": "Data Science Institute",
+        "link": "https://www.universityofgalway.ie/dsi/#"
+      },
+      {
+        "uni_name": "Technological University Dublin,",
+        "dept_name": "School of Computer Science",
+        "link": "https://www.tudublin.ie/explore/faculties-and-schools/computing-digital-data/computer-science/"
+      }
+    ]
+  },
+  {
+    "country": "Italy",
+    "country_code": "it",
+    "partners": [
+      {
+        "uni_name": "Free University of Bozen-Bolzano,",
+        "dept_name": "Faculty of Computer Science",
+        "link": "https://www.unibz.it/en/faculties/computer-science/"
+      },
+      {
+        "uni_name": "Politecnico di Milano,",
+        "dept_name": "Dipartimento di Elettronica, Informazione e Bioingegneria",
+        "link": "https://www.deib.polimi.it/eng/home-page"
+      },
+      {
+        "uni_name": "Politecnico di Torino,",
+        "dept_name": "Department of Control and Computer Engineering",
+        "link": "http://www.dauin.polito.it/"
+      },
+      {
+        "uni_name": "Roma Informatics (Federated Member)",
+        "dept_name": "",
+        "link": ""
+      },
+      {
+        "uni_name": "Università degli Studi di Genova,",
+        "dept_name": "Dipartimento di Informatica, Bioingegneria, Robotica ed Ingegneria dei Sistemi",
+        "link": "https://dibris.unige.it/en"
+      },
+      {
+        "uni_name": "Università degli Studi di Milano-Bicocca,",
+        "dept_name": "Dipartimento di Informatica, Sistemistica e Comunicazione",
+        "link": "http://www.disco.unimib.it"
+      },
+      {
+        "uni_name": "Università degli Studi di Torino,",
+        "dept_name": "Dipartimento di Informatica",
+        "link": "https://www.cs.unito.it/do/home.pl"
+      },
+      {
+        "uni_name": "University of Bari \"Aldo Moro\",",
+        "dept_name": "Dipartimento di Informatica",
+        "link": "http://www.uniba.it/ricerca/dipartimenti/informatica"
+      },
+      {
+        "uni_name": "University of Bologna,",
+        "dept_name": "Department of Computer Science and Engineering",
+        "link": "http://www.cse.unibo.it/en"
+      },
+      {
+        "uni_name": "University of L'Aquila,",
+        "dept_name": "Department of Information Engineering, Computer Science and Mathematics",
+        "link": "https://www.disim.univaq.it/"
+      },
+      {
+        "uni_name": "University of Milan,",
+        "dept_name": "Dipartimento di Informatica \"Giovanni Degli Antoni\"",
+        "link": "http://www.di.unimi.it/"
+      },
+      {
+        "uni_name": "University of Perugia,",
+        "dept_name": "KITLab - Knowledge and Information Technology Laboratory",
+        "link": "http://www.dmi.unipg.it/kitlab/"
+      },
+      {
+        "uni_name": "University of Pisa,",
+        "dept_name": "Dipartimento di Informatica",
+        "link": "https://di.unipi.it/en/"
+      },
+      {
+        "uni_name": "University of Trento,",
+        "dept_name": "Department of Information Engineering and Computer Science",
+        "link": "http://www.disi.unitn.it/"
+      }
+    ]
+  },
+  {
+    "country": "Latvia",
+    "country_code": "lv",
+    "partners": [
+      {
+        "uni_name": "Informatics Latvija (Federated Member):",
+        "dept_name": "",
+        "link": ""
+      }
+    ]
+  },
+  {
+    "country": "Lithuania",
+    "country_code": "lt",
+    "partners": [
+      {
+        "uni_name": "Kaunas University of Technology,",
+        "dept_name": "Faculty of Informatics",
+        "link": "https://fi.ktu.edu/"
+      },
+      {
+        "uni_name": "Vilnius University,",
+        "dept_name": "Faculty of Mathematics and Informatics",
+        "link": "https://mif.vu.lt/lt3/en/"
+      }
+    ]
+  },
+  {
+    "country": "Luxembourg",
+    "country_code": "lu",
+    "partners": [
+      {
+        "uni_name": "University of Luxembourg,",
+        "dept_name": "SnT Centre",
+        "link": "http://wwwen.uni.lu/snt"
+      }
+    ]
+  },
+  {
+    "country": "Malta",
+    "country_code": "mt",
+    "partners": [
+      {
+        "uni_name": "University of Malta,",
+        "dept_name": "Faculty of Information and Communication Technology",
+        "link": "https://www.um.edu.mt/ict/"
+      }
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "country_code": "nl",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "Centrum Wiskunde & Informatica (CWI)",
+        "link": "http://www.cwi.nl/"
+      },
+      {
+        "uni_name": "University of Amsterdam,",
+        "dept_name": "Informatics Institute",
+        "link": "http://ivi.uva.nl/"
+      },
+      {
+        "uni_name": "Vrije Universiteit Amsterdam,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://www.cs.vu.nl/en/index.aspx"
+      },
+      {
+        "uni_name": "Eindhoven University of Technology,",
+        "dept_name": "Department of Mathematics and Computer Science",
+        "link": "https://www.tue.nl/en/our-university/departments/mathematics-and-computer-science/"
+      },
+      {
+        "uni_name": "Leiden University,",
+        "dept_name": "Leiden Institute of Advanced Computer Science",
+        "link": "https://www.universiteitleiden.nl/en/science/computer-science"
+      },
+      {
+        "uni_name": "Radboud University,",
+        "dept_name": "Institute for Computing and Information Sciences",
+        "link": "http://www.ru.nl/icis/"
+      },
+      {
+        "uni_name": "TU Delft,",
+        "dept_name": "Faculty of Electrical Engineering, Mathematics and Computer Science",
+        "link": "http://www.ewi.tudelft.nl/en/"
+      },
+      {
+        "uni_name": "University of Groningen,",
+        "dept_name": "Bernoulli Institute for Mathematics, Computer Science and Artificial Intelligence",
+        "link": "https://www.rug.nl/research/bernoulli/"
+      },
+      {
+        "uni_name": "University of Twente,",
+        "dept_name": "Faculty of Electrical Engineering, Mathematics and Computer Science",
+        "link": "https://www.utwente.nl/en/eemcs/education/"
+      },
+      {
+        "uni_name": "Utrecht University,",
+        "dept_name": "Department of Information and Computing Sciences",
+        "link": "https://www.uu.nl/en/organisation/department-of-information-and-computing-sciences"
+      }
+    ]
+  },
+  {
+    "country": "Norway",
+    "country_code": "no",
+    "partners": [
+      {
+        "uni_name": "Norwegian University of Science and Technology (NTNU)",
+        "dept_name": "",
+        "link": ""
+      },
+      {
+        "uni_name": "UiT The Arctic University of Norway,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://en.uit.no/enhet/ifi?p_dimension_id=88138"
+      }
+    ]
+  },
+  {
+    "country": "Poland",
+    "country_code": "pl",
+    "partners": [
+      {
+        "uni_name": "AGH University of Krakow,",
+        "dept_name": "Faculty of Computer Science",
+        "link": "https://www.informatyka.agh.edu.pl/pl/"
+      }
+    ]
+  },
+  {
+    "country": "Portugal",
+    "country_code": "pt",
+    "partners": [
+      {
+        "uni_name": "Instituto Politécnico de Leiria,",
+        "dept_name": "School of Technology and Management of Leiria",
+        "link": "https://www.ipleiria.pt/estg/"
+      },
+      {
+        "uni_name": "Universidade NOVA de Lisboa,",
+        "dept_name": "NOVA Laboratory for Computer Science and Informatics (NOVA LINCS)",
+        "link": "http://nova-lincs.di.fct.unl.pt/"
+      },
+      {
+        "uni_name": "University of Porto,",
+        "dept_name": "Department of Informatics Engineering",
+        "link": "https://sigarra.up.pt/feup/en/uni_geral.unidade_view?pv_unidade=151"
+      },
+      {
+        "uni_name": "University of Lisbon,",
+        "dept_name": "Department of Computer Science and Engineering (IST)",
+        "link": "https://dei.tecnico.ulisboa.pt/en"
+      }
+    ]
+  },
+  {
+    "country": "Romania",
+    "country_code": "ro",
+    "partners": [
+      {
+        "uni_name": "Alexandru Ioan Cuza University of Iasi,",
+        "dept_name": "Faculty of Computer Science",
+        "link": "http://www.uaic.ro/en/studies/faculties/faculty-computer-science/"
+      },
+      {
+        "uni_name": "Babeş-Bolyai University,",
+        "dept_name": "Faculty of Mathematics and Computer Science",
+        "link": "http://www.cs.ubbcluj.ro/en/"
+      },
+      {
+        "uni_name": "University of Craiova,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://inf.ucv.ro/"
+      },
+      {
+        "uni_name": "Gheorghe Asachi Technical University of Iasi,",
+        "dept_name": "Faculty of Automatic Control and Computer Engineering",
+        "link": "https://www.ac.tuiasi.ro"
+      },
+      {
+        "uni_name": "\"George Emil Palade\" University of Medicine, Pharmacy, Sciences and Technology of Tirgu Mures,",
+        "dept_name": "Faculty of Engineering and Information Technology",
+        "link": "https://umfst.ro/inginerie/en/"
+      },
+      {
+        "uni_name": "Ovidius University of Constanta,",
+        "dept_name": "Faculty of Mathematics and Informatics",
+        "link": "https://fmi.univ-ovidius.ro/en/"
+      },
+      {
+        "uni_name": "University of Bucharest,",
+        "dept_name": "Faculty of Mathematics and Computer Science",
+        "link": "https://fmi.unibuc.ro/"
+      },
+      {
+        "uni_name": "University Politehnica of Bucharest,",
+        "dept_name": "Faculty of Automatic Control and Computers",
+        "link": "https://acs.pub.ro/en/"
+      },
+      {
+        "uni_name": "Technical University of Cluj-Napoca,",
+        "dept_name": "Computer Science Department",
+        "link": "https://cs.utcluj.ro/the-department.html"
+      },
+      {
+        "uni_name": "West University of Timisoara,",
+        "dept_name": "Faculty of Mathematics and Computer Science",
+        "link": "https://admitere.uvt.ro/en/program/facultatea-de-matematica-si-informatica/"
+      }
+    ]
+  },
+  {
+    "country": "Slovakia",
+    "country_code": "sk",
+    "partners": [
+      {
+        "uni_name": "Slovak University of Technology in Bratislava,",
+        "dept_name": "Faculty of Informatics and Information Technologies",
+        "link": "http://www.fiit.stuba.sk/en.html?page_id=749"
+      }
+    ]
+  },
+  {
+    "country": "Slovenia",
+    "country_code": "si",
+    "partners": [
+      {
+        "uni_name": "University of Maribor,",
+        "dept_name": "Faculty of Electrical Engineering and Computer Science",
+        "link": "https://feri.um.si/en/study/"
+      }
+    ]
+  },
+  {
+    "country": "Spain",
+    "country_code": "es",
+    "partners": [
+      {
+        "uni_name": ", Spain",
+        "dept_name": "IMDEA Software Institute",
+        "link": "http://www.software.imdea.org"
+      },
+      {
+        "uni_name": "Universidad de Castilla - La Mancha (Federated Member)",
+        "dept_name": "",
+        "link": ""
+      },
+      {
+        "uni_name": "Universidad de Málaga,",
+        "dept_name": "Escuela Técnica Superior de Ingeniería Informática",
+        "link": "https://www.uma.es/etsi-informatica/?set_language=en"
+      },
+      {
+        "uni_name": "Universidad de Sevilla,",
+        "dept_name": "Escuela Técnica Superior de Ingeniería Informática",
+        "link": "https://www.etsii.us.es/"
+      },
+      {
+        "uni_name": "Universidad Nacional de Educación a Distancia (UNED),",
+        "dept_name": "Computer Science School of Engineering",
+        "link": "https://www.uned.es/universidad/facultades/informatica.html"
+      },
+      {
+        "uni_name": "Universidad Politécnica de Madrid,",
+        "dept_name": "Escuela Técnica Superior de Ingenieros Informáticos",
+        "link": "http://www.etsiinf.upm.es"
+      },
+      {
+        "uni_name": "Universidad Politécnica de Madrid,",
+        "dept_name": "Escuela Técnica Superior de Ingeniería de Sistemas Informáticos",
+        "link": "https://www.etsisi.upm.es/"
+      },
+      {
+        "uni_name": "Universitat Politècnica de Catalunya,",
+        "dept_name": "Facultat d'Informatica de Barcelona",
+        "link": "http://www.fib.upc.edu/en.html"
+      },
+      {
+        "uni_name": "Universitat Politécnica de Valencia,",
+        "dept_name": "Escuela Tecnica Superior de Ingenieria Informatica",
+        "link": "https://www.etsinf.upv.es"
+      },
+      {
+        "uni_name": "Universidad Rey Juan Carlos,",
+        "dept_name": "Higher Technical School of Computer Engineering",
+        "link": "https://en.urjc.es/universidad/facultades/escuela-tecnica-superior-de-ingenieria-informatica"
+      },
+      {
+        "uni_name": "Universidad Salamanca,",
+        "dept_name": "Department of Computer Science and Automation",
+        "link": "https://www.usal.es/"
+      }
+    ]
+  },
+  {
+    "country": "Sweden",
+    "country_code": "se",
+    "partners": [
+      {
+        "uni_name": "Kristianstad University,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.hkr.se/en/"
+      },
+      {
+        "uni_name": "Linnaeus University,",
+        "dept_name": "Department of Computer Science and Media Technology",
+        "link": "https://lnu.se/en/meet-linnaeus-university/Organisation/faculty-of-technology/meet-the-faculty-of-technology/computer-science/"
+      },
+      {
+        "uni_name": "Mälardalen University,",
+        "dept_name": "School of Innovation Design and Engineering",
+        "link": "https://www.mdu.se/en/malardalen-university?"
+      },
+      {
+        "uni_name": "Umeå University,",
+        "dept_name": "Department of Computing Science",
+        "link": "https://www.umu.se/en/department-of-computing-science/"
+      }
+    ]
+  },
+  {
+    "country": "Switzerland",
+    "country_code": "ch",
+    "partners": [
+      {
+        "uni_name": "BeNeFri Computer Science (Federated Member)",
+        "dept_name": "",
+        "link": ""
+      },
+      {
+        "uni_name": "EPFL,",
+        "dept_name": "School of Computer and Communication Sciences",
+        "link": "http://ic.epfl.ch/"
+      },
+      {
+        "uni_name": "ETH Zurich,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://www.inf.ethz.ch/"
+      },
+      {
+        "uni_name": "Pedagogical University Vaud,",
+        "dept_name": "Media, digital use and informatics didactics Teaching and Research",
+        "link": "https://www.hepl.ch/"
+      },
+      {
+        "uni_name": "Università della Svizzera italiana,",
+        "dept_name": "Faculty of Informatics",
+        "link": "http://www.inf.usi.ch/"
+      },
+      {
+        "uni_name": "University of Basel,",
+        "dept_name": "Department of Mathematics and Computer Science",
+        "link": "https://dmi.unibas.ch/en/home/"
+      },
+      {
+        "uni_name": "University of Lausanne (Federated Member)",
+        "dept_name": "",
+        "link": ""
+      },
+      {
+        "uni_name": "University of Zurich,",
+        "dept_name": "Department of Informatics",
+        "link": "http://www.ifi.uzh.ch/"
+      },
+      {
+        "uni_name": "ZHAW Zurich University of Applied Sciences,",
+        "dept_name": "School of Engineering",
+        "link": "https://www.zhaw.ch/en/engineering/"
+      },
+      {
+        "uni_name": "University of St. Gallen,",
+        "dept_name": "School of Computer Science",
+        "link": "https://www.unisg.ch/de/universitaet/schools/computer-science/"
+      }
+    ]
+  },
+  {
+    "country": "UK",
+    "country_code": "gb",
+    "partners": [
+      {
+        "uni_name": "Imperial College London,",
+        "dept_name": "Department of Computing",
+        "link": "https://www.imperial.ac.uk/computing/"
+      },
+      {
+        "uni_name": "Liverpool John Moores University,",
+        "dept_name": "School of Computer Science and Mathematics",
+        "link": "https://www.ljmu.ac.uk/about-us/faculties/faculty-of-engineering-and-technology/school-of-computer-science-and-mathematics"
+      },
+      {
+        "uni_name": "Royal Holloway University of London,",
+        "dept_name": "Department of Computer Science",
+        "link": "https://www.royalholloway.ac.uk/research-and-education/departments-and-schools/computer-science/"
+      },
+      {
+        "uni_name": "The University of Edinburgh,",
+        "dept_name": "School of Informatics",
+        "link": "http://www.ed.ac.uk/schools-departments/informatics/"
+      },
+      {
+        "uni_name": "University College London,",
+        "dept_name": "Department of Computer Science",
+        "link": "http://www.cs.ucl.ac.uk/"
+      },
+      {
+        "uni_name": "University of Glasgow,",
+        "dept_name": "School of Computing Science",
+        "link": "http://www.gla.ac.uk/schools/computing/"
+      }
+    ]
+  },
+  {
+    "country": "Industry",
+    "country_code": "",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "Elsevier",
+        "link": "https://www.elsevier.com/"
+      },
+      {
+        "uni_name": "",
+        "dept_name": "Google",
+        "link": "https://research.google/"
+      },
+      {
+        "uni_name": "",
+        "dept_name": "IBM Research-Europe",
+        "link": "https://www.zurich.ibm.com/"
+      },
+      {
+        "uni_name": "",
+        "dept_name": "Springer",
+        "link": "https://link.springer.com/"
+      }
+    ]
+  },
+  {
+    "country": "Associate",
+    "country_code": "",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "Eclipse Foundation",
+        "link": "https://www.eclipse.org"
+      },
+      {
+        "uni_name": "",
+        "dept_name": "Heinz Nixdorf Museumsforum GmbH",
+        "link": "https://www.hnf.de/en/home.html"
+      }
+    ]
+  },
+  {
+    "country": "Austria",
+    "country_code": "at",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "Informatik Austria",
+        "link": "https://www.informatikaustria.at/"
+      }
+    ]
+  },
+  {
+    "country": "France",
+    "country_code": "fr",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "SIF - Societé Informatique de France",
+        "link": "https://www.societe-informatique-de-france.fr/"
+      }
+    ]
+  },
+  {
+    "country": "Germany",
+    "country_code": "de",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "Fakultätentag Informatik",
+        "link": "http://www.ft-informatik.de/"
+      },
+      {
+        "uni_name": "(GI)",
+        "dept_name": "Gesellschaft für Informatik",
+        "link": "https://gi.de"
+      }
+    ]
+  },
+  {
+    "country": "Italy",
+    "country_code": "it",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "GRIN - GRuppo di INformatica",
+        "link": "https://www.grin-informatica.it/"
+      }
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "country_code": "nl",
+    "partners": [
+      {
+        "uni_name": "",
+        "dept_name": "IPN - ICT-Research Platform Netherlands",
+        "link": "https://ict-research.nl"
+      }
+    ]
+  },
+  {
+    "country": "Spain",
+    "country_code": "es",
+    "partners": [
+      {
+        "uni_name": "(CODDII)",
+        "dept_name": "Conferencia de Directores y Decanos de Ingeniería Informática",
+        "link": "http://www.coddii.org"
+      }
+    ]
+  },
+  {
+    "country": "Switzerland",
+    "country_code": "ch",
+    "partners": [
+      {
+        "uni_name": "(associate member)",
+        "dept_name": "SVIA SSIE SSII Schweiz - Verein für Informatik in der Ausbildung",
+        "link": "https://svia-ssie-ssii.ch/de/"
+      },
+      {
+        "uni_name": "(SIRA)",
+        "dept_name": "Swiss Informatics Research Association",
+        "link": "https://sira.swissinformatics.org/"
+      }
+    ]
+  }
+]
