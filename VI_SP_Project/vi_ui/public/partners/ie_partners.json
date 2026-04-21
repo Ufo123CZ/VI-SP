@@ -6,17 +6,23 @@
       {
         "uni_name": "Johannes Kepler University Linz (Federated Member):",
         "dept_name": "",
-        "link": ""
+        "link": "",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "TU Wien,",
         "dept_name": "Faculty of Informatics",
-        "link": "http://www.informatik.tuwien.ac.at/"
+        "link": "http://www.informatik.tuwien.ac.at/",
+        "lat": 48.1952987,
+        "lon": 16.3696703
       },
       {
         "uni_name": "University of Klagenfurt,",
         "dept_name": "Faculty of Technical Sciences",
-        "link": "https://www.aau.at/en/tewi/"
+        "link": "https://www.aau.at/en/tewi/",
+        "lat": 46.6164026,
+        "lon": 14.2646809
       }
     ]
   },
@@ -27,7 +33,9 @@
       {
         "uni_name": "Azerbaijan Technical University,",
         "dept_name": "Department of Computer Technologies",
-        "link": "https://aztu.edu.az/en"
+        "link": "https://aztu.edu.az/en",
+        "lat": 40.3701146,
+        "lon": 49.8154394
       }
     ]
   },
@@ -38,32 +46,44 @@
       {
         "uni_name": "KU Leuven,",
         "dept_name": "Department of Computer Science",
-        "link": "http://wms.cs.kuleuven.be/cs/english"
+        "link": "http://wms.cs.kuleuven.be/cs/english",
+        "lat": 50.8057129,
+        "lon": 3.2915374
       },
       {
         "uni_name": "Université catholique de Louvain,",
         "dept_name": "Computer Science Department (INGI)",
-        "link": "https://www.uclouvain.be/en/research-institutes/icteam/ingi"
+        "link": "https://www.uclouvain.be/en/research-institutes/icteam/ingi",
+        "lat": 50.8212043,
+        "lon": 4.3495585
       },
       {
         "uni_name": "University of Liège,",
         "dept_name": "Montefiore Institute",
-        "link": "https://www.montefiore.uliege.be/cms/c_3482888/en/montefiore-institute?id=c_3482888"
+        "link": "https://www.montefiore.uliege.be/cms/c_3482888/en/montefiore-institute?id=c_3482888",
+        "lat": 50.6368602,
+        "lon": 5.5624252
       },
       {
         "uni_name": "University of Mons,",
         "dept_name": "INFORTECH Research Institute",
-        "link": "https://www.umons.ac.be/infortech"
+        "link": "https://www.umons.ac.be/infortech",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Namur,",
         "dept_name": "Faculty of Computer Science",
-        "link": "https://www.unamur.be/en/it"
+        "link": "https://www.unamur.be/en/it",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Vrije Universiteit Brussel,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.vub.be/en/about-vub/faculties-institutes-and-campuses/our-faculties/sciences-and-bioengineering-sciences/departments-and-research-groups#paragraph-168896"
+        "link": "https://www.vub.be/en/about-vub/faculties-institutes-and-campuses/our-faculties/sciences-and-bioengineering-sciences/departments-and-research-groups#paragraph-168896",
+        "lat": 50.8225504,
+        "lon": 4.3954969
       }
     ]
   },
@@ -74,7 +94,9 @@
       {
         "uni_name": "University of Mostar,",
         "dept_name": "Center for Information Technologies (SUMIT)",
-        "link": "https://sumit.sum.ba/#"
+        "link": "https://sumit.sum.ba/#",
+        "lat": 43.3640286,
+        "lon": 17.819665
       }
     ]
   },
@@ -85,12 +107,16 @@
       {
         "uni_name": "Sofia University,",
         "dept_name": "Faculty of Mathematics and Informatics",
-        "link": "https://www.fmi.uni-sofia.bg/en/"
+        "link": "https://www.fmi.uni-sofia.bg/en/",
+        "lat": 42.6935364,
+        "lon": 23.33528
       },
       {
         "uni_name": "Technical University of Sofia,",
         "dept_name": "Faculty of Applied Mathematics and Informatics, Department of Informatics",
-        "link": "https://fpmi.bg/cms/about-us/"
+        "link": "https://fpmi.bg/cms/about-us/",
+        "lat": 42.6552239,
+        "lon": 23.3550724
       }
     ]
   },
@@ -101,12 +127,16 @@
       {
         "uni_name": "University of Cyprus,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.cs.ucy.ac.cy/"
+        "link": "https://www.cs.ucy.ac.cy/",
+        "lat": 35.1439124,
+        "lon": 33.413932
       },
       {
         "uni_name": "Neapolis University Pafos,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.nup.ac.cy/department-of-computer-science/"
+        "link": "https://www.nup.ac.cy/department-of-computer-science/",
+        "lat": 34.749421,
+        "lon": 32.4266045
       }
     ]
   },
@@ -117,17 +147,23 @@
       {
         "uni_name": "Czech Technical University in Prague,",
         "dept_name": "Faculty of Information Technology",
-        "link": "http://www.fit.cvut.cz/en"
+        "link": "http://www.fit.cvut.cz/en",
+        "lat": 50.1029026,
+        "lon": 14.3946353
       },
       {
         "uni_name": "Masaryk University,",
         "dept_name": "Faculty of Informatics",
-        "link": "http://www.fi.muni.cz/"
+        "link": "http://www.fi.muni.cz/",
+        "lat": 49.2099967,
+        "lon": 16.5992487
       },
       {
         "uni_name": "University of West Bohemia,",
         "dept_name": "Department of Computer Science and Engineering",
-        "link": "https://www.kiv.zcu.cz/en/index.html"
+        "link": "https://www.kiv.zcu.cz/en/index.html",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -138,27 +174,37 @@
       {
         "uni_name": "Aalborg University,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.cs.aau.dk/"
+        "link": "https://www.cs.aau.dk/",
+        "lat": 57.0159071,
+        "lon": 9.9753082
       },
       {
         "uni_name": "Aarhus University,",
         "dept_name": "Department of Computer Science",
-        "link": "http://cs.au.dk/"
+        "link": "http://cs.au.dk/",
+        "lat": 56.1670905,
+        "lon": 10.2026177
       },
       {
         "uni_name": "",
         "dept_name": "IT University of Copenhagen",
-        "link": "https://en.itu.dk/"
+        "link": "https://en.itu.dk/",
+        "lat": 55.6596553,
+        "lon": 12.5910769
       },
       {
         "uni_name": "University of Copenhagen,",
         "dept_name": "Department of Computer Science",
-        "link": "https://di.ku.dk/english/"
+        "link": "https://di.ku.dk/english/",
+        "lat": 55.6801502,
+        "lon": 12.572327
       },
       {
         "uni_name": "University of Southern Denmark,",
         "dept_name": "Department of Mathematics and Computer Science",
-        "link": "https://www.sdu.dk/en/Om_SDU/Institutter_centre/Imada_matematik_og_datalogi"
+        "link": "https://www.sdu.dk/en/Om_SDU/Institutter_centre/Imada_matematik_og_datalogi",
+        "lat": 55.3678532,
+        "lon": 10.4280534
       }
     ]
   },
@@ -169,17 +215,23 @@
       {
         "uni_name": "Tallinn University,",
         "dept_name": "School of Digital Technologies",
-        "link": "https://www.tlu.ee/en/dt"
+        "link": "https://www.tlu.ee/en/dt",
+        "lat": 59.4393125,
+        "lon": 24.7723471
       },
       {
         "uni_name": "Tallinn University of Technology,",
         "dept_name": "School of Information Technologies",
-        "link": "https://taltech.ee/en/school-of-information-technologies"
+        "link": "https://taltech.ee/en/school-of-information-technologies",
+        "lat": 59.3949741,
+        "lon": 24.6676189
       },
       {
         "uni_name": "University of Tartu,",
         "dept_name": "Institute of Computer Science",
-        "link": "http://www.cs.ut.ee/en"
+        "link": "http://www.cs.ut.ee/en",
+        "lat": 58.381014,
+        "lon": 26.7195598
       }
     ]
   },
@@ -190,12 +242,16 @@
       {
         "uni_name": "Aalto University,",
         "dept_name": "Department of Computer Science",
-        "link": "http://cs.aalto.fi/en/"
+        "link": "http://cs.aalto.fi/en/",
+        "lat": 60.1860789,
+        "lon": 24.8281018
       },
       {
         "uni_name": "University of Helsinki,",
         "dept_name": "Department of Computer Science",
-        "link": "http://www.cs.helsinki.fi/en"
+        "link": "http://www.cs.helsinki.fi/en",
+        "lat": 60.2267221,
+        "lon": 25.01767
       }
     ]
   },
@@ -206,42 +262,58 @@
       {
         "uni_name": "- Federation Informatique de Lyon (Federated Member)",
         "dept_name": "FIL",
-        "link": "https://fil.cnrs.fr/"
+        "link": "https://fil.cnrs.fr/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Institut Polytechnique de Paris,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.polytechnique.edu/en/department-of-computer-science"
+        "link": "https://www.polytechnique.edu/en/department-of-computer-science",
+        "lat": 48.7139028,
+        "lon": 2.2141075
       },
       {
         "uni_name": "",
         "dept_name": "Inria - National Institute for Research in Digital Science and Technology",
-        "link": "http://www.inria.fr/en/"
+        "link": "http://www.inria.fr/en/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "(IRIT)",
         "dept_name": "Institut de Recherche en Informatique de Toulouse",
-        "link": "https://www.irit.fr/en/home/"
+        "link": "https://www.irit.fr/en/home/",
+        "lat": 43.5619318,
+        "lon": 1.4679104
       },
       {
         "uni_name": "Université de Lorraine,",
         "dept_name": "Laboratoire Lorrain de recherche en informatique et ses applications (LORIA)",
-        "link": "https://www.loria.fr/en/"
+        "link": "https://www.loria.fr/en/",
+        "lat": 49.1199381,
+        "lon": 6.1613478
       },
       {
         "uni_name": "Université de Montpellier - CNRS,",
         "dept_name": "Laboratoire d'Informatique, de Robotique, de Micro-électronique de Montpellier (LIRMM)",
-        "link": "https://www.lirmm.fr"
+        "link": "https://www.lirmm.fr",
+        "lat": 43.681793,
+        "lon": 3.87666
       },
       {
         "uni_name": "University of Nantes, Laboratory of Digital Sciences of Nantes,",
         "dept_name": "LS2N",
-        "link": "https://www.ls2n.fr/?lang=en"
+        "link": "https://www.ls2n.fr/?lang=en",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Université de Rennes,",
         "dept_name": "Institut de Recherche en Informatique et Systèmes Aléatoires (IRISA)",
-        "link": "https://www.irisa.fr/en"
+        "link": "https://www.irisa.fr/en",
+        "lat": 48.1193848,
+        "lon": -1.701487
       }
     ]
   },
@@ -252,7 +324,9 @@
       {
         "uni_name": "Ivane Javakhishvili Tbilisi State University,",
         "dept_name": "Department of Computer Science, the Faculty of Exact and Natural Sciences",
-        "link": "https://computing.tsu.ge/en"
+        "link": "https://computing.tsu.ge/en",
+        "lat": 41.7170674,
+        "lon": 44.7213762
       }
     ]
   },
@@ -263,92 +337,128 @@
       {
         "uni_name": "Christian Albrecths Universität zu Kiel.",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.inf.uni-kiel.de/en"
+        "link": "https://www.inf.uni-kiel.de/en",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "",
         "dept_name": "Hasso Plattner Institute",
-        "link": "http://hpi.de/en.html"
+        "link": "http://hpi.de/en.html",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Karlsruhe Institute of Technology (KIT),",
         "dept_name": "Department of Informatics",
-        "link": "http://www.informatik.kit.edu/english/index.php"
+        "link": "http://www.informatik.kit.edu/english/index.php",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Otto von Guericke University Magdeburg,",
         "dept_name": "Faculty of Computer Science",
-        "link": "http://www.cs.ovgu.de/inf/en/"
+        "link": "http://www.cs.ovgu.de/inf/en/",
+        "lat": 52.1027384,
+        "lon": 11.6154432
       },
       {
         "uni_name": "Paderborn University,",
         "dept_name": "Department of Computer Science",
-        "link": "https://cs.uni-paderborn.de/en/"
+        "link": "https://cs.uni-paderborn.de/en/",
+        "lat": 51.707521,
+        "lon": 8.7724141
       },
       {
         "uni_name": "RWTH Aachen University,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.informatik.rwth-aachen.de/cms/~mxz/informatik/?lidx=1"
+        "link": "https://www.informatik.rwth-aachen.de/cms/~mxz/informatik/?lidx=1",
+        "lat": 50.7791732,
+        "lon": 6.0689207
       },
       {
         "uni_name": "(Federated Member):",
         "dept_name": "Saarland Informatics Campus",
-        "link": "https://saarland-informatics-campus.de/en/"
+        "link": "https://saarland-informatics-campus.de/en/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Technische Hochschule Ostwestfalen-Lippe,",
         "dept_name": "Institute Industrial IT",
-        "link": "https://www.th-owl.de/init/en/"
+        "link": "https://www.th-owl.de/init/en/",
+        "lat": 52.017417,
+        "lon": 8.904336
       },
       {
         "uni_name": "Technical University of Darmstadt,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.informatik.tu-darmstadt.de/fb20/index.en.jsp"
+        "link": "https://www.informatik.tu-darmstadt.de/fb20/index.en.jsp",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Technical University of Munich,",
         "dept_name": "School of Computation, Information and Technology",
-        "link": "https://www.cit.tum.de/cit/startseite/"
+        "link": "https://www.cit.tum.de/cit/startseite/",
+        "lat": 48.2654976,
+        "lon": 11.6692249
       },
       {
         "uni_name": "Technische Universität Berlin,",
         "dept_name": "Faculty of Electrical Engineering and Computer Science",
-        "link": "https://www.tu.berlin/en/eecs"
+        "link": "https://www.tu.berlin/en/eecs",
+        "lat": 52.5110159,
+        "lon": 13.3269541
       },
       {
         "uni_name": "Technische Universität Dresden,",
         "dept_name": "Faculty of Computer Science",
-        "link": "https://tu-dresden.de/ing/informatik?set_language=en"
+        "link": "https://tu-dresden.de/ing/informatik?set_language=en",
+        "lat": 51.0282765,
+        "lon": 13.7359828
       },
       {
         "uni_name": "Universität Hamburg,",
         "dept_name": "Department of Informatics",
-        "link": "https://www.inf.uni-hamburg.de/en.html"
+        "link": "https://www.inf.uni-hamburg.de/en.html",
+        "lat": 53.5574865,
+        "lon": 9.9850377
       },
       {
         "uni_name": "University of Bamberg,",
         "dept_name": "Faculty of Information Systems and Applied Computer Sciences",
-        "link": "https://www.uni-bamberg.de/en/wiai/"
+        "link": "https://www.uni-bamberg.de/en/wiai/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Duisburg-Essen,",
         "dept_name": "Institute for Computer Science and Business Information Systems",
-        "link": "https://www.icb.wiwi.uni-due.de/en/"
+        "link": "https://www.icb.wiwi.uni-due.de/en/",
+        "lat": 51.4290899,
+        "lon": 6.800858
       },
       {
         "uni_name": "University of Mannheim,",
         "dept_name": "School of Business Informatics and Mathematics",
-        "link": "https://www.wim.uni-mannheim.de/en/"
+        "link": "https://www.wim.uni-mannheim.de/en/",
+        "lat": 49.4699765,
+        "lon": 8.4819024
       },
       {
         "uni_name": "University of Münster,",
         "dept_name": "Department of Computer Science",
-        "link": "https://cs.uni-muenster.de"
+        "link": "https://cs.uni-muenster.de",
+        "lat": 51.9673422,
+        "lon": 7.5992433
       },
       {
         "uni_name": "University of Stuttgart,",
         "dept_name": "Faculty of Computer Science Electrical Engineering and Information Technology",
-        "link": "http://www.f-iei.uni-stuttgart.de/index.en.html"
+        "link": "http://www.f-iei.uni-stuttgart.de/index.en.html",
+        "lat": 48.7133801,
+        "lon": 9.212073
       }
     ]
   },
@@ -359,17 +469,23 @@
       {
         "uni_name": "Aristotle University of Thessaloniki,",
         "dept_name": "School of Informatics",
-        "link": "https://www.csd.auth.gr/en/"
+        "link": "https://www.csd.auth.gr/en/",
+        "lat": 40.6296719,
+        "lon": 22.9591469
       },
       {
         "uni_name": "Athens University of Economics and Business,",
         "dept_name": "Department of Management Science and Technology",
-        "link": "https://www.dept.aueb.gr/en/dmst"
+        "link": "https://www.dept.aueb.gr/en/dmst",
+        "lat": 37.9941383,
+        "lon": 23.7324792
       },
       {
         "uni_name": "University of Crete,",
         "dept_name": "Computer Science Department",
-        "link": "https://www.csd.uoc.gr/CSD/index.jsp?lang=en"
+        "link": "https://www.csd.uoc.gr/CSD/index.jsp?lang=en",
+        "lat": 35.3072756,
+        "lon": 25.0824949
       }
     ]
   },
@@ -380,12 +496,16 @@
       {
         "uni_name": "Eötvös Loránd University,",
         "dept_name": "Faculty of Informatics",
-        "link": "https://www.inf.elte.hu/en/"
+        "link": "https://www.inf.elte.hu/en/",
+        "lat": 47.4934799,
+        "lon": 19.0618993
       },
       {
         "uni_name": "University of Szeged,",
         "dept_name": "Institute of Informatics",
-        "link": "http://www.inf.u-szeged.hu/en"
+        "link": "http://www.inf.u-szeged.hu/en",
+        "lat": 46.2500455,
+        "lon": 20.1465034
       }
     ]
   },
@@ -396,7 +516,9 @@
       {
         "uni_name": "Reykjavik University,",
         "dept_name": "Department of Computer Science",
-        "link": "https://en.ru.is/st/dcs/"
+        "link": "https://en.ru.is/st/dcs/",
+        "lat": 64.1247374,
+        "lon": -21.9275372
       }
     ]
   },
@@ -407,12 +529,16 @@
       {
         "uni_name": "NUI Galway,",
         "dept_name": "Data Science Institute",
-        "link": "https://www.universityofgalway.ie/dsi/#"
+        "link": "https://www.universityofgalway.ie/dsi/#",
+        "lat": 53.2932299,
+        "lon": -9.0777541
       },
       {
         "uni_name": "Technological University Dublin,",
         "dept_name": "School of Computer Science",
-        "link": "https://www.tudublin.ie/explore/faculties-and-schools/computing-digital-data/computer-science/"
+        "link": "https://www.tudublin.ie/explore/faculties-and-schools/computing-digital-data/computer-science/",
+        "lat": 53.3579326,
+        "lon": -6.287314
       }
     ]
   },
@@ -423,72 +549,100 @@
       {
         "uni_name": "Free University of Bozen-Bolzano,",
         "dept_name": "Faculty of Computer Science",
-        "link": "https://www.unibz.it/en/faculties/computer-science/"
+        "link": "https://www.unibz.it/en/faculties/computer-science/",
+        "lat": 46.498298,
+        "lon": 11.3501018
       },
       {
         "uni_name": "Politecnico di Milano,",
         "dept_name": "Dipartimento di Elettronica, Informazione e Bioingegneria",
-        "link": "https://www.deib.polimi.it/eng/home-page"
+        "link": "https://www.deib.polimi.it/eng/home-page",
+        "lat": 45.0468832,
+        "lon": 9.7030881
       },
       {
         "uni_name": "Politecnico di Torino,",
         "dept_name": "Department of Control and Computer Engineering",
-        "link": "http://www.dauin.polito.it/"
+        "link": "http://www.dauin.polito.it/",
+        "lat": 45.0636974,
+        "lon": 7.6575263
       },
       {
         "uni_name": "Roma Informatics (Federated Member)",
         "dept_name": "",
-        "link": ""
+        "link": "",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Università degli Studi di Genova,",
         "dept_name": "Dipartimento di Informatica, Bioingegneria, Robotica ed Ingegneria dei Sistemi",
-        "link": "https://dibris.unige.it/en"
+        "link": "https://dibris.unige.it/en",
+        "lat": 44.4148861,
+        "lon": 8.9266707
       },
       {
         "uni_name": "Università degli Studi di Milano-Bicocca,",
         "dept_name": "Dipartimento di Informatica, Sistemistica e Comunicazione",
-        "link": "http://www.disco.unimib.it"
+        "link": "http://www.disco.unimib.it",
+        "lat": 45.5182761,
+        "lon": 9.2139042
       },
       {
         "uni_name": "Università degli Studi di Torino,",
         "dept_name": "Dipartimento di Informatica",
-        "link": "https://www.cs.unito.it/do/home.pl"
+        "link": "https://www.cs.unito.it/do/home.pl",
+        "lat": 45.0733824,
+        "lon": 7.6994372
       },
       {
         "uni_name": "University of Bari \"Aldo Moro\",",
         "dept_name": "Dipartimento di Informatica",
-        "link": "http://www.uniba.it/ricerca/dipartimenti/informatica"
+        "link": "http://www.uniba.it/ricerca/dipartimenti/informatica",
+        "lat": 41.1094882,
+        "lon": 16.8816878
       },
       {
         "uni_name": "University of Bologna,",
         "dept_name": "Department of Computer Science and Engineering",
-        "link": "http://www.cse.unibo.it/en"
+        "link": "http://www.cse.unibo.it/en",
+        "lat": 44.4982886,
+        "lon": 11.354457
       },
       {
         "uni_name": "University of L'Aquila,",
         "dept_name": "Department of Information Engineering, Computer Science and Mathematics",
-        "link": "https://www.disim.univaq.it/"
+        "link": "https://www.disim.univaq.it/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Milan,",
         "dept_name": "Dipartimento di Informatica \"Giovanni Degli Antoni\"",
-        "link": "http://www.di.unimi.it/"
+        "link": "http://www.di.unimi.it/",
+        "lat": 45.4757322,
+        "lon": 9.2282917
       },
       {
         "uni_name": "University of Perugia,",
         "dept_name": "KITLab - Knowledge and Information Technology Laboratory",
-        "link": "http://www.dmi.unipg.it/kitlab/"
+        "link": "http://www.dmi.unipg.it/kitlab/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Pisa,",
         "dept_name": "Dipartimento di Informatica",
-        "link": "https://di.unipi.it/en/"
+        "link": "https://di.unipi.it/en/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Trento,",
         "dept_name": "Department of Information Engineering and Computer Science",
-        "link": "http://www.disi.unitn.it/"
+        "link": "http://www.disi.unitn.it/",
+        "lat": 46.0661807,
+        "lon": 11.1166177
       }
     ]
   },
@@ -499,7 +653,9 @@
       {
         "uni_name": "Informatics Latvija (Federated Member):",
         "dept_name": "",
-        "link": ""
+        "link": "",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -510,12 +666,16 @@
       {
         "uni_name": "Kaunas University of Technology,",
         "dept_name": "Faculty of Informatics",
-        "link": "https://fi.ktu.edu/"
+        "link": "https://fi.ktu.edu/",
+        "lat": 54.8988052,
+        "lon": 23.9126526
       },
       {
         "uni_name": "Vilnius University,",
         "dept_name": "Faculty of Mathematics and Informatics",
-        "link": "https://mif.vu.lt/lt3/en/"
+        "link": "https://mif.vu.lt/lt3/en/",
+        "lat": 54.682847,
+        "lon": 25.2878406
       }
     ]
   },
@@ -526,7 +686,9 @@
       {
         "uni_name": "University of Luxembourg,",
         "dept_name": "SnT Centre",
-        "link": "http://wwwen.uni.lu/snt"
+        "link": "http://wwwen.uni.lu/snt",
+        "lat": 49.5036259,
+        "lon": 5.9487155
       }
     ]
   },
@@ -537,7 +699,9 @@
       {
         "uni_name": "University of Malta,",
         "dept_name": "Faculty of Information and Communication Technology",
-        "link": "https://www.um.edu.mt/ict/"
+        "link": "https://www.um.edu.mt/ict/",
+        "lat": 35.9020939,
+        "lon": 14.4834634
       }
     ]
   },
@@ -548,52 +712,72 @@
       {
         "uni_name": "",
         "dept_name": "Centrum Wiskunde & Informatica (CWI)",
-        "link": "http://www.cwi.nl/"
+        "link": "http://www.cwi.nl/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Amsterdam,",
         "dept_name": "Informatics Institute",
-        "link": "http://ivi.uva.nl/"
+        "link": "http://ivi.uva.nl/",
+        "lat": 52.3681334,
+        "lon": 4.8898042
       },
       {
         "uni_name": "Vrije Universiteit Amsterdam,",
         "dept_name": "Department of Computer Science",
-        "link": "http://www.cs.vu.nl/en/index.aspx"
+        "link": "http://www.cs.vu.nl/en/index.aspx",
+        "lat": 52.3340539,
+        "lon": 4.8651882
       },
       {
         "uni_name": "Eindhoven University of Technology,",
         "dept_name": "Department of Mathematics and Computer Science",
-        "link": "https://www.tue.nl/en/our-university/departments/mathematics-and-computer-science/"
+        "link": "https://www.tue.nl/en/our-university/departments/mathematics-and-computer-science/",
+        "lat": 51.4486602,
+        "lon": 5.4903996
       },
       {
         "uni_name": "Leiden University,",
         "dept_name": "Leiden Institute of Advanced Computer Science",
-        "link": "https://www.universiteitleiden.nl/en/science/computer-science"
+        "link": "https://www.universiteitleiden.nl/en/science/computer-science",
+        "lat": 52.1686355,
+        "lon": 4.4597028
       },
       {
         "uni_name": "Radboud University,",
         "dept_name": "Institute for Computing and Information Sciences",
-        "link": "http://www.ru.nl/icis/"
+        "link": "http://www.ru.nl/icis/",
+        "lat": 51.8215173,
+        "lon": 5.8634329
       },
       {
         "uni_name": "TU Delft,",
         "dept_name": "Faculty of Electrical Engineering, Mathematics and Computer Science",
-        "link": "http://www.ewi.tudelft.nl/en/"
+        "link": "http://www.ewi.tudelft.nl/en/",
+        "lat": 51.9988274,
+        "lon": 4.3739604
       },
       {
         "uni_name": "University of Groningen,",
         "dept_name": "Bernoulli Institute for Mathematics, Computer Science and Artificial Intelligence",
-        "link": "https://www.rug.nl/research/bernoulli/"
+        "link": "https://www.rug.nl/research/bernoulli/",
+        "lat": 53.2194416,
+        "lon": 6.5629863
       },
       {
         "uni_name": "University of Twente,",
         "dept_name": "Faculty of Electrical Engineering, Mathematics and Computer Science",
-        "link": "https://www.utwente.nl/en/eemcs/education/"
+        "link": "https://www.utwente.nl/en/eemcs/education/",
+        "lat": 52.2433268,
+        "lon": 6.8509157
       },
       {
         "uni_name": "Utrecht University,",
         "dept_name": "Department of Information and Computing Sciences",
-        "link": "https://www.uu.nl/en/organisation/department-of-information-and-computing-sciences"
+        "link": "https://www.uu.nl/en/organisation/department-of-information-and-computing-sciences",
+        "lat": 52.0928174,
+        "lon": 5.1211367
       }
     ]
   },
@@ -604,12 +788,16 @@
       {
         "uni_name": "Norwegian University of Science and Technology (NTNU)",
         "dept_name": "",
-        "link": ""
+        "link": "",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "UiT The Arctic University of Norway,",
         "dept_name": "Department of Computer Science",
-        "link": "https://en.uit.no/enhet/ifi?p_dimension_id=88138"
+        "link": "https://en.uit.no/enhet/ifi?p_dimension_id=88138",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -620,7 +808,9 @@
       {
         "uni_name": "AGH University of Krakow,",
         "dept_name": "Faculty of Computer Science",
-        "link": "https://www.informatyka.agh.edu.pl/pl/"
+        "link": "https://www.informatyka.agh.edu.pl/pl/",
+        "lat": 50.0657583,
+        "lon": 19.9192221
       }
     ]
   },
@@ -631,22 +821,30 @@
       {
         "uni_name": "Instituto Politécnico de Leiria,",
         "dept_name": "School of Technology and Management of Leiria",
-        "link": "https://www.ipleiria.pt/estg/"
+        "link": "https://www.ipleiria.pt/estg/",
+        "lat": 39.7372845,
+        "lon": -8.8112835
       },
       {
         "uni_name": "Universidade NOVA de Lisboa,",
         "dept_name": "NOVA Laboratory for Computer Science and Informatics (NOVA LINCS)",
-        "link": "http://nova-lincs.di.fct.unl.pt/"
+        "link": "http://nova-lincs.di.fct.unl.pt/",
+        "lat": 38.7328407,
+        "lon": -9.1602002
       },
       {
         "uni_name": "University of Porto,",
         "dept_name": "Department of Informatics Engineering",
-        "link": "https://sigarra.up.pt/feup/en/uni_geral.unidade_view?pv_unidade=151"
+        "link": "https://sigarra.up.pt/feup/en/uni_geral.unidade_view?pv_unidade=151",
+        "lat": 41.1784933,
+        "lon": -8.5961974
       },
       {
         "uni_name": "University of Lisbon,",
         "dept_name": "Department of Computer Science and Engineering (IST)",
-        "link": "https://dei.tecnico.ulisboa.pt/en"
+        "link": "https://dei.tecnico.ulisboa.pt/en",
+        "lat": 38.7527961,
+        "lon": -9.1570276
       }
     ]
   },
@@ -657,52 +855,72 @@
       {
         "uni_name": "Alexandru Ioan Cuza University of Iasi,",
         "dept_name": "Faculty of Computer Science",
-        "link": "http://www.uaic.ro/en/studies/faculties/faculty-computer-science/"
+        "link": "http://www.uaic.ro/en/studies/faculties/faculty-computer-science/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Babeş-Bolyai University,",
         "dept_name": "Faculty of Mathematics and Computer Science",
-        "link": "http://www.cs.ubbcluj.ro/en/"
+        "link": "http://www.cs.ubbcluj.ro/en/",
+        "lat": 46.7677836,
+        "lon": 23.5919766
       },
       {
         "uni_name": "University of Craiova,",
         "dept_name": "Department of Computer Science",
-        "link": "http://inf.ucv.ro/"
+        "link": "http://inf.ucv.ro/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Gheorghe Asachi Technical University of Iasi,",
         "dept_name": "Faculty of Automatic Control and Computer Engineering",
-        "link": "https://www.ac.tuiasi.ro"
+        "link": "https://www.ac.tuiasi.ro",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "\"George Emil Palade\" University of Medicine, Pharmacy, Sciences and Technology of Tirgu Mures,",
         "dept_name": "Faculty of Engineering and Information Technology",
-        "link": "https://umfst.ro/inginerie/en/"
+        "link": "https://umfst.ro/inginerie/en/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Ovidius University of Constanta,",
         "dept_name": "Faculty of Mathematics and Informatics",
-        "link": "https://fmi.univ-ovidius.ro/en/"
+        "link": "https://fmi.univ-ovidius.ro/en/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Bucharest,",
         "dept_name": "Faculty of Mathematics and Computer Science",
-        "link": "https://fmi.unibuc.ro/"
+        "link": "https://fmi.unibuc.ro/",
+        "lat": 44.4356445,
+        "lon": 26.1009263
       },
       {
         "uni_name": "University Politehnica of Bucharest,",
         "dept_name": "Faculty of Automatic Control and Computers",
-        "link": "https://acs.pub.ro/en/"
+        "link": "https://acs.pub.ro/en/",
+        "lat": 44.439368,
+        "lon": 26.0506033
       },
       {
         "uni_name": "Technical University of Cluj-Napoca,",
         "dept_name": "Computer Science Department",
-        "link": "https://cs.utcluj.ro/the-department.html"
+        "link": "https://cs.utcluj.ro/the-department.html",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "West University of Timisoara,",
         "dept_name": "Faculty of Mathematics and Computer Science",
-        "link": "https://admitere.uvt.ro/en/program/facultatea-de-matematica-si-informatica/"
+        "link": "https://admitere.uvt.ro/en/program/facultatea-de-matematica-si-informatica/",
+        "lat": 45.7473293,
+        "lon": 21.231261
       }
     ]
   },
@@ -713,7 +931,9 @@
       {
         "uni_name": "Slovak University of Technology in Bratislava,",
         "dept_name": "Faculty of Informatics and Information Technologies",
-        "link": "http://www.fiit.stuba.sk/en.html?page_id=749"
+        "link": "http://www.fiit.stuba.sk/en.html?page_id=749",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -724,7 +944,9 @@
       {
         "uni_name": "University of Maribor,",
         "dept_name": "Faculty of Electrical Engineering and Computer Science",
-        "link": "https://feri.um.si/en/study/"
+        "link": "https://feri.um.si/en/study/",
+        "lat": 46.5592325,
+        "lon": 15.6432937
       }
     ]
   },
@@ -735,57 +957,79 @@
       {
         "uni_name": ", Spain",
         "dept_name": "IMDEA Software Institute",
-        "link": "http://www.software.imdea.org"
+        "link": "http://www.software.imdea.org",
+        "lat": 39.3260685,
+        "lon": -4.8379791
       },
       {
         "uni_name": "Universidad de Castilla - La Mancha (Federated Member)",
         "dept_name": "",
-        "link": ""
+        "link": "",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Universidad de Málaga,",
         "dept_name": "Escuela Técnica Superior de Ingeniería Informática",
-        "link": "https://www.uma.es/etsi-informatica/?set_language=en"
+        "link": "https://www.uma.es/etsi-informatica/?set_language=en",
+        "lat": 36.7165576,
+        "lon": -4.4953364
       },
       {
         "uni_name": "Universidad de Sevilla,",
         "dept_name": "Escuela Técnica Superior de Ingeniería Informática",
-        "link": "https://www.etsii.us.es/"
+        "link": "https://www.etsii.us.es/",
+        "lat": 37.3788317,
+        "lon": -5.9761817
       },
       {
         "uni_name": "Universidad Nacional de Educación a Distancia (UNED),",
         "dept_name": "Computer Science School of Engineering",
-        "link": "https://www.uned.es/universidad/facultades/informatica.html"
+        "link": "https://www.uned.es/universidad/facultades/informatica.html",
+        "lat": 38.8244735,
+        "lon": -0.6118279
       },
       {
         "uni_name": "Universidad Politécnica de Madrid,",
         "dept_name": "Escuela Técnica Superior de Ingenieros Informáticos",
-        "link": "http://www.etsiinf.upm.es"
+        "link": "http://www.etsiinf.upm.es",
+        "lat": 40.5473558,
+        "lon": -3.6918341
       },
       {
         "uni_name": "Universidad Politécnica de Madrid,",
         "dept_name": "Escuela Técnica Superior de Ingeniería de Sistemas Informáticos",
-        "link": "https://www.etsisi.upm.es/"
+        "link": "https://www.etsisi.upm.es/",
+        "lat": 40.5473558,
+        "lon": -3.6918341
       },
       {
         "uni_name": "Universitat Politècnica de Catalunya,",
         "dept_name": "Facultat d'Informatica de Barcelona",
-        "link": "http://www.fib.upc.edu/en.html"
+        "link": "http://www.fib.upc.edu/en.html",
+        "lat": 41.2214475,
+        "lon": 1.7301449
       },
       {
         "uni_name": "Universitat Politécnica de Valencia,",
         "dept_name": "Escuela Tecnica Superior de Ingenieria Informatica",
-        "link": "https://www.etsinf.upv.es"
+        "link": "https://www.etsinf.upv.es",
+        "lat": 39.4808517,
+        "lon": -0.3420311
       },
       {
         "uni_name": "Universidad Rey Juan Carlos,",
         "dept_name": "Higher Technical School of Computer Engineering",
-        "link": "https://en.urjc.es/universidad/facultades/escuela-tecnica-superior-de-ingenieria-informatica"
+        "link": "https://en.urjc.es/universidad/facultades/escuela-tecnica-superior-de-ingenieria-informatica",
+        "lat": 40.3361179,
+        "lon": -3.8771203
       },
       {
         "uni_name": "Universidad Salamanca,",
         "dept_name": "Department of Computer Science and Automation",
-        "link": "https://www.usal.es/"
+        "link": "https://www.usal.es/",
+        "lat": 40.4451115,
+        "lon": -3.720474
       }
     ]
   },
@@ -796,22 +1040,30 @@
       {
         "uni_name": "Kristianstad University,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.hkr.se/en/"
+        "link": "https://www.hkr.se/en/",
+        "lat": 56.0481822,
+        "lon": 14.1457312
       },
       {
         "uni_name": "Linnaeus University,",
         "dept_name": "Department of Computer Science and Media Technology",
-        "link": "https://lnu.se/en/meet-linnaeus-university/Organisation/faculty-of-technology/meet-the-faculty-of-technology/computer-science/"
+        "link": "https://lnu.se/en/meet-linnaeus-university/Organisation/faculty-of-technology/meet-the-faculty-of-technology/computer-science/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Mälardalen University,",
         "dept_name": "School of Innovation Design and Engineering",
-        "link": "https://www.mdu.se/en/malardalen-university?"
+        "link": "https://www.mdu.se/en/malardalen-university?",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Umeå University,",
         "dept_name": "Department of Computing Science",
-        "link": "https://www.umu.se/en/department-of-computing-science/"
+        "link": "https://www.umu.se/en/department-of-computing-science/",
+        "lat": 63.8217763,
+        "lon": 20.3043163
       }
     ]
   },
@@ -822,52 +1074,72 @@
       {
         "uni_name": "BeNeFri Computer Science (Federated Member)",
         "dept_name": "",
-        "link": ""
+        "link": "",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "EPFL,",
         "dept_name": "School of Computer and Communication Sciences",
-        "link": "http://ic.epfl.ch/"
+        "link": "http://ic.epfl.ch/",
+        "lat": 46.5186594,
+        "lon": 6.5665615
       },
       {
         "uni_name": "ETH Zurich,",
         "dept_name": "Department of Computer Science",
-        "link": "http://www.inf.ethz.ch/"
+        "link": "http://www.inf.ethz.ch/",
+        "lat": 47.413218,
+        "lon": 8.5374914
       },
       {
         "uni_name": "Pedagogical University Vaud,",
         "dept_name": "Media, digital use and informatics didactics Teaching and Research",
-        "link": "https://www.hepl.ch/"
+        "link": "https://www.hepl.ch/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "Università della Svizzera italiana,",
         "dept_name": "Faculty of Informatics",
-        "link": "http://www.inf.usi.ch/"
+        "link": "http://www.inf.usi.ch/",
+        "lat": 46.0109126,
+        "lon": 8.9581205
       },
       {
         "uni_name": "University of Basel,",
         "dept_name": "Department of Mathematics and Computer Science",
-        "link": "https://dmi.unibas.ch/en/home/"
+        "link": "https://dmi.unibas.ch/en/home/",
+        "lat": 47.5612651,
+        "lon": 7.5752961
       },
       {
         "uni_name": "University of Lausanne (Federated Member)",
         "dept_name": "",
-        "link": ""
+        "link": "",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of Zurich,",
         "dept_name": "Department of Informatics",
-        "link": "http://www.ifi.uzh.ch/"
+        "link": "http://www.ifi.uzh.ch/",
+        "lat": 47.4968435,
+        "lon": 8.7298072
       },
       {
         "uni_name": "ZHAW Zurich University of Applied Sciences,",
         "dept_name": "School of Engineering",
-        "link": "https://www.zhaw.ch/en/engineering/"
+        "link": "https://www.zhaw.ch/en/engineering/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "University of St. Gallen,",
         "dept_name": "School of Computer Science",
-        "link": "https://www.unisg.ch/de/universitaet/schools/computer-science/"
+        "link": "https://www.unisg.ch/de/universitaet/schools/computer-science/",
+        "lat": 47.4300025,
+        "lon": 9.3722184
       }
     ]
   },
@@ -878,32 +1150,44 @@
       {
         "uni_name": "Imperial College London,",
         "dept_name": "Department of Computing",
-        "link": "https://www.imperial.ac.uk/computing/"
+        "link": "https://www.imperial.ac.uk/computing/",
+        "lat": 51.4989595,
+        "lon": -0.1756407
       },
       {
         "uni_name": "Liverpool John Moores University,",
         "dept_name": "School of Computer Science and Mathematics",
-        "link": "https://www.ljmu.ac.uk/about-us/faculties/faculty-of-engineering-and-technology/school-of-computer-science-and-mathematics"
+        "link": "https://www.ljmu.ac.uk/about-us/faculties/faculty-of-engineering-and-technology/school-of-computer-science-and-mathematics",
+        "lat": 53.4123844,
+        "lon": -2.980927
       },
       {
         "uni_name": "Royal Holloway University of London,",
         "dept_name": "Department of Computer Science",
-        "link": "https://www.royalholloway.ac.uk/research-and-education/departments-and-schools/computer-science/"
+        "link": "https://www.royalholloway.ac.uk/research-and-education/departments-and-schools/computer-science/",
+        "lat": 51.4244496,
+        "lon": -0.5642554
       },
       {
         "uni_name": "The University of Edinburgh,",
         "dept_name": "School of Informatics",
-        "link": "http://www.ed.ac.uk/schools-departments/informatics/"
+        "link": "http://www.ed.ac.uk/schools-departments/informatics/",
+        "lat": 55.9426681,
+        "lon": -3.1889932
       },
       {
         "uni_name": "University College London,",
         "dept_name": "Department of Computer Science",
-        "link": "http://www.cs.ucl.ac.uk/"
+        "link": "http://www.cs.ucl.ac.uk/",
+        "lat": 51.5242031,
+        "lon": -0.1330007
       },
       {
         "uni_name": "University of Glasgow,",
         "dept_name": "School of Computing Science",
-        "link": "http://www.gla.ac.uk/schools/computing/"
+        "link": "http://www.gla.ac.uk/schools/computing/",
+        "lat": 55.8716587,
+        "lon": -4.2883961
       }
     ]
   },
@@ -914,22 +1198,30 @@
       {
         "uni_name": "",
         "dept_name": "Elsevier",
-        "link": "https://www.elsevier.com/"
+        "link": "https://www.elsevier.com/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "",
         "dept_name": "Google",
-        "link": "https://research.google/"
+        "link": "https://research.google/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "",
         "dept_name": "IBM Research-Europe",
-        "link": "https://www.zurich.ibm.com/"
+        "link": "https://www.zurich.ibm.com/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "",
         "dept_name": "Springer",
-        "link": "https://link.springer.com/"
+        "link": "https://link.springer.com/",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -940,12 +1232,16 @@
       {
         "uni_name": "",
         "dept_name": "Eclipse Foundation",
-        "link": "https://www.eclipse.org"
+        "link": "https://www.eclipse.org",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "",
         "dept_name": "Heinz Nixdorf Museumsforum GmbH",
-        "link": "https://www.hnf.de/en/home.html"
+        "link": "https://www.hnf.de/en/home.html",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -956,7 +1252,9 @@
       {
         "uni_name": "",
         "dept_name": "Informatik Austria",
-        "link": "https://www.informatikaustria.at/"
+        "link": "https://www.informatikaustria.at/",
+        "lat": 48.2232613,
+        "lon": 16.3932569
       }
     ]
   },
@@ -967,7 +1265,9 @@
       {
         "uni_name": "",
         "dept_name": "SIF - Societé Informatique de France",
-        "link": "https://www.societe-informatique-de-france.fr/"
+        "link": "https://www.societe-informatique-de-france.fr/",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -978,12 +1278,16 @@
       {
         "uni_name": "",
         "dept_name": "Fakultätentag Informatik",
-        "link": "http://www.ft-informatik.de/"
+        "link": "http://www.ft-informatik.de/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "(GI)",
         "dept_name": "Gesellschaft für Informatik",
-        "link": "https://gi.de"
+        "link": "https://gi.de",
+        "lat": 50.7806144,
+        "lon": 6.0737086
       }
     ]
   },
@@ -994,7 +1298,9 @@
       {
         "uni_name": "",
         "dept_name": "GRIN - GRuppo di INformatica",
-        "link": "https://www.grin-informatica.it/"
+        "link": "https://www.grin-informatica.it/",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -1005,7 +1311,9 @@
       {
         "uni_name": "",
         "dept_name": "IPN - ICT-Research Platform Netherlands",
-        "link": "https://ict-research.nl"
+        "link": "https://ict-research.nl",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -1016,7 +1324,9 @@
       {
         "uni_name": "(CODDII)",
         "dept_name": "Conferencia de Directores y Decanos de Ingeniería Informática",
-        "link": "http://www.coddii.org"
+        "link": "http://www.coddii.org",
+        "lat": null,
+        "lon": null
       }
     ]
   },
@@ -1027,12 +1337,16 @@
       {
         "uni_name": "(associate member)",
         "dept_name": "SVIA SSIE SSII Schweiz - Verein für Informatik in der Ausbildung",
-        "link": "https://svia-ssie-ssii.ch/de/"
+        "link": "https://svia-ssie-ssii.ch/de/",
+        "lat": null,
+        "lon": null
       },
       {
         "uni_name": "(SIRA)",
         "dept_name": "Swiss Informatics Research Association",
-        "link": "https://sira.swissinformatics.org/"
+        "link": "https://sira.swissinformatics.org/",
+        "lat": 46.1924432,
+        "lon": 8.8176008
       }
     ]
   }

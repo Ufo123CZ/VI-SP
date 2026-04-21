@@ -28,6 +28,14 @@ const RedIcon = L.icon({
   iconAnchor: [12, 41],
   popupAnchor: [1, -34]
 });
+
+const GreenIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+  shadowUrl: iconShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34]
+});
 // -------------------------
 
 const mapContainer = ref<HTMLElement | null>(null);
@@ -42,9 +50,17 @@ const countryClusterGroups: Record<string, L.MarkerClusterGroup> = {};
 const universitiesData = ref<Record<string, University[]>>({});
 const availableCountries = ref<string[]>([]);
 
+// Store country-specific layer groups for toggling
+const countryGroupMap: Record<string, L.LayerGroup> = {};
+let ieLayerRef: L.LayerGroup | null = null;
+
 // Search state
 const searchQuery = ref('');
 const selectedCountry = ref<string>('all');
+const showIEOnly = ref(false);
+
+// Partners
+const iePartnersData = ref<IEPartnerCountry[]>([]);
 
 type Department = {
   name: string;
@@ -58,6 +74,7 @@ type Department = {
 type University = {
   institution: string;
   name: string;
+  partner?: string;
   link?: string;
   location?: {
     lat: number | null;
@@ -66,63 +83,108 @@ type University = {
   departments?: Department[];
 };
 
+type IEPartner = {
+  uni_name: string;
+  dept_name: string;
+  link: string;
+  lat: number | null;
+  lon: number | null;
+};
+
+type IEPartnerCountry = {
+  country: string;
+  country_code: string;
+  partners: IEPartner[];
+};
+
 type SearchResult = {
   countryCode: string;
-  uni: University;
+  uni?: University;
   dept?: Department;
+  iePartner?: IEPartner;
+  isIEPartner: boolean;
 };
 
 const highlightMarker = (marker: L.Marker) => {
   if (highlightedMarker && highlightedMarker !== marker) {
-    highlightedMarker.setIcon(DefaultIcon);
+    // check registry to see if it was originally green
+    const wasGreen = [...markerRegistry.entries()]
+        .some(([, m]) => m === highlightedMarker && ieLayerRef?.hasLayer(m));
+    highlightedMarker.setIcon(wasGreen ? GreenIcon : DefaultIcon);
   }
   marker.setIcon(RedIcon);
   highlightedMarker = marker;
 };
 
-// Computed search results
 const searchResults = computed((): SearchResult[] => {
   const query = searchQuery.value.trim().toLowerCase();
   if (!query) return [];
 
   const results: SearchResult[] = [];
 
-  for (const [countryCode, unis] of Object.entries(universitiesData.value)) {
-    if (selectedCountry.value !== 'all' && selectedCountry.value !== countryCode) continue;
+  // search universities (skip if IE only filter is on)
+  if (!showIEOnly.value) {
+    for (const [countryCode, unis] of Object.entries(universitiesData.value)) {
+      if (selectedCountry.value !== 'all' && selectedCountry.value !== countryCode) continue;
 
-    unis.forEach((uni) => {
-      if (uni.departments && uni.departments.length > 0) {
-        uni.departments.forEach((dept) => {
-          if (
-              uni.name.toLowerCase().includes(query) ||
-              dept.name.toLowerCase().includes(query)
-          ) {
-            results.push({ countryCode, uni, dept });
+      unis.forEach((uni) => {
+        if (uni.departments && uni.departments.length > 0) {
+          uni.departments.forEach((dept) => {
+            if (uni.name.toLowerCase().includes(query) || dept.name.toLowerCase().includes(query)) {
+              results.push({ countryCode, uni, dept, isIEPartner: false });
+            }
+          });
+        } else {
+          if (uni.name.toLowerCase().includes(query)) {
+            results.push({ countryCode, uni, isIEPartner: false });
           }
-        });
-      } else {
-        if (uni.name.toLowerCase().includes(query)) {
-          results.push({ countryCode, uni });
         }
-      }
-    });
+      });
+    }
   }
 
-  return results.slice(0, 20); // cap at 20 results
+  // search IE partners
+  iePartnersData.value.forEach((country) => {
+    if (selectedCountry.value !== 'all' && selectedCountry.value !== country.country_code) return;
+
+    country.partners.forEach((partner) => {
+      if (
+          partner.uni_name.toLowerCase().includes(query) ||
+          partner.dept_name.toLowerCase().includes(query)
+      ) {
+        results.push({
+          countryCode: country.country_code,
+          iePartner: partner,
+          isIEPartner: true,
+        });
+      }
+    });
+  });
+
+  return results.slice(0, 20);
 });
 
 const flyToResult = (result: SearchResult) => {
   if (!map) return;
 
-  const location = result.dept?.location ?? result.uni.location;
-  const lat = location?.lat;
-  const lon = location?.lon;
+  const lat = result.isIEPartner ? result.iePartner?.lat : (result.dept?.location ?? result.uni?.location)?.lat;
+  const lon = result.isIEPartner ? result.iePartner?.lon : (result.dept?.location ?? result.uni?.location)?.lon;
 
   if (lat && lon) {
-    map.flyTo([lat, lon], 17, {
-      animate: true,
-      duration: 0.8,
-    });
+    if (result.isIEPartner) {
+      // enable IE layer if disabled
+      if (ieLayerRef && !map.hasLayer(ieLayerRef)) {
+        ieLayerRef.addTo(map);
+      }
+    } else {
+      // enable country layer if disabled
+      const countryLayer = countryGroupMap[result.countryCode];
+      if (countryLayer && !map.hasLayer(countryLayer)) {
+        countryLayer.addTo(map);
+      }
+    }
+
+    map.flyTo([lat, lon], 17, { animate: true, duration: 0.8 });
 
     map.once('moveend', () => {
       const marker = markerRegistry.get(`${lat},${lon}`);
@@ -136,9 +198,7 @@ const flyToResult = (result: SearchResult) => {
   searchQuery.value = '';
 };
 
-const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
-  countryLayers: Record<string, { borders: L.LayerGroup; markers: L.LayerGroup }>;
-}> => {
+const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Record<string, { borders: L.LayerGroup; markers: L.LayerGroup }>; }> => {
   const bordersLayer = L.layerGroup();
   const markersLayer = L.layerGroup();
   const countryLayers: Record<string, { borders: L.LayerGroup; markers: L.LayerGroup }> = {};
@@ -200,8 +260,13 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
             const lat = dept.location?.lat;
             const lon = dept.location?.lon;
             if (lat && lon) {
-              const marker = L.marker([lat, lon])
-                  .bindPopup(`<b>${uni.name}</b><br/><span>${dept.name}</span>`)
+              const marker =
+                  L.marker([lat, lon])
+                  .bindPopup(`
+                    <b>${uni.name}</b><br/>
+                    <span>${dept.name}</span>
+                    ${dept.link ? `<br/><a href="${dept.link}" target="_blank" style="font-size: 12px;">Visit website</a>` : ''}
+                  `)
                   .addTo(clusterGroup);
               markerRegistry.set(`${lat},${lon}`, marker);
               marker.on('click', () => highlightMarker(marker));
@@ -211,9 +276,13 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{
           const lat = uni.location?.lat;
           const lon = uni.location?.lon;
           if (lat && lon) {
-            const marker = L.marker([lat, lon])
-                .bindPopup(`<b>${uni.name}</b>`)
-                .addTo(clusterGroup);
+            const marker =
+                L.marker([lat, lon])
+                    .bindPopup(`
+                      <b>${uni.name}</b>
+                       ${uni.link ? `<br/><a href="${uni.link}" target="_blank" style="font-size: 12px;">Visit website</a>` : ''}
+                     `)
+                    .addTo(clusterGroup);
             markerRegistry.set(`${lat},${lon}`, marker);
             marker.on('click', () => highlightMarker(marker));
           }
@@ -259,6 +328,10 @@ const setLegend = () => {
           University
         </div>
         <div>
+          <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png" style="width:13px; height:20px; vertical-align:middle; margin-right:6px;">
+          IE Partner
+        </div>
+        <div>
           <span style="
             display:inline-block; width:20px; height:20px;
             background:#3388ff; color:white;
@@ -276,12 +349,49 @@ const setLegend = () => {
   legend.addTo(map);
 };
 
+const load_ie_partners = async (): Promise<L.LayerGroup> => {
+  const iePartnersLayer = L.layerGroup();
+
+  try {
+    const response = await fetch('/partners/ie_partners.json');
+    const countries: IEPartnerCountry[] = await response.json();
+    iePartnersData.value = countries; // add this line
+
+    countries.forEach(country => {
+      country.partners.forEach(partner => {
+        if (!partner.lat || !partner.lon) return;
+
+        const marker = L.marker([partner.lat, partner.lon], { icon: GreenIcon })
+            .bindPopup(`
+        <b>${partner.uni_name}</b><br/>
+        ${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
+        <span style="color: green; font-weight: 600;">★ IE Partner</span><br/>
+        ${partner.link ? `<a href="${partner.link}" target="_blank" style="font-size: 12px;">Visit website</a>` : ''}
+      `)
+            .addTo(iePartnersLayer);
+
+        markerRegistry.set(`${partner.lat},${partner.lon}`, marker);
+        marker.on('click', (e) => {
+          L.DomEvent.stopPropagation(e);
+          highlightMarker(marker);
+        });
+      });
+    });
+
+
+  } catch (error) {
+    console.error('Error loading IE partners:', error);
+  }
+
+  return iePartnersLayer;
+};
+
 onMounted(async () => {
   if (!mapContainer.value) return;
 
   const europeBounds = L.latLngBounds(
       L.latLng(24.0, -35.0),
-      L.latLng(72.0, 45.0)
+      L.latLng(72.0, 52.0)
   );
 
   map = L.map(mapContainer.value, {
@@ -305,20 +415,25 @@ onMounted(async () => {
   });
 
   const { countryLayers } = await fetchDrawBordersAndPlaceMarkers();
+  const iePartnersLayer = await load_ie_partners();
+  ieLayerRef = iePartnersLayer;
 
   // build per-country overlays
   const overlays: Record<string, L.Layer> = {};
+  overlays['IE Partners'] = iePartnersLayer;
   const countryGroupLayers: L.LayerGroup[] = [];
 
   for (const [countryCode, layers] of Object.entries(countryLayers)) {
     const code = countryCode.toUpperCase();
     const countryGroup = L.layerGroup([layers.borders, layers.markers]);
     overlays[code] = countryGroup;
+    countryGroupMap[countryCode] = countryGroup;
     countryGroupLayers.push(countryGroup);
   }
 
   // add all to map by default = all checked
   countryGroupLayers.forEach(layer => layer.addTo(map!));
+  // iePartnersLayer.addTo(map!);
 
   L.control.layers(
       { 'Street': osmLayer, 'Satellite': satelliteLayer },
@@ -326,6 +441,21 @@ onMounted(async () => {
       { position: 'bottomleft' }
   ).addTo(map);
   setLegend();
+
+  // map.on('click', () => {
+  //   if (highlightedMarker) {
+  //     highlightedMarker.setIcon(DefaultIcon);
+  //     highlightedMarker = null;
+  //   }
+  // });
+
+  map.on('click', () => {
+    if (highlightedMarker) {
+      const wasGreen = ieLayerRef?.hasLayer(highlightedMarker);
+      highlightedMarker.setIcon(wasGreen ? GreenIcon : DefaultIcon);
+      highlightedMarker = null;
+    }
+  });
 });
 
 onUnmounted(() => {
@@ -359,6 +489,23 @@ onUnmounted(() => {
           {{ code.toUpperCase() }}
         </option>
       </select>
+
+      <!-- IE filter toggle -->
+      <button
+        @click="showIEOnly = !showIEOnly"
+        :style="`
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: 1px solid ${showIEOnly ? 'green' : '#ccc'};
+        background: ${showIEOnly ? '#f0fff0' : 'white'};
+        color: ${showIEOnly ? 'green' : '#333'};
+        font-size: 13px;
+        cursor: pointer;
+        white-space: nowrap;
+      `"
+      >
+        ★ IE Only
+      </button>
 
       <!-- Search input -->
       <div style="position: relative; flex: 1;">
@@ -405,9 +552,13 @@ onUnmounted(() => {
               onmouseover="this.style.background='#f5f5f5'"
               onmouseout="this.style.background='white'"
           >
-            <div style="font-weight: 600;">{{ result.uni.name }}</div>
+            <div style="font-weight: 600;">
+              <span v-if="result.isIEPartner" style="color: green; margin-right: 4px;">★</span>
+              {{ result.isIEPartner ? result.iePartner?.uni_name : result.uni?.name }}
+            </div>
             <div style="color: #666; font-size: 11px;">
-              {{ result.dept?.name ?? result.uni.institution }} · {{ result.countryCode.toUpperCase() }}
+              {{ result.isIEPartner ? result.iePartner?.dept_name : (result.dept?.name ?? result.uni?.institution) }}
+              · {{ result.countryCode.toUpperCase() }}
             </div>
           </div>
         </div>

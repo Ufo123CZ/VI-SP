@@ -20,9 +20,15 @@ if __name__ == "__main__":
 
     output_files = []
 
-    for input_file in input_files:
-        output_file_path = get_country_data(input_file, OUTPUT_DIR)
-        output_files.append(output_file_path)
+
+    proceed = input("Do you want to proceed with country identification? (Y/n): ").strip().lower()
+    if proceed == 'n':
+        print("Exiting without country identification.")
+        output_files = [os.path.join(OUTPUT_DIR, f) for f in os.listdir(OUTPUT_DIR) if f.lower().endswith(".json")]
+    else:
+        for input_file in input_files:
+            output_file_path = get_country_data(input_file, OUTPUT_DIR)
+            output_files.append(output_file_path)
 
     # Ask user if they want to proceed with location identification and default to 'Y'
     proceed = input("Do you want to proceed with location identification? (Y/n): ").strip().lower()
@@ -36,8 +42,4 @@ if __name__ == "__main__":
             
         for output_file in output_files:
             fill_location_data(output_file, no_loc_file)
-        print("All location data has been filled.")    
-
-
-
-    
+        print("All location data has been filled.")

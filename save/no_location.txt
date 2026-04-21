@@ -1,0 +1,58 @@
+Universities and departments with missing location data:
+
+cz.json:
+  [dept]  Jihočeská univerzita v Českých Budějovicích > Ekonomická fakulta
+  [dept]  Jihočeská univerzita v Českých Budějovicích > Přírodovědecká fakulta
+  [dept]  Slezská univerzita v Opavě > Filozoficko-přírodovědecká fakulta v Opavě
+  [dept]  Slezská univerzita v Opavě > Obchodně podnikatelská fakulta v Karviné
+  [uni]   Akademie HUSPOL s.r.o.
+  [uni]   Moravská vysoká škola Olomouc o.p.s.
+  [uni]   Unicorn vysoká škola s.r.o.
+  [uni]   Vysoká škola finanční a správní a.s.
+
+de.json:
+  [dept]  Eberhard-Karls-Universität Tübingen > Fachbereich Informatik
+  [uni]   AKAD Bildungsgesellschaft (Akad University)
+  [uni]   Design akademie berlin - SRH Hochschule für Kommunikation und Design
+  [uni]   DIPLOMA Private Staatlich anerkannte Hochschule
+  [uni]   Fachhochschule Westküste, Hochschule für Wirtschaft und Technik
+  [uni]   Hochschule Aalen - Technik und Wirtschaft
+  [uni]   Hochschule für angewandte Wissenschaft und Kunst Hildesheim/Holzminden/Göttingen
+  [uni]   Hochschule für angewandte Wissenschaften Ansbach
+  [uni]   Hochschule für angewandte Wissenschaften Augsburg
+  [uni]   Hochschule für angewandte Wissenschaften Kempten
+  [uni]   Hochschule für angewandte Wissenschaften Neu-Ulm (HNU)
+  [uni]   Hochschule für Technik und Wirtschaft des Saarlandes
+  [uni]   Hochschule für Technik, Wirtschaft und Kultur Leipzig
+  [uni]   Hochschule für Technik, Wirtschaft und Medien Offenburg
+  [uni]   Hochschule für Telekommunikation Leipzig
+  [uni]   Hochschule für Wirtschaft, Technik und Kultur (HWTK)
+  [uni]   Hochschule Furtwangen - Informatik, Technik, Wirtschaft, Medien, Gesundheit
+  [uni]   Hochschule Harz, Hochschule für angewandte Wissenschaften
+  [uni]   Hochschule Konstanz Technik, Wirtschaft und Gestaltung
+  [uni]   Hochschule Pforzheim - Gestaltung, Technik, Wirtschaft und Recht
+  [uni]   Hochschule Wismar - University of Applied Sciences - Technology, Business and Design
+  [uni]   HSBA Hamburg School of Business Administration
+  [uni]   Jade Hochschule Wilhelmshaven/Oldenburg/Elsfleth
+  [uni]   Mediadesign Hochschule für Design und Informatik
+  [uni]   Nordakademie Hochschule der Wirtschaft
+  [uni]   nta Naturwissenschaftlich-Technische Akademie Prof. Dr. Grübler gGmbH, Isny
+  [uni]   Ostbayerische Technische Hochschule Amberg-Weiden
+  [uni]   Ostfalia Hochschule für angewandte Wissenschaften - Hochschule Braunschweig/Wolfenbüttel
+  [uni]   Provadis School of International Management and Technology
+  [uni]   Technische Hochschule Georg Agricola zu Bochum
+  [uni]   Westfälische Hochschule Gelsenkirchen, Bocholt, Recklinghausen
+  [uni]   Wilhelm Büchner Hochschule
+
+no.json:
+
+pt.json:
+  [dept]  Atlântica - Escola Universitária de Ciências Empresariais, Saúde, Tecnologias e Engenharia > Tecnologias de Informação e Comunicação
+  [dept]  ISMAI - Instituto Universitário da Maia > Departamento de Ciências da Comunicação e Tecnologias da Informação
+  [dept]  ISMAT - Instituto Superior Manuel Teixeira Gomes > Departamento de Ciências Empresariais e Tecnologias de Informação
+  [dept]  ISMT - Instituto Superior Miguel Torga > Informática
+  [dept]  Universidade de Trásos-Montes e Alto Douro > Escola de Ciências e Tecnologia
+  [uni]   Instituto Superior de Tecnologias Avançadas de Lisboa
+
+lv.json:
+  [dept]  Latvijas Lauksaimniecības universitāte > Informācijas tehnoloģiju fakultāte
