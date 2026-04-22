@@ -53,6 +53,8 @@ const availableCountries = ref<string[]>([]);
 // Store country-specific layer groups for toggling
 const countryGroupMap: Record<string, L.LayerGroup> = {};
 let ieLayerRef: L.LayerGroup | null = null;
+let allBordersLayerRef: L.LayerGroup | null = null;
+
 
 // Search state
 const searchQuery = ref('');
@@ -226,7 +228,7 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
       markersLayer.addLayer(countryMarkersLayer); // into global layer
 
       const borderGeoJson = L.geoJSON(geojsonData, {
-        style: { color: '#8abcff', weight: 2, fillOpacity: 0.1, fillColor: '#5ea1ff' },
+        style: { color: 'rgb(33,116,245)', weight: 1, fillOpacity: 0.1, fillColor: '#2174f5' },
         onEachFeature: (feature: any, layer: L.Layer) => {
           const countryName = feature.properties.NAME || feature.properties.name || "Unknown Country";
           layer.bindPopup(`<b>${countryName}</b>`);
@@ -361,7 +363,10 @@ const load_ie_partners = async (): Promise<L.LayerGroup> => {
       country.partners.forEach(partner => {
         if (!partner.lat || !partner.lon) return;
 
-        const marker = L.marker([partner.lat, partner.lon], { icon: GreenIcon })
+        const marker = L.marker([partner.lat, partner.lon], {
+          icon: GreenIcon,
+          zIndexOffset: 1000
+        })
             .bindPopup(`
         <b>${partner.uni_name}</b><br/>
         ${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
@@ -423,17 +428,24 @@ onMounted(async () => {
   overlays['IE Partners'] = iePartnersLayer;
   const countryGroupLayers: L.LayerGroup[] = [];
 
+  const allBordersLayer = L.layerGroup();
+  allBordersLayerRef = allBordersLayer;
+
   for (const [countryCode, layers] of Object.entries(countryLayers)) {
     const code = countryCode.toUpperCase();
-    const countryGroup = L.layerGroup([layers.borders, layers.markers]);
+    const countryGroup = L.layerGroup([layers.markers]);
     overlays[code] = countryGroup;
     countryGroupMap[countryCode] = countryGroup;
     countryGroupLayers.push(countryGroup);
+    allBordersLayer.addLayer(layers.borders);
   }
+
+  overlays['— All Borders'] = allBordersLayer; // add at top of overlays
 
   // add all to map by default = all checked
   countryGroupLayers.forEach(layer => layer.addTo(map!));
-  // iePartnersLayer.addTo(map!);
+  allBordersLayer.addTo(map!);
+  // iePartnersLayer.addTo(map!); // IE is off by default
 
   L.control.layers(
       { 'Street': osmLayer, 'Satellite': satelliteLayer },
@@ -441,13 +453,6 @@ onMounted(async () => {
       { position: 'bottomleft' }
   ).addTo(map);
   setLegend();
-
-  // map.on('click', () => {
-  //   if (highlightedMarker) {
-  //     highlightedMarker.setIcon(DefaultIcon);
-  //     highlightedMarker = null;
-  //   }
-  // });
 
   map.on('click', () => {
     if (highlightedMarker) {
