@@ -14,6 +14,7 @@ const showIEOnly = ref(false);
 const universitiesData = ref<Record<string, University[]>>({});
 const iePartnersData = ref<IEPartnerCountry[]>([]);
 const availableCountries = ref<string[]>([]);
+const allCountriesData = ref<any>(null);
 
 // Modal State
 const isModalOpen = ref(false);
@@ -23,10 +24,15 @@ const modalContent = ref<ModalPayload | null>(null);
 const mapRef = ref<InstanceType<typeof LeafletMap> | null>(null);
 
 // Update data once map fetches it
-const handleDataLoaded = (payload: { unis: Record<string, University[]>, partners: IEPartnerCountry[], countries: string[] }) => {
+const handleDataLoaded = (payload: {
+  unis: Record<string, University[]>,
+  partners: IEPartnerCountry[],
+  countries: string[],
+  allCountriesData: any; }) => {
   universitiesData.value = payload.unis;
   iePartnersData.value = payload.partners;
   availableCountries.value = payload.countries;
+  allCountriesData.value = payload.allCountriesData;;
 };
 
 const handleSelectResult = (result: SearchResult) => {
@@ -107,6 +113,7 @@ const searchResults = computed((): SearchResult[] => {
         :title="modalContent.title"
         :subtitle="modalContent.subtitle"
         :data="modalContent.data"
+        :all-countries-data="allCountriesData"
         @close="isModalOpen = false"
     />
   </main>

@@ -40,7 +40,7 @@ const GreenIcon = L.icon({
 });
 
 const emit = defineEmits<{
-  (e: 'data-loaded', payload: { unis: Record<string, University[]>, partners: IEPartnerCountry[], countries: string[] }): void;
+  (e: 'data-loaded', payload: { unis: Record<string, University[]>, partners: IEPartnerCountry[], countries: string[], allCountriesData: any }): void;
   (e: 'show-details', payload: ModalPayload): void;
 }>();
 
@@ -159,24 +159,19 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
 
           console.log(`[2. MAP INIT] Matching ${countryName}... Match found?`, !!match);
 
-          if (match) {
-            // Interactive UI indicating clickability
-            (layer as any).options.className = 'clickable-country';
-            layer.bindPopup(`<b>${countryName}</b><br><span style="font-size: 11px; color: #666;">Click map area for details</span>`);
+          (layer as any).options.className = 'clickable-country';
 
-            layer.on('click', () => {
+          // Tooltip hint on hover
+          layer.bindPopup(`<b>${countryName}</b><br><span style="font-size: 11px; color: #666;">Click map area for details</span>`);
 
-              console.log(`[3. MAP CLICK] You clicked ${countryName}. Emitting this exact data to App.vue:`, match.data);
-
-              emit('show-details', {
-                title: match.matchedName,
-                subtitle: 'Country Overview',
-                data: match.data
-              });
+          // Always emit the event, even if there is no match
+          layer.on('click', () => {
+            emit('show-details', {
+              title: match ? match.matchedName : countryName, // Fallback to raw map name if not matched
+              subtitle: 'Country Overview',
+              data: match ? match.data : null // Send null so the modal knows to show "No Data"
             });
-          } else {
-            layer.bindPopup(`<b>${countryName}</b>`);
-          }
+          });
 
           layer.on('mouseover', (e: L.LeafletMouseEvent) => {
             (e.target as L.Path).setStyle({ fillOpacity: 0.4 });
@@ -391,7 +386,8 @@ onMounted(async () => {
   emit('data-loaded', {
     unis: universitiesData,
     partners: iePartnersData,
-    countries: availableCountries
+    countries: availableCountries,
+    allCountriesData: parsedCountriesData.value
   });
 
   const overlays: Record<string, L.Layer> = {};
