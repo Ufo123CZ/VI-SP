@@ -13,6 +13,8 @@ const showIEOnly = ref(false);
 // Map data state
 const universitiesData = ref<Record<string, University[]>>({});
 const iePartnersData = ref<IEPartnerCountry[]>([]);
+const ieAnduniversitiesData = ref<Record<string, University[]>>({});
+
 const availableCountries = ref<string[]>([]);
 const allCountriesData = ref<any>(null);
 
@@ -27,6 +29,7 @@ const mapRef = ref<InstanceType<typeof LeafletMap> | null>(null);
 const handleDataLoaded = (payload: {
   unis: Record<string, University[]>,
   partners: IEPartnerCountry[],
+  partnersAndUnis: Record<string, University[]>,
   countries: string[],
   allCountriesData: any; }) => {
   universitiesData.value = payload.unis;

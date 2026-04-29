@@ -53,6 +53,8 @@ let highlightedMarker: L.Marker | null = null;
 const countryClusterGroups: Record<string, L.MarkerClusterGroup> = {};
 const countryGroupMap: Record<string, L.LayerGroup> = {};
 let ieLayerRef: L.LayerGroup | null = null;
+const iePartnerMarkers = new Set<L.Marker>();
+const iePartnerCoords = new Set<string>();
 let allBordersLayerRef: L.LayerGroup | null = null;
 
 // Extracted internal data to emit later
@@ -85,8 +87,7 @@ const findMatchInDictionary = (searchName: string, dictionary: ParsedDataDiction
 
 const highlightMarker = (marker: L.Marker) => {
   if (highlightedMarker && highlightedMarker !== marker) {
-    const wasGreen = [...markerRegistry.entries()]
-        .some(([, m]) => m === highlightedMarker && ieLayerRef?.hasLayer(m));
+    const wasGreen = iePartnerMarkers.has(highlightedMarker);
     highlightedMarker.setIcon(wasGreen ? GreenIcon : DefaultIcon);
   }
   marker.setIcon(RedIcon);
@@ -105,9 +106,10 @@ const flyToResult = (result: SearchResult) => {
         ieLayerRef.addTo(map);
       }
     } else {
-      const countryLayer = countryGroupMap[result.countryCode];
-      if (countryLayer && !map.hasLayer(countryLayer)) {
-        countryLayer.addTo(map);
+      // all unis are in one layer now — use any value from countryGroupMap
+      const uniLayer = Object.values(countryGroupMap)[0];
+      if (uniLayer && !map.hasLayer(uniLayer)) {
+        uniLayer.addTo(map);
       }
     }
 
@@ -145,7 +147,7 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
       const borderResponse = await fetch(`/borders/${fileName}`);
       const geojsonData = await borderResponse.json();
 
-      const clusterGroup = L.markerClusterGroup({ maxClusterRadius: 50 });
+      const clusterGroup = L.markerClusterGroup({ maxClusterRadius: 100 });
       countryClusterGroups[countryCode] = clusterGroup;
       countryMarkersLayer.addLayer(clusterGroup);
       markersLayer.addLayer(countryMarkersLayer);
@@ -302,7 +304,16 @@ const load_ie_partners = async (): Promise<L.LayerGroup> => {
       iePartnersData.push(country);
     }
 
+    const ieCountryClusters: Record<string, L.MarkerClusterGroup> = {};
+
     countries.forEach(country => {
+      if (!ieCountryClusters[country.country_code]) {
+        const cluster = L.markerClusterGroup({ maxClusterRadius: 100 });
+        ieCountryClusters[country.country_code] = cluster;
+        iePartnersLayer.addLayer(cluster);
+      }
+      const countryCluster = ieCountryClusters[country.country_code];
+
       country.partners.forEach(partner => {
         if (!partner.lat || !partner.lon) return;
 
@@ -316,8 +327,10 @@ const load_ie_partners = async (): Promise<L.LayerGroup> => {
         <span class="ie-star-popup">★ IE Partner</span><br/>
         ${partner.link ? `<a class="popup-link" href="${partner.link}" target="_blank">Visit website</a>` : ''}
       `)
-            .addTo(iePartnersLayer);
+            .addTo(countryCluster);
 
+        iePartnerMarkers.add(marker);
+        iePartnerCoords.add(`${partner.lat},${partner.lon}`);
         markerRegistry.set(`${partner.lat},${partner.lon}`, marker);
         marker.on('click', (e) => {
           L.DomEvent.stopPropagation(e);
@@ -335,6 +348,91 @@ const load_ie_partners = async (): Promise<L.LayerGroup> => {
   }
 
   return iePartnersLayer;
+};
+
+const buildCombinedLayer = (): L.LayerGroup => {
+  const combinedLayer = L.layerGroup();
+  const clusters: Record<string, L.MarkerClusterGroup> = {};
+
+  const getCluster = (code: string) => {
+    if (!clusters[code]) {
+      clusters[code] = L.markerClusterGroup({ maxClusterRadius: 100 });
+      combinedLayer.addLayer(clusters[code]);
+    }
+    return clusters[code];
+  };
+
+  // Universities — skip any whose coords match an IE partner
+  for (const [countryCode, unis] of Object.entries(universitiesData)) {
+    const cluster = getCluster(countryCode);
+    unis.forEach(uni => {
+      if (uni.departments && uni.departments.length > 0) {
+        uni.departments.forEach(dept => {
+          const lat = dept.location?.lat;
+          const lon = dept.location?.lon;
+          if (!lat || !lon || iePartnerCoords.has(`${lat},${lon}`)) return;
+          const marker = L.marker([lat, lon])
+              .bindPopup(`
+                <b>${uni.name}</b><br/>
+                <span>${dept.name}</span>
+                ${dept.link ? `<br/><a class="popup-link" href="${dept.link}" target="_blank">Visit website</a>` : ''}
+              `)
+              .addTo(cluster);
+          markerRegistry.set(`${lat},${lon}`, marker);
+          marker.on('click', () => {
+            highlightMarker(marker);
+            const match = findMatchInDictionary(uni.name, parsedMembersData.value);
+            if (match) emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
+          });
+        });
+      } else {
+        const lat = uni.location?.lat;
+        const lon = uni.location?.lon;
+        if (!lat || !lon || iePartnerCoords.has(`${lat},${lon}`)) return;
+        const marker = L.marker([lat, lon])
+            .bindPopup(`
+              <b>${uni.name}</b>
+              ${uni.link ? `<br/><a class="popup-link" href="${uni.link}" target="_blank">Visit website</a>` : ''}
+            `)
+            .addTo(cluster);
+        markerRegistry.set(`${lat},${lon}`, marker);
+        marker.on('click', () => {
+          highlightMarker(marker);
+          const match = findMatchInDictionary(uni.name, parsedMembersData.value);
+          if (match) emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
+        });
+      }
+    });
+  }
+
+  // IE Partners — always included, into the same per-country cluster
+  const ieByCountry: Record<string, true> = {};
+  iePartnersData.forEach(country => {
+    const cluster = getCluster(country.country_code);
+    country.partners.forEach(partner => {
+      if (!partner.lat || !partner.lon) return;
+      if (ieByCountry[`${partner.lat},${partner.lon}`]) return; // skip duplicates from repeated country entries
+      ieByCountry[`${partner.lat},${partner.lon}`] = true;
+      const marker = L.marker([partner.lat, partner.lon], { icon: GreenIcon, zIndexOffset: 1000 })
+          .bindPopup(`
+            <b>${partner.uni_name}</b><br/>
+            ${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
+            <span class="ie-star-popup">★ IE Partner</span><br/>
+            ${partner.link ? `<a class="popup-link" href="${partner.link}" target="_blank">Visit website</a>` : ''}
+          `)
+          .addTo(cluster);
+      iePartnerMarkers.add(marker);
+      markerRegistry.set(`${partner.lat},${partner.lon}`, marker);
+      marker.on('click', (e) => {
+        L.DomEvent.stopPropagation(e);
+        highlightMarker(marker);
+        const match = findMatchInDictionary(partner.uni_name, parsedMembersData.value);
+        if (match) emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
+      });
+    });
+  });
+
+  return combinedLayer;
 };
 
 onMounted(async () => {
@@ -370,6 +468,14 @@ onMounted(async () => {
   L.control.zoom({ position: 'bottomleft' }).addTo(map);
   map.fitBounds(europeBounds);
 
+  map.on('click', () => {
+    if (highlightedMarker) {
+      const wasGreen = iePartnerMarkers.has(highlightedMarker);
+      highlightedMarker.setIcon(wasGreen ? GreenIcon : DefaultIcon);
+      highlightedMarker = null;
+    }
+  });
+
   const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
@@ -380,7 +486,7 @@ onMounted(async () => {
 
   const { countryLayers } = await fetchDrawBordersAndPlaceMarkers();
   const iePartnersLayer = await load_ie_partners();
-  ieLayerRef = iePartnersLayer;
+  const combinedLayer = buildCombinedLayer();
 
   // Emitting the data back to App.vue once loading is done
   emit('data-loaded', {
@@ -390,41 +496,72 @@ onMounted(async () => {
     allCountriesData: parsedCountriesData.value
   });
 
-  const overlays: Record<string, L.Layer> = {};
-  overlays['IE Partners'] = iePartnersLayer;
-  const countryGroupLayers: L.LayerGroup[] = [];
-
+  // 3. Build unified border and university layers
   const allBordersLayer = L.layerGroup();
+  const allUniversitiesLayer = L.layerGroup();
   allBordersLayerRef = allBordersLayer;
 
   for (const [countryCode, layers] of Object.entries(countryLayers)) {
-    const code = countryCode.toUpperCase();
-    const countryGroup = L.layerGroup([layers.markers]);
-    overlays[code] = countryGroup;
-    countryGroupMap[countryCode] = countryGroup;
-    countryGroupLayers.push(countryGroup);
     allBordersLayer.addLayer(layers.borders);
+    allUniversitiesLayer.addLayer(layers.markers);
+    countryGroupMap[countryCode] = allUniversitiesLayer;
   }
 
-  overlays['— All Borders'] = allBordersLayer;
+  // Wrapper layer groups — the layer control tracks these.
+  // Their contents are swapped behind the scenes based on which combination is selected.
+  const unisWrapper = L.layerGroup([allUniversitiesLayer]);
+  const ieWrapper = L.layerGroup();
+  ieLayerRef = ieWrapper;
 
-  countryGroupLayers.forEach(layer => layer.addTo(map!));
-  allBordersLayer.addTo(map!);
+  let combinedActive = false;
+
+  const syncLayerContents = () => {
+    const unisOn = map!.hasLayer(unisWrapper);
+    const ieOn = map!.hasLayer(ieWrapper);
+
+    if (unisOn && ieOn) {
+      unisWrapper.clearLayers();
+      ieWrapper.clearLayers();
+      if (!map!.hasLayer(combinedLayer)) combinedLayer.addTo(map!);
+      combinedActive = true;
+    } else {
+      if (combinedActive) {
+        map!.removeLayer(combinedLayer);
+        combinedActive = false;
+      }
+      if (unisOn && !unisWrapper.hasLayer(allUniversitiesLayer)) {
+        unisWrapper.addLayer(allUniversitiesLayer);
+      } else if (!unisOn) {
+        unisWrapper.clearLayers();
+      }
+      if (ieOn && !ieWrapper.hasLayer(iePartnersLayer)) {
+        ieWrapper.addLayer(iePartnersLayer);
+      } else if (!ieOn) {
+        ieWrapper.clearLayers();
+      }
+    }
+  };
+
+  map.on('overlayadd', syncLayerContents);
+  map.on('overlayremove', syncLayerContents);
+
+  const overlays: Record<string, L.Layer> = {
+    'Universities': unisWrapper,
+    'IE Partners': ieWrapper,
+    'Borders': allBordersLayer,
+  };
+
+  // Universities and Borders on by default, IE Partners off
+  allBordersLayer.addTo(map);
+  unisWrapper.addTo(map);
 
   L.control.layers(
       { 'Street': osmLayer, 'Satellite': satelliteLayer },
       overlays,
       { position: 'bottomleft' }
   ).addTo(map);
-  setLegend();
 
-  map.on('click', () => {
-    if (highlightedMarker) {
-      const wasGreen = ieLayerRef?.hasLayer(highlightedMarker);
-      highlightedMarker.setIcon(wasGreen ? GreenIcon : DefaultIcon);
-      highlightedMarker = null;
-    }
-  });
+  setLegend();
 });
 
 onUnmounted(() => {
