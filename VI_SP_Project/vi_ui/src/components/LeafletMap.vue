@@ -53,8 +53,12 @@ let highlightedMarker: L.Marker | null = null;
 const countryClusterGroups: Record<string, L.MarkerClusterGroup> = {};
 const countryGroupMap: Record<string, L.LayerGroup> = {};
 let ieLayerRef: L.LayerGroup | null = null;
+let unisWrapperRef: L.LayerGroup | null = null;
+let combinedActive = false;
+let syncLayerContentsRef: (() => void) | null = null;
 const iePartnerMarkers = new Set<L.Marker>();
 const iePartnerCoords = new Set<string>();
+const combinedMarkerRegistry = new Map<string, L.Marker>();
 let allBordersLayerRef: L.LayerGroup | null = null;
 
 // Extracted internal data to emit later
@@ -104,19 +108,20 @@ const flyToResult = (result: SearchResult) => {
     if (result.isIEPartner) {
       if (ieLayerRef && !map.hasLayer(ieLayerRef)) {
         ieLayerRef.addTo(map);
+        syncLayerContentsRef?.();
       }
     } else {
-      // all unis are in one layer now — use any value from countryGroupMap
-      const uniLayer = Object.values(countryGroupMap)[0];
-      if (uniLayer && !map.hasLayer(uniLayer)) {
-        uniLayer.addTo(map);
+      if (unisWrapperRef && !map.hasLayer(unisWrapperRef)) {
+        unisWrapperRef.addTo(map);
+        syncLayerContentsRef?.();
       }
     }
 
     map.flyTo([lat, lon], 17, { animate: true, duration: 0.8 });
 
     map.once('moveend', () => {
-      const marker = markerRegistry.get(`${lat},${lon}`);
+      const registry = combinedActive ? combinedMarkerRegistry : markerRegistry;
+      const marker = registry.get(`${lat},${lon}`);
       if (marker) {
         highlightMarker(marker);
         marker.openPopup();
@@ -378,7 +383,7 @@ const buildCombinedLayer = (): L.LayerGroup => {
                 ${dept.link ? `<br/><a class="popup-link" href="${dept.link}" target="_blank">Visit website</a>` : ''}
               `)
               .addTo(cluster);
-          markerRegistry.set(`${lat},${lon}`, marker);
+          combinedMarkerRegistry.set(`${lat},${lon}`, marker);
           marker.on('click', () => {
             highlightMarker(marker);
             const match = findMatchInDictionary(uni.name, parsedMembersData.value);
@@ -395,7 +400,7 @@ const buildCombinedLayer = (): L.LayerGroup => {
               ${uni.link ? `<br/><a class="popup-link" href="${uni.link}" target="_blank">Visit website</a>` : ''}
             `)
             .addTo(cluster);
-        markerRegistry.set(`${lat},${lon}`, marker);
+        combinedMarkerRegistry.set(`${lat},${lon}`, marker);
         marker.on('click', () => {
           highlightMarker(marker);
           const match = findMatchInDictionary(uni.name, parsedMembersData.value);
@@ -422,7 +427,7 @@ const buildCombinedLayer = (): L.LayerGroup => {
           `)
           .addTo(cluster);
       iePartnerMarkers.add(marker);
-      markerRegistry.set(`${partner.lat},${partner.lon}`, marker);
+      combinedMarkerRegistry.set(`${partner.lat},${partner.lon}`, marker);
       marker.on('click', (e) => {
         L.DomEvent.stopPropagation(e);
         highlightMarker(marker);
@@ -512,8 +517,7 @@ onMounted(async () => {
   const unisWrapper = L.layerGroup([allUniversitiesLayer]);
   const ieWrapper = L.layerGroup();
   ieLayerRef = ieWrapper;
-
-  let combinedActive = false;
+  unisWrapperRef = unisWrapper;
 
   const syncLayerContents = () => {
     const unisOn = map!.hasLayer(unisWrapper);
@@ -542,6 +546,7 @@ onMounted(async () => {
     }
   };
 
+  syncLayerContentsRef = syncLayerContents;
   map.on('overlayadd', syncLayerContents);
   map.on('overlayremove', syncLayerContents);
 
