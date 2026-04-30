@@ -3,40 +3,28 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// -- Marker Clustering
 import 'leaflet.markercluster';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
-// --- THE VITE ICON FIX ---
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 import type { University, IEPartnerCountry, SearchResult, ParsedDataDictionary, ModalPayload } from '@/types';
 
 const DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34]
+  iconUrl: icon, shadowUrl: iconShadow, iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34]
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const RedIcon = L.icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-  shadowUrl: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34]
+  shadowUrl: iconShadow, iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34]
 });
 
 const GreenIcon = L.icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
-  shadowUrl: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34]
+  shadowUrl: iconShadow, iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34]
 });
 
 const emit = defineEmits<{
@@ -61,32 +49,50 @@ const iePartnerCoords = new Set<string>();
 const combinedMarkerRegistry = new Map<string, L.Marker>();
 let allBordersLayerRef: L.LayerGroup | null = null;
 
-// Extracted internal data to emit later
 const universitiesData: Record<string, University[]> = {};
 const availableCountries: string[] = [];
 const iePartnersData: IEPartnerCountry[] = [];
 
-// New dictionary states
+// Data States
 const parsedCountriesData = ref<ParsedDataDictionary>({});
 const parsedMembersData = ref<ParsedDataDictionary>({});
+const parsedEterData = ref<ParsedDataDictionary>({});
 
-// Fuzzy match against Object Keys
+// NEW: Strip absolutely everything except letters and numbers for a flawless match
+const cleanForMatch = (str: string) => str ? str.toLowerCase().replace(/[^a-z0-9]/g, '') : '';
+
 const findMatchInDictionary = (searchName: string, dictionary: ParsedDataDictionary) => {
-  if (!searchName) return null;
-  const lowerSearch = searchName.toLowerCase();
+  if (!searchName || !dictionary || Object.keys(dictionary).length === 0) return null;
+
+  const lowerSearch = cleanForMatch(searchName);
   const keys = Object.keys(dictionary);
 
-  const matchedKey = keys.find(k =>
-      k.toLowerCase().includes(lowerSearch) || lowerSearch.includes(k.toLowerCase())
-  );
+  const matchedKey = keys.find(k => {
+    const cleanK = cleanForMatch(k);
+    // Prevent tiny acronyms from accidentally matching large strings
+    if (cleanK.length < 5 || lowerSearch.length < 5) return cleanK === lowerSearch;
+    return cleanK.includes(lowerSearch) || lowerSearch.includes(cleanK);
+  });
 
-  if (matchedKey) {
-    return {
-      matchedName: matchedKey,
-      data: dictionary[matchedKey]
-    };
-  }
-  return null;
+  return matchedKey ? { matchedName: matchedKey, data: dictionary[matchedKey] } : null;
+};
+
+// --- EMIT UNIFIED MODAL DATA ---
+const handleInstitutionDetailsClick = (rawName: string) => {
+  const matchMember = findMatchInDictionary(rawName, parsedMembersData.value);
+  const matchEter = findMatchInDictionary(rawName, parsedEterData.value);
+
+  // Use whichever name matched cleanly, fallback to raw name
+  const title = matchMember ? matchMember.matchedName : (matchEter ? matchEter.matchedName : rawName);
+
+  emit('show-details', {
+    title,
+    subtitle: 'Institution Details',
+    data: {
+      member: matchMember ? matchMember.data : null,
+      eter: matchEter ? matchEter.data.informatics_data : null
+    }
+  });
 };
 
 const highlightMarker = (marker: L.Marker) => {
@@ -100,32 +106,20 @@ const highlightMarker = (marker: L.Marker) => {
 
 const flyToResult = (result: SearchResult) => {
   if (!map) return;
-
   const lat = result.isIEPartner ? result.iePartner?.lat : (result.dept?.location ?? result.uni?.location)?.lat;
   const lon = result.isIEPartner ? result.iePartner?.lon : (result.dept?.location ?? result.uni?.location)?.lon;
 
   if (lat && lon) {
     if (result.isIEPartner) {
-      if (ieLayerRef && !map.hasLayer(ieLayerRef)) {
-        ieLayerRef.addTo(map);
-        syncLayerContentsRef?.();
-      }
+      if (ieLayerRef && !map.hasLayer(ieLayerRef)) { ieLayerRef.addTo(map); syncLayerContentsRef?.(); }
     } else {
-      if (unisWrapperRef && !map.hasLayer(unisWrapperRef)) {
-        unisWrapperRef.addTo(map);
-        syncLayerContentsRef?.();
-      }
+      if (unisWrapperRef && !map.hasLayer(unisWrapperRef)) { unisWrapperRef.addTo(map); syncLayerContentsRef?.(); }
     }
-
     map.flyTo([lat, lon], 17, { animate: true, duration: 0.8 });
-
     map.once('moveend', () => {
       const registry = combinedActive ? combinedMarkerRegistry : markerRegistry;
       const marker = registry.get(`${lat},${lon}`);
-      if (marker) {
-        highlightMarker(marker);
-        marker.openPopup();
-      }
+      if (marker) { highlightMarker(marker); marker.openPopup(); }
     });
   }
 };
@@ -143,7 +137,6 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
 
   for (const fileName of fileNames) {
     const countryCode = fileName.replace('.geo.json', '');
-
     const countryBordersLayer = L.layerGroup();
     const countryMarkersLayer = L.layerGroup();
     countryLayers[countryCode] = { borders: countryBordersLayer, markers: countryMarkersLayer };
@@ -151,7 +144,6 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
     try {
       const borderResponse = await fetch(`/borders/${fileName}`);
       const geojsonData = await borderResponse.json();
-
       const clusterGroup = L.markerClusterGroup({ maxClusterRadius: 100 });
       countryClusterGroups[countryCode] = clusterGroup;
       countryMarkersLayer.addLayer(clusterGroup);
@@ -161,48 +153,28 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
         style: { color: 'rgb(33,116,245)', weight: 1, fillOpacity: 0.1, fillColor: '#2174f5' },
         onEachFeature: (feature: any, layer: L.Layer) => {
           const countryName = feature.properties.NAME || feature.properties.name || "Unknown Country";
-
           const match = findMatchInDictionary(countryName, parsedCountriesData.value);
-
-          console.log(`[2. MAP INIT] Matching ${countryName}... Match found?`, !!match);
-
           (layer as any).options.className = 'clickable-country';
-
-          // Tooltip hint on hover
           layer.bindPopup(`<b>${countryName}</b><br><span style="font-size: 11px; color: #666;">Click map area for details</span>`);
 
-          // Always emit the event, even if there is no match
           layer.on('click', () => {
             emit('show-details', {
-              title: match ? match.matchedName : countryName, // Fallback to raw map name if not matched
+              title: match ? match.matchedName : countryName,
               subtitle: 'Country Overview',
-              data: match ? match.data : null // Send null so the modal knows to show "No Data"
+              data: match ? match.data : null
             });
           });
-
-          layer.on('mouseover', (e: L.LeafletMouseEvent) => {
-            (e.target as L.Path).setStyle({ fillOpacity: 0.4 });
-          });
-          layer.on('mouseout', (e: L.LeafletMouseEvent) => {
-            (e.target as L.Path).setStyle({ fillOpacity: 0.1 });
-          });
+          layer.on('mouseover', (e: L.LeafletMouseEvent) => { (e.target as L.Path).setStyle({ fillOpacity: 0.4 }); });
+          layer.on('mouseout', (e: L.LeafletMouseEvent) => { (e.target as L.Path).setStyle({ fillOpacity: 0.1 }); });
         }
       });
       countryBordersLayer.addLayer(borderGeoJson);
       bordersLayer.addLayer(countryBordersLayer);
-
-    } catch (error) {
-      console.error(`Error loading border file ${fileName}:`, error);
-      continue;
-    }
+    } catch (error) { continue; }
 
     try {
       const unisResponse = await fetch(`/unis/${countryCode}.json`);
-
-      if (!unisResponse.ok) {
-        continue;
-      }
-
+      if (!unisResponse.ok) continue;
       const unis: University[] = await unisResponse.json();
       const clusterGroup = countryClusterGroups[countryCode];
 
@@ -210,107 +182,66 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
       availableCountries.push(countryCode);
 
       unis.forEach((uni) => {
+        const placeMarker = (lat: number, lon: number, deptName?: string, link?: string) => {
+          const marker = L.marker([lat, lon])
+              .bindPopup(`
+              <b>${uni.name}</b>${deptName ? `<br/><span>${deptName}</span>` : ''}
+              ${link ? `<br/><a class="popup-link" href="${link}" target="_blank">Visit website</a>` : ''}
+              <div class="popup-action">
+                <button class="popup-details-btn">View Statistics</button>
+              </div>
+            `)
+              .addTo(clusterGroup);
+
+          markerRegistry.set(`${lat},${lon}`, marker);
+          marker.on('click', () => highlightMarker(marker));
+
+          marker.on('popupopen', (e) => {
+            const btn = e.popup.getElement()?.querySelector('.popup-details-btn');
+            if (btn) btn.onclick = () => handleInstitutionDetailsClick(uni.name);
+          });
+        };
+
         if (uni.departments && uni.departments.length > 0) {
           uni.departments.forEach((dept) => {
-            const lat = dept.location?.lat;
-            const lon = dept.location?.lon;
-            if (lat && lon) {
-              const marker = L.marker([lat, lon])
-                  .bindPopup(`
-                    <b>${uni.name}</b><br/>
-                    <span>${dept.name}</span>
-                    ${dept.link ? `<br/><a class="popup-link" href="${dept.link}" target="_blank">Visit website</a>` : ''}
-                  `)
-                  .addTo(clusterGroup);
-
-              markerRegistry.set(`${lat},${lon}`, marker);
-              marker.on('click', () => {
-                highlightMarker(marker);
-                const match = findMatchInDictionary(uni.name, parsedMembersData.value);
-                if (match) {
-                  emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
-                }
-              });
-            }
+            if (dept.location?.lat && dept.location?.lon) placeMarker(dept.location.lat, dept.location.lon, dept.name, dept.link);
           });
-        } else {
-          const lat = uni.location?.lat;
-          const lon = uni.location?.lon;
-          if (lat && lon) {
-            const marker = L.marker([lat, lon])
-                .bindPopup(`
-                  <b>${uni.name}</b>
-                   ${uni.link ? `<br/><a class="popup-link" href="${uni.link}" target="_blank">Visit website</a>` : ''}
-                 `)
-                .addTo(clusterGroup);
-
-            markerRegistry.set(`${lat},${lon}`, marker);
-            marker.on('click', () => {
-              highlightMarker(marker);
-              const match = findMatchInDictionary(uni.name, parsedMembersData.value);
-              if (match) {
-                emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
-              }
-            });
-          }
+        } else if (uni.location?.lat && uni.location?.lon) {
+          placeMarker(uni.location.lat, uni.location.lon, undefined, uni.link);
         }
       });
-
-    } catch (error) {
-      console.error(`No universities file found for ${countryCode}`);
-    }
+    } catch (error) {}
   }
-
   return { countryLayers };
 };
 
 const setLegend = () => {
   if (!map) return;
-
   const legend = new L.Control({ position: 'bottomright' });
-
   legend.onAdd = (): HTMLElement => {
     const div = L.DomUtil.create('div');
     div.innerHTML = `
       <div class="leaflet-custom-legend">
         <b>Legend</b>
-        <div class="legend-item">
-          <span class="legend-swatch border-swatch"></span>
-          Country border
-        </div>
-        <div class="legend-item">
-          <img src="${icon}" class="legend-icon">
-          University
-        </div>
-        <div class="legend-item">
-          <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png" class="legend-icon">
-          IE Partner
-        </div>
-        <div class="legend-item">
-          <span class="legend-swatch cluster-swatch">3</span>
-          University cluster
-        </div>
+        <div class="legend-item"><span class="legend-swatch border-swatch"></span>Country border</div>
+        <div class="legend-item"><img src="${icon}" class="legend-icon">University</div>
+        <div class="legend-item"><img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png" class="legend-icon">IE Partner</div>
+        <div class="legend-item"><span class="legend-swatch cluster-swatch">3</span>University cluster</div>
       </div>
     `;
     return div;
   };
-
   legend.addTo(map);
 };
 
 const load_ie_partners = async (): Promise<L.LayerGroup> => {
   const iePartnersLayer = L.layerGroup();
-
   try {
     const response = await fetch('/partners/ie_partners.json');
     const countries: IEPartnerCountry[] = await response.json();
-
-    for (const country of countries) {
-      iePartnersData.push(country);
-    }
+    for (const country of countries) iePartnersData.push(country);
 
     const ieCountryClusters: Record<string, L.MarkerClusterGroup> = {};
-
     countries.forEach(country => {
       if (!ieCountryClusters[country.country_code]) {
         const cluster = L.markerClusterGroup({ maxClusterRadius: 100 });
@@ -321,37 +252,28 @@ const load_ie_partners = async (): Promise<L.LayerGroup> => {
 
       country.partners.forEach(partner => {
         if (!partner.lat || !partner.lon) return;
-
-        const marker = L.marker([partner.lat, partner.lon], {
-          icon: GreenIcon,
-          zIndexOffset: 1000
-        })
+        const marker = L.marker([partner.lat, partner.lon], { icon: GreenIcon, zIndexOffset: 1000 })
             .bindPopup(`
-        <b>${partner.uni_name}</b><br/>
-        ${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
-        <span class="ie-star-popup">★ IE Partner</span><br/>
-        ${partner.link ? `<a class="popup-link" href="${partner.link}" target="_blank">Visit website</a>` : ''}
-      `)
+            <b>${partner.uni_name}</b><br/>${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
+            <span class="ie-star-popup">★ IE Partner</span><br/>
+            ${partner.link ? `<a class="popup-link" href="${partner.link}" target="_blank">Visit website</a>` : ''}
+            <div class="popup-action"><button class="popup-details-btn">View Statistics</button></div>
+          `)
             .addTo(countryCluster);
 
         iePartnerMarkers.add(marker);
         iePartnerCoords.add(`${partner.lat},${partner.lon}`);
         markerRegistry.set(`${partner.lat},${partner.lon}`, marker);
-        marker.on('click', (e) => {
-          L.DomEvent.stopPropagation(e);
-          highlightMarker(marker);
-          const match = findMatchInDictionary(partner.uni_name, parsedMembersData.value);
-          if (match) {
-            emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
-          }
+
+        marker.on('click', (e) => { L.DomEvent.stopPropagation(e); highlightMarker(marker); });
+
+        marker.on('popupopen', (e) => {
+          const btn = e.popup.getElement()?.querySelector('.popup-details-btn');
+          if (btn) btn.onclick = () => handleInstitutionDetailsClick(partner.uni_name || partner.dept_name);
         });
       });
     });
-
-  } catch (error) {
-    console.error('Error loading IE partners:', error);
-  }
-
+  } catch (error) { console.error('Error loading IE partners:', error); }
   return iePartnersLayer;
 };
 
@@ -367,72 +289,58 @@ const buildCombinedLayer = (): L.LayerGroup => {
     return clusters[code];
   };
 
-  // Universities — skip any whose coords match an IE partner
   for (const [countryCode, unis] of Object.entries(universitiesData)) {
     const cluster = getCluster(countryCode);
     unis.forEach(uni => {
-      if (uni.departments && uni.departments.length > 0) {
-        uni.departments.forEach(dept => {
-          const lat = dept.location?.lat;
-          const lon = dept.location?.lon;
-          if (!lat || !lon || iePartnerCoords.has(`${lat},${lon}`)) return;
-          const marker = L.marker([lat, lon])
-              .bindPopup(`
-                <b>${uni.name}</b><br/>
-                <span>${dept.name}</span>
-                ${dept.link ? `<br/><a class="popup-link" href="${dept.link}" target="_blank">Visit website</a>` : ''}
-              `)
-              .addTo(cluster);
-          combinedMarkerRegistry.set(`${lat},${lon}`, marker);
-          marker.on('click', () => {
-            highlightMarker(marker);
-            const match = findMatchInDictionary(uni.name, parsedMembersData.value);
-            if (match) emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
-          });
-        });
-      } else {
-        const lat = uni.location?.lat;
-        const lon = uni.location?.lon;
-        if (!lat || !lon || iePartnerCoords.has(`${lat},${lon}`)) return;
+      const placeMarker = (lat: number, lon: number, deptName?: string, link?: string) => {
+        if (iePartnerCoords.has(`${lat},${lon}`)) return;
         const marker = L.marker([lat, lon])
             .bindPopup(`
-              <b>${uni.name}</b>
-              ${uni.link ? `<br/><a class="popup-link" href="${uni.link}" target="_blank">Visit website</a>` : ''}
+              <b>${uni.name}</b>${deptName ? `<br/><span>${deptName}</span>` : ''}
+              ${link ? `<br/><a class="popup-link" href="${link}" target="_blank">Visit website</a>` : ''}
+              <div class="popup-action"><button class="popup-details-btn">View Statistics</button></div>
             `)
             .addTo(cluster);
+
         combinedMarkerRegistry.set(`${lat},${lon}`, marker);
-        marker.on('click', () => {
-          highlightMarker(marker);
-          const match = findMatchInDictionary(uni.name, parsedMembersData.value);
-          if (match) emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
+        marker.on('click', () => highlightMarker(marker));
+
+        marker.on('popupopen', (e) => {
+          const btn = e.popup.getElement()?.querySelector('.popup-details-btn');
+          if (btn) btn.onclick = () => handleInstitutionDetailsClick(uni.name);
         });
+      };
+      if (uni.departments && uni.departments.length > 0) {
+        uni.departments.forEach(dept => { if (dept.location?.lat && dept.location?.lon) placeMarker(dept.location.lat, dept.location.lon, dept.name, dept.link); });
+      } else if (uni.location?.lat && uni.location?.lon) {
+        placeMarker(uni.location.lat, uni.location.lon, undefined, uni.link);
       }
     });
   }
 
-  // IE Partners — always included, into the same per-country cluster
   const ieByCountry: Record<string, true> = {};
   iePartnersData.forEach(country => {
     const cluster = getCluster(country.country_code);
     country.partners.forEach(partner => {
-      if (!partner.lat || !partner.lon) return;
-      if (ieByCountry[`${partner.lat},${partner.lon}`]) return; // skip duplicates from repeated country entries
+      if (!partner.lat || !partner.lon || ieByCountry[`${partner.lat},${partner.lon}`]) return;
       ieByCountry[`${partner.lat},${partner.lon}`] = true;
       const marker = L.marker([partner.lat, partner.lon], { icon: GreenIcon, zIndexOffset: 1000 })
           .bindPopup(`
-            <b>${partner.uni_name}</b><br/>
-            ${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
+            <b>${partner.uni_name}</b><br/>${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
             <span class="ie-star-popup">★ IE Partner</span><br/>
             ${partner.link ? `<a class="popup-link" href="${partner.link}" target="_blank">Visit website</a>` : ''}
+            <div class="popup-action"><button class="popup-details-btn">View Statistics</button></div>
           `)
           .addTo(cluster);
+
       iePartnerMarkers.add(marker);
       combinedMarkerRegistry.set(`${partner.lat},${partner.lon}`, marker);
-      marker.on('click', (e) => {
-        L.DomEvent.stopPropagation(e);
-        highlightMarker(marker);
-        const match = findMatchInDictionary(partner.uni_name, parsedMembersData.value);
-        if (match) emit('show-details', { title: match.matchedName, subtitle: 'University Details', data: match.data });
+
+      marker.on('click', (e) => { L.DomEvent.stopPropagation(e); highlightMarker(marker); });
+
+      marker.on('popupopen', (e) => {
+        const btn = e.popup.getElement()?.querySelector('.popup-details-btn');
+        if (btn) btn.onclick = () => handleInstitutionDetailsClick(partner.uni_name || partner.dept_name);
       });
     });
   });
@@ -443,33 +351,30 @@ const buildCombinedLayer = (): L.LayerGroup => {
 onMounted(async () => {
   if (!mapContainer.value) return;
 
-  // 1. Fetch JSON Dictionaries FIRST
-  try {
-    const [countriesRes, membersRes] = await Promise.all([
-      fetch('countries_data/countries_parsed.json'),
-      fetch('members_data/members_parsed.json')
-    ]);
-    parsedCountriesData.value = await countriesRes.json();
-    parsedMembersData.value = await membersRes.json();
+  // NEW: Bulletproof Fetch that ignores strict MIME headers but stops HTML crashes
+  const fetchJsonSafely = async (url: string) => {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) return {};
+      const text = await res.text();
+      // If the dev server accidentally returned the index.html page, block it gracefully
+      if (text.trim().startsWith('<')) {
+        console.warn(`[Map Warning] ${url} is missing or returning HTML.`);
+        return {};
+      }
+      return JSON.parse(text);
+    } catch (error) {
+      console.error(`[Map Error] Failed to parse ${url}:`, error);
+      return {};
+    }
+  };
 
-    console.log('[1. MAP LOAD] Fetched countries data. Available keys:', Object.keys(parsedCountriesData.value));
-  } catch (error) {
-    console.error('Error loading parsed data:', error);
-  }
+  parsedCountriesData.value = (await fetchJsonSafely('/countries_data/countries_parsed.json')) || {};
+  parsedMembersData.value = (await fetchJsonSafely('/members_data/members_parsed.json')) || {};
+  parsedEterData.value = (await fetchJsonSafely('/eter_data/eter_parsed.json')) || {};
 
-  // 2. Map Initialization
-  const europeBounds = L.latLngBounds(
-      L.latLng(24.0, -35.0),
-      L.latLng(72.0, 52.0)
-  );
-
-  map = L.map(mapContainer.value, {
-    maxBounds: europeBounds,
-    maxBoundsViscosity: 1.0,
-    minZoom: 4,
-    zoomControl: false,
-  });
-
+  const europeBounds = L.latLngBounds(L.latLng(24.0, -35.0), L.latLng(72.0, 52.0));
+  map = L.map(mapContainer.value, { maxBounds: europeBounds, maxBoundsViscosity: 1.0, minZoom: 4, zoomControl: false });
   L.control.zoom({ position: 'bottomleft' }).addTo(map);
   map.fitBounds(europeBounds);
 
@@ -481,27 +386,15 @@ onMounted(async () => {
     }
   });
 
-  const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: '&copy; Esri'
-  });
+  const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+  const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { attribution: '&copy; Esri' });
 
   const { countryLayers } = await fetchDrawBordersAndPlaceMarkers();
   const iePartnersLayer = await load_ie_partners();
   const combinedLayer = buildCombinedLayer();
 
-  // Emitting the data back to App.vue once loading is done
-  emit('data-loaded', {
-    unis: universitiesData,
-    partners: iePartnersData,
-    countries: availableCountries,
-    allCountriesData: parsedCountriesData.value
-  });
+  emit('data-loaded', { unis: universitiesData, partners: iePartnersData, countries: availableCountries, allCountriesData: parsedCountriesData.value });
 
-  // 3. Build unified border and university layers
   const allBordersLayer = L.layerGroup();
   const allUniversitiesLayer = L.layerGroup();
   allBordersLayerRef = allBordersLayer;
@@ -512,8 +405,6 @@ onMounted(async () => {
     countryGroupMap[countryCode] = allUniversitiesLayer;
   }
 
-  // Wrapper layer groups — the layer control tracks these.
-  // Their contents are swapped behind the scenes based on which combination is selected.
   const unisWrapper = L.layerGroup([allUniversitiesLayer]);
   const ieWrapper = L.layerGroup();
   ieLayerRef = ieWrapper;
@@ -524,25 +415,15 @@ onMounted(async () => {
     const ieOn = map!.hasLayer(ieWrapper);
 
     if (unisOn && ieOn) {
-      unisWrapper.clearLayers();
-      ieWrapper.clearLayers();
+      unisWrapper.clearLayers(); ieWrapper.clearLayers();
       if (!map!.hasLayer(combinedLayer)) combinedLayer.addTo(map!);
       combinedActive = true;
     } else {
-      if (combinedActive) {
-        map!.removeLayer(combinedLayer);
-        combinedActive = false;
-      }
-      if (unisOn && !unisWrapper.hasLayer(allUniversitiesLayer)) {
-        unisWrapper.addLayer(allUniversitiesLayer);
-      } else if (!unisOn) {
-        unisWrapper.clearLayers();
-      }
-      if (ieOn && !ieWrapper.hasLayer(iePartnersLayer)) {
-        ieWrapper.addLayer(iePartnersLayer);
-      } else if (!ieOn) {
-        ieWrapper.clearLayers();
-      }
+      if (combinedActive) { map!.removeLayer(combinedLayer); combinedActive = false; }
+      if (unisOn && !unisWrapper.hasLayer(allUniversitiesLayer)) unisWrapper.addLayer(allUniversitiesLayer);
+      else if (!unisOn) unisWrapper.clearLayers();
+      if (ieOn && !ieWrapper.hasLayer(iePartnersLayer)) ieWrapper.addLayer(iePartnersLayer);
+      else if (!ieOn) ieWrapper.clearLayers();
     }
   };
 
@@ -550,30 +431,15 @@ onMounted(async () => {
   map.on('overlayadd', syncLayerContents);
   map.on('overlayremove', syncLayerContents);
 
-  const overlays: Record<string, L.Layer> = {
-    'Universities': unisWrapper,
-    'IE Partners': ieWrapper,
-    'Borders': allBordersLayer,
-  };
-
-  // Universities and Borders on by default, IE Partners off
+  const overlays: Record<string, L.Layer> = { 'Universities': unisWrapper, 'IE Partners': ieWrapper, 'Borders': allBordersLayer };
   allBordersLayer.addTo(map);
   unisWrapper.addTo(map);
 
-  L.control.layers(
-      { 'Street': osmLayer, 'Satellite': satelliteLayer },
-      overlays,
-      { position: 'bottomleft' }
-  ).addTo(map);
-
+  L.control.layers({ 'Street': osmLayer, 'Satellite': satelliteLayer }, overlays, { position: 'bottomleft' }).addTo(map);
   setLegend();
 });
 
-onUnmounted(() => {
-  if (map) {
-    map.remove();
-  }
-});
+onUnmounted(() => { if (map) map.remove(); });
 </script>
 
 <template>
@@ -581,76 +447,36 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.map-container {
-  height: 100vh;
-  width: 100vw;
-  padding-top: 50px;
-  box-sizing: border-box;
-  display: block;
-}
+.map-container { height: 100vh; width: 100vw; padding-top: 50px; box-sizing: border-box; display: block; }
+:deep(.clickable-country) { cursor: pointer; }
+:deep(.leaflet-custom-legend) { background: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 1px 5px rgba(0,0,0,0.3); font-size: 13px; line-height: 24px; }
+:deep(.leaflet-custom-legend b) { display: block; margin-bottom: 6px; }
+:deep(.legend-item) { display: flex; align-items: center; }
+:deep(.legend-swatch) { display: inline-block; vertical-align: middle; margin-right: 6px; }
+:deep(.border-swatch) { width: 16px; height: 16px; background: #3388ff; opacity: 0.4; border: 2px solid #3388ff; }
+:deep(.cluster-swatch) { width: 20px; height: 20px; background: #3388ff; color: white; border-radius: 50%; text-align: center; font-size: 11px; line-height: 20px; }
+:deep(.legend-icon) { width: 13px; height: 20px; vertical-align: middle; margin-right: 6px; }
+:deep(.popup-link) { font-size: 12px; }
+:deep(.ie-star-popup) { color: green; font-weight: 600; }
 
-/* This targets the SVGs specifically so the user knows they can click them */
-:deep(.clickable-country) {
-  cursor: pointer;
-}
-
-:deep(.leaflet-custom-legend) {
-  background: white;
-  padding: 10px 14px;
-  border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.3);
-  font-size: 13px;
-  line-height: 24px;
-}
-
-:deep(.leaflet-custom-legend b) {
-  display: block;
-  margin-bottom: 6px;
-}
-
-:deep(.legend-item) {
-  display: flex;
-  align-items: center;
-}
-
-:deep(.legend-swatch) {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-
-:deep(.border-swatch) {
-  width: 16px;
-  height: 16px;
-  background: #3388ff;
-  opacity: 0.4;
-  border: 2px solid #3388ff;
-}
-
-:deep(.cluster-swatch) {
-  width: 20px;
-  height: 20px;
-  background: #3388ff;
-  color: white;
-  border-radius: 50%;
+/* NEW STYLES FOR THE POPUP BUTTON */
+:deep(.popup-action) {
+  margin-top: 12px;
   text-align: center;
-  font-size: 11px;
-  line-height: 20px;
 }
-
-:deep(.legend-icon) {
-  width: 13px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-
-:deep(.popup-link) {
+:deep(.popup-details-btn) {
+  background-color: #3388ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
   font-size: 12px;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.2s;
 }
-
-:deep(.ie-star-popup) {
-  color: green;
-  font-weight: 600;
+:deep(.popup-details-btn:hover) {
+  background-color: #1565c0;
 }
 </style>
