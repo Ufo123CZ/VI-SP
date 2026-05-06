@@ -237,7 +237,7 @@ const setLegend = () => {
 const load_ie_partners = async (): Promise<L.LayerGroup> => {
   const iePartnersLayer = L.layerGroup();
   try {
-    const response = await fetch('/partners/ie_partners.json');
+    const response = await fetch('/ie_members/ie_members.json');
     const countries: IEPartnerCountry[] = await response.json();
     for (const country of countries) iePartnersData.push(country);
 
