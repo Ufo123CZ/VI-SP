@@ -44,8 +44,6 @@ const handleSelectResult = (result: SearchResult) => {
 };
 
 const handleShowDetails = (payload: ModalPayload) => {
-  console.log('[4. APP.VUE] Received show-details event. Payload is:', payload);
-
   modalContent.value = payload;
   isModalOpen.value = true;
 };

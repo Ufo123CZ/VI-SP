@@ -7,8 +7,20 @@ const props = defineProps<{
 }>();
 
 const hasMember = computed(() => !!props.data?.member?.data?.length);
-const hasEter = computed(() => !!props.data?.eter && Object.keys(props.data.eter).length > 0);
+const hasEter = computed(() => {
+  const eter = props.data?.eter;
 
+  if (!eter) return false;
+
+  return Object.values(eter).some((year: any) => {
+    return (
+        year?.enrolled_bsc > 0 ||
+        year?.enrolled_msc > 0 ||
+        year?.graduates_bsc > 0 ||
+        year?.graduates_msc > 0
+    );
+  });
+});
 const activeInstTab = ref<'member' | 'eter'>('member');
 
 watch(() => props.data, () => {
@@ -71,7 +83,7 @@ const partnerLineOptions = { responsive: true, maintainAspectRatio: false, plugi
   <div>
     <div v-if="hasMember && hasEter" class="tabs">
       <button :class="{ active: activeInstTab === 'member' }" @click="activeInstTab = 'member'">Informatics Europe Data</button>
-      <button :class="{ active: activeInstTab === 'eter' }" @click="activeInstTab = 'eter'">ETER Historical Data</button>
+      <button :class="{ active: activeInstTab === 'eter' }" @click="activeInstTab = 'eter'">ETER Data</button>
     </div>
 
     <div v-if="activeInstTab === 'member' && hasMember" class="tab-pane">
@@ -84,7 +96,7 @@ const partnerLineOptions = { responsive: true, maintainAspectRatio: false, plugi
     </div>
 
     <div v-if="activeInstTab === 'eter' && hasEter" class="tab-pane">
-      <p class="landscape-intro">Historical informatics statistics via the European Tertiary Education Register (ETER).</p>
+      <p class="landscape-intro">Informatics statistics via the European Tertiary Education Register (ETER).</p>
       <div v-if="partnerEnrollmentChartData" class="landscape-card">
         <h3>Enrollment Over Time</h3>
         <div class="chart-container landscape-chart"><Bar :data="partnerEnrollmentChartData" :options="memberChartOptions" /></div>
@@ -93,7 +105,7 @@ const partnerLineOptions = { responsive: true, maintainAspectRatio: false, plugi
         <h3>Graduates Over Time</h3>
         <div class="chart-container landscape-chart"><Line :data="partnerGraduatesChartData" :options="partnerLineOptions" /></div>
       </div>
-      <div v-if="!partnerEnrollmentChartData && !partnerGraduatesChartData" class="no-data-state"><p>No historical data available.</p></div>
+      <div v-if="!partnerEnrollmentChartData && !partnerGraduatesChartData" class="no-data-state"><p>No ETER data available.</p></div>
     </div>
   </div>
 </template>

@@ -11,7 +11,7 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 import type { University, IEPartnerCountry, SearchResult, ParsedDataDictionary, ModalPayload } from '@/types';
-import { useChoropleth } from './utils/useChoropleth';
+import { useChoropleth } from '../utils/useChoropleth.ts';
 import ChoroplethPanel from './ChoroplethPanel.vue';
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
@@ -88,7 +88,8 @@ const findMatchInDictionary = (searchName: string, dictionary: ParsedDataDiction
 const handleInstitutionDetailsClick = (rawName: string) => {
   const matchMember = findMatchInDictionary(rawName, parsedMembersData.value);
   const matchEter   = findMatchInDictionary(rawName, parsedEterData.value);
-  const title = matchMember?.matchedName ?? matchEter?.matchedName ?? rawName;
+  const rawTitle = matchMember?.matchedName ?? matchEter?.matchedName ?? rawName;
+  const title = rawTitle.split(',')[0].trim();
   emit('show-details', {
     title,
     subtitle: 'Institution Details',

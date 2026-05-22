@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CHOROPLETH_FIELD_LABELS, DATASET_LABELS } from './utils/useChoropleth.ts';
+import { CHOROPLETH_FIELD_LABELS, DATASET_LABELS } from '../utils/useChoropleth.ts';
 
 const props = defineProps<{
   active:    boolean;
@@ -45,7 +45,7 @@ const open = defineModel<boolean>('open', { default: false });
   <Transition name="ch-slide">
     <div v-if="open" class="ch-panel">
       <div class="ch-panel-header">
-        <span class="ch-panel-title">Choropleth Settings</span>
+        <span class="ch-panel-title">Heatmap Settings</span>
         <button class="ch-close" @click="open = false">✕</button>
       </div>
 

@@ -22,8 +22,29 @@ const isCountry = computed(() => props.subtitle === 'Country Overview');
 const isInstitution = computed(() => props.subtitle === 'Institution Details');
 
 const hasData = computed(() => {
-  if (isCountry.value) return !!props.data && !!props.data.statistics;
-  if (isInstitution.value) return !!props.data && (!!props.data.member || !!props.data.eter);
+  if (isCountry.value) {
+    return !!props.data?.statistics;
+  }
+
+  if (isInstitution.value) {
+    const hasMemberData =
+        props.data?.member &&
+        Object.keys(props.data.member).length > 0;
+
+    const hasEterData =
+        props.data?.eter &&
+        Object.values(props.data.eter).some((year: any) => {
+          return (
+              year?.enrolled_bsc > 0 ||
+              year?.enrolled_msc > 0 ||
+              year?.graduates_bsc > 0 ||
+              year?.graduates_msc > 0
+          );
+        });
+
+    return hasMemberData || hasEterData;
+  }
+
   return false;
 });
 
