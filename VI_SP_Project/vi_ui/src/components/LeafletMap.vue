@@ -167,6 +167,7 @@ const fetchDrawBordersAndPlaceMarkers = async (): Promise<{ countryLayers: Recor
           choropleth.registerPath(countryName, layer as L.Path);
 
           layer.on('click', () => {
+            (layer as L.Path).closePopup();
             emit('show-details', { title: match?.matchedName ?? countryName, subtitle: 'Country Overview', data: match?.data ?? null });
           });
           layer.on('mouseover', (e: L.LeafletMouseEvent) => {
@@ -251,7 +252,7 @@ const load_ie_partners = async (): Promise<L.LayerGroup> => {
         const marker = L.marker([partner.lat, partner.lon], { icon: GreenIcon, zIndexOffset: 1000 })
             .bindPopup(`
             <b>${partner.uni_name}</b><br/>${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
-            <span class="ie-star-popup">★ IE Partner</span><br/>
+            <span class="ie-star-popup">★ IE Member</span><br/>
             ${partner.link ? `<a class="popup-link" href="${partner.link}" target="_blank">Visit website</a>` : ''}
             <div class="popup-action"><button class="popup-details-btn">View Statistics</button></div>
           `)
@@ -266,7 +267,7 @@ const load_ie_partners = async (): Promise<L.LayerGroup> => {
         });
       });
     });
-  } catch (error) { console.error('Error loading IE partners:', error); }
+  } catch (error) { console.error('Error loading IE member:', error); }
   return iePartnersLayer;
 };
 
@@ -314,7 +315,7 @@ const buildCombinedLayer = (): L.LayerGroup => {
       const marker = L.marker([partner.lat, partner.lon], { icon: GreenIcon, zIndexOffset: 1000 })
           .bindPopup(`
           <b>${partner.uni_name}</b><br/>${partner.dept_name ? `<span>${partner.dept_name}</span><br/>` : ''}
-          <span class="ie-star-popup">★ IE Partner</span><br/>
+          <span class="ie-star-popup">★ IE Member</span><br/>
           ${partner.link ? `<a class="popup-link" href="${partner.link}" target="_blank">Visit website</a>` : ''}
           <div class="popup-action"><button class="popup-details-btn">View Statistics</button></div>
         `)
@@ -409,7 +410,7 @@ onMounted(async () => {
   map.on('overlayadd', syncLayerContents);
   map.on('overlayremove', syncLayerContents);
 
-  const overlays: Record<string, L.Layer> = { 'Universities': unisWrapper, 'IE Partners': ieWrapper, 'Borders': allBordersLayer };
+  const overlays: Record<string, L.Layer> = { 'Universities': unisWrapper, 'IE Members': ieWrapper, 'Borders': allBordersLayer };
   allBordersLayer.addTo(map);
   unisWrapper.addTo(map);
 
