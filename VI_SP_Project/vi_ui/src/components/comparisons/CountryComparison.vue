@@ -9,34 +9,40 @@ const props = defineProps<{
   targetData: any;
 }>();
 
-const chartOptions = {
+// 1. Options for Total Enrollment Comparison
+const enrollmentChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'top' as const
-    }
+  plugins: { legend: { position: 'top' as const } },
+  scales: {
+    x: { title: { display: true, text: 'Academic Year', font: { weight: 'bold' } } },
+    y: { beginAtZero: true, title: { display: true, text: 'Number of Students', font: { weight: 'bold' } } }
   }
 };
 
+// 2. Options for Degrees Awarded Comparison
+const degreesChartOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: { legend: { position: 'top' as const } },
+  scales: {
+    x: { title: { display: true, text: 'Academic Year', font: { weight: 'bold' } } },
+    y: { beginAtZero: true, title: { display: true, text: 'Degrees Awarded', font: { weight: 'bold' } } }
+  }
+};
+
+// 3. Options for Gender Parity (Female Representation)
 const pipelineChartOptions = {
   responsive: true,
   maintainAspectRatio: false,
-
-  plugins: {
-    legend: {
-      position: 'top' as const
-    }
-  },
-
+  plugins: { legend: { position: 'top' as const } },
   scales: {
+    x: { title: { display: true, text: 'Academic Year', font: { weight: 'bold' } } },
     y: {
       beginAtZero: true,
-
+      title: { display: true, text: 'Percentage (%)', font: { weight: 'bold' } },
       ticks: {
-        callback: function (value: any) {
-          return value + '%';
-        }
+        callback: function (value: any) { return value + '%'; }
       }
     }
   }
@@ -117,21 +123,17 @@ const countryEnrollmentChart = computed(() => {
 
   return {
     labels: years,
-
     datasets: [
       {
         label: props.baseTitle,
         backgroundColor: '#3388ff',
-
         data: years.map(
             y => Number(g1?.all?.[y]?.total || 0) || 0
         )
       },
-
       {
         label: props.targetTitle,
         backgroundColor: '#ff9800',
-
         data: years.map(
             y => Number(g2?.all?.[y]?.total || 0) || 0
         )
@@ -163,37 +165,26 @@ const countryDegreesChart = computed(() => {
 
   return {
     labels: years,
-
     datasets: [
       {
         type: 'line',
-
         label: props.baseTitle,
-
         borderColor: '#3388ff',
         backgroundColor: '#3388ff',
-
         borderWidth: 2,
         pointRadius: 4,
-
         data: years.map(
             y => Number(g1?.degrees?.[y]?.total || 0) || 0
         )
       },
-
       {
         type: 'line',
-
         label: props.targetTitle,
-
         borderColor: '#ff9800',
         backgroundColor: '#ff9800',
-
         borderWidth: 2,
         borderDash: [5, 5],
-
         pointRadius: 4,
-
         data: years.map(
             y => Number(g2?.degrees?.[y]?.total || 0) || 0
         )
@@ -242,69 +233,35 @@ const countryPipelineChart = computed(() => {
 
   return {
     labels: years,
-
     datasets: [
       {
         label: `${props.baseTitle} (BSc % Female)`,
-
         borderColor: '#1565c0',
         backgroundColor: '#1565c0',
-
-        data: buildFemaleArr(
-            props.baseData?.statistics,
-            'BSc',
-            years
-        ),
-
+        data: buildFemaleArr(props.baseData?.statistics, 'BSc', years),
         tension: 0.3
       },
-
       {
         label: `${props.baseTitle} (MSc % Female)`,
-
         borderColor: '#e65100',
         backgroundColor: '#e65100',
-
-        data: buildFemaleArr(
-            props.baseData?.statistics,
-            'MSc',
-            years
-        ),
-
+        data: buildFemaleArr(props.baseData?.statistics, 'MSc', years),
         tension: 0.3
       },
-
       {
         label: `${props.targetTitle} (BSc % Female)`,
-
         borderColor: '#1565c0',
         backgroundColor: '#1565c0',
-
         borderDash: [5, 5],
-
-        data: buildFemaleArr(
-            props.targetData?.statistics,
-            'BSc',
-            years
-        ),
-
+        data: buildFemaleArr(props.targetData?.statistics, 'BSc', years),
         tension: 0.3
       },
-
       {
         label: `${props.targetTitle} (MSc % Female)`,
-
         borderColor: '#e65100',
         backgroundColor: '#e65100',
-
         borderDash: [5, 5],
-
-        data: buildFemaleArr(
-            props.targetData?.statistics,
-            'MSc',
-            years
-        ),
-
+        data: buildFemaleArr(props.targetData?.statistics, 'MSc', years),
         tension: 0.3
       }
     ]
@@ -320,61 +277,30 @@ const countryPipelineChart = computed(() => {
       </label>
 
       <div class="pill-container">
-        <button
-            v-for="l in countryLevels"
-            :key="l"
-            @click="selectedCountryLevel = l"
-            class="pill-btn"
-            :class="{
-            active: selectedCountryLevel === l
-          }"
-        >
+        <button v-for="l in countryLevels" :key="l" @click="selectedCountryLevel = l" class="pill-btn" :class="{active: selectedCountryLevel === l}">
           {{ l }}
         </button>
       </div>
     </div>
 
-    <div
-        class="landscape-card"
-        v-if="countryEnrollmentChart"
-    >
+    <div class="landscape-card" v-if="countryEnrollmentChart">
       <h3>Total Enrollment Comparison</h3>
-
       <div class="chart-container landscape-chart">
-        <Bar
-            :data="countryEnrollmentChart"
-            :options="chartOptions"
-        />
+        <Bar :data="countryEnrollmentChart" :options="enrollmentChartOptions"/>
       </div>
     </div>
 
-    <div
-        class="landscape-card"
-        v-if="countryDegreesChart"
-    >
+    <div class="landscape-card" v-if="countryDegreesChart">
       <h3>Degrees Awarded Comparison</h3>
-
       <div class="chart-container landscape-chart">
-        <Line
-            :data="countryDegreesChart"
-            :options="chartOptions"
-        />
+        <Line :data="countryDegreesChart" :options="degreesChartOptions"/>
       </div>
     </div>
 
-    <div
-        class="landscape-card"
-        v-if="countryPipelineChart"
-    >
-      <h3>
-        Gender Parity Comparison (% Female)
-      </h3>
-
+    <div class="landscape-card" v-if="countryPipelineChart">
+      <h3>Female Representation Comparison (% Female)</h3>
       <div class="chart-container landscape-chart">
-        <Line
-            :data="countryPipelineChart"
-            :options="pipelineChartOptions"
-        />
+        <Line :data="countryPipelineChart" :options="pipelineChartOptions"/>
       </div>
     </div>
   </div>
@@ -383,7 +309,6 @@ const countryPipelineChart = computed(() => {
 <style scoped>
 .dataset-selector {
   margin-bottom: 20px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -392,9 +317,7 @@ const countryPipelineChart = computed(() => {
 
 .dataset-selector label {
   display: block;
-
   margin-bottom: 8px;
-
   font-weight: bold;
 }
 
@@ -405,17 +328,12 @@ const countryPipelineChart = computed(() => {
 
 .pill-btn {
   padding: 6px 16px;
-
   border-radius: 20px;
   border: 1px solid #ccc;
-
   background: white;
-
   cursor: pointer;
-
   font-size: 13px;
   font-weight: 600;
-
   color: #666;
 }
 
@@ -427,22 +345,16 @@ const countryPipelineChart = computed(() => {
 
 .landscape-card {
   margin-bottom: 30px;
-
   background: white;
-
   padding: 20px;
-
   border-radius: 8px;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 .landscape-card h3 {
   margin: 0 0 16px 0;
-
   font-size: 16px;
   color: #333;
-
   text-align: center;
 }
 

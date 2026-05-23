@@ -57,7 +57,6 @@ const enrollmentChartData = computed(() => {
 
   const datasets: any[] = [];
 
-  // --- RESTORED: BASE COUNTRY STACKING LOGIC ---
   const baseHasFirst = !!group?.first;
   if (group?.all) {
     const firstData: number[] = [];
@@ -83,7 +82,6 @@ const enrollmentChartData = computed(() => {
     }
   }
 
-  // --- RESTORED: COMPARE COUNTRY STACKING LOGIC ---
   if (props.compareTitle && compGroup?.all) {
     const compHasFirst = !!compGroup?.first;
     const compFirstData: number[] = [];
@@ -112,7 +110,13 @@ const enrollmentChartData = computed(() => {
   return { labels: years, datasets };
 });
 
-const enrollmentChartOptions = { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' as const } }, scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true } } };
+const enrollmentChartOptions = {
+  responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' as const } },
+  scales: {
+    x: { stacked: true, title: { display: true, text: 'Academic Year', font: { weight: 'bold' } } },
+    y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Number of Students', font: { weight: 'bold' } } }
+  }
+};
 
 const degreesChartData = computed(() => {
   const group = groupedStats.value[selectedLevel.value];
@@ -132,7 +136,13 @@ const degreesChartData = computed(() => {
   return { labels: years, datasets };
 });
 
-const degreesChartOptions = { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index' as const, intersect: false }, plugins: { legend: { position: 'top' as const } }, scales: { y: { beginAtZero: true } } };
+const degreesChartOptions = {
+  responsive: true, maintainAspectRatio: false, interaction: { mode: 'index' as const, intersect: false }, plugins: { legend: { position: 'top' as const } },
+  scales: {
+    x: { title: { display: true, text: 'Academic Year', font: { weight: 'bold' } } },
+    y: { beginAtZero: true, title: { display: true, text: 'Degrees Awarded', font: { weight: 'bold' } } }
+  }
+};
 
 // ==========================================
 // 2. PIPELINE / GENDER CHARTS
@@ -149,6 +159,7 @@ const pipelineChartData = computed(() => {
     if (stats) Object.values(stats).forEach(ds => Object.keys(ds as any).forEach(y => yearSet.add(y)));
   });
   const years = Array.from(yearSet).sort();
+  if (!years.length) return null;
 
   const datasets = [
     { label: `${props.title} (BSc)`, borderColor: '#1565c0', backgroundColor: '#1565c0', data: buildFemaleArr(props.data?.statistics, 'BSc', years), tension: 0.3 },
@@ -166,7 +177,10 @@ const pipelineChartData = computed(() => {
 
 const pipelineChartOptions = {
   responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'top' as const } },
-  scales: { y: { beginAtZero: true, ticks: { callback: function(value: any) { return value + '%'; } } } }
+  scales: {
+    x: { title: { display: true, text: 'Academic Year', font: { weight: 'bold' } } },
+    y: { beginAtZero: true, title: { display: true, text: 'Percentage (%)', font: { weight: 'bold' } }, ticks: { callback: function(value: any) { return value + '%'; } } }
+  }
 };
 
 // ==========================================
@@ -192,7 +206,6 @@ const landscapeInsights = computed(() => {
   if (!props.allCountriesData || !selectedLandscapeYear.value) return null;
   const countriesStats = [];
   const targetYear = selectedLandscapeYear.value;
-
   let baseCountryHasData = false;
 
   for (const [countryName, details] of Object.entries(props.allCountriesData)) {
@@ -209,9 +222,7 @@ const landscapeInsights = computed(() => {
     const totalStudents = bscTotal + mscTotal + phdTotal;
 
     if (totalStudents > 0) {
-
       if (countryName === props.title) baseCountryHasData = true;
-
       const popM = pop / 1000000;
       countriesStats.push({
         country: countryName, bsc: bscTotal, msc: mscTotal, phd: phdTotal,
@@ -220,9 +231,7 @@ const landscapeInsights = computed(() => {
       });
     }
   }
-
   if (!baseCountryHasData) return null;
-
   return { byDensity: [...countriesStats].sort((a, b) => b.density - a.density), byTotal: [...countriesStats].sort((a, b) => b.total - a.total) };
 });
 
@@ -249,6 +258,7 @@ const landscapeDonutOptions = { responsive: true, maintainAspectRatio: false, cu
 
 const landscapeDensityChartData = computed(() => {
   const data = landscapeInsights.value?.byDensity || [];
+  if (data.length === 0) return null;
   return {
     labels: data.map(d => d.country),
     datasets: [
@@ -261,6 +271,7 @@ const landscapeDensityChartData = computed(() => {
 
 const landscapeTotalChartData = computed(() => {
   const data = landscapeInsights.value?.byTotal || [];
+  if (data.length === 0) return null;
   return {
     labels: data.map(d => d.country),
     datasets: [
@@ -271,30 +282,37 @@ const landscapeTotalChartData = computed(() => {
   };
 });
 
-const landscapeOptions = computed(() => ({
-  responsive: true,
-  maintainAspectRatio: false,
-  interaction: { mode: 'index' as const, intersect: false },
-  plugins: { legend: { display: true, position: 'top' as const } },
-  scales: {
-    x: {
-      stacked: true,
-      ticks: {
-        color: (context: any) => {
-          const idx = context.index !== undefined ? context.index : context.tick?.value;
-          const label = context.chart?.data?.labels?.[idx];
-          return label === props.title || label === props.compareTitle ? '#000' : '#666';
-        },
-        font: (context: any) => {
-          const idx = context.index !== undefined ? context.index : context.tick?.value;
-          const label = context.chart?.data?.labels?.[idx];
-          return { weight: label === props.title || label === props.compareTitle ? 'bold' : 'normal' };
+// Helper function to build the landscape options so we can easily swap the Y-axis title
+const getLandscapeOptions = (yAxisTitle: string) => {
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: { mode: 'index' as const, intersect: false },
+    plugins: { legend: { display: true, position: 'top' as const } },
+    scales: {
+      x: {
+        stacked: true,
+        title: { display: true, text: 'Country', font: { weight: 'bold' } },
+        ticks: {
+          color: (context: any) => {
+            const idx = context.index !== undefined ? context.index : context.tick?.value;
+            const label = context.chart?.data?.labels?.[idx];
+            return label === props.title || label === props.compareTitle ? '#000' : '#666';
+          },
+          font: (context: any) => {
+            const idx = context.index !== undefined ? context.index : context.tick?.value;
+            const label = context.chart?.data?.labels?.[idx];
+            return { weight: label === props.title || label === props.compareTitle ? 'bold' : 'normal' };
+          }
         }
-      }
-    },
-    y: { stacked: true, beginAtZero: true }
-  }
-}));
+      },
+      y: { stacked: true, beginAtZero: true, title: { display: true, text: yAxisTitle, font: { weight: 'bold' } } }
+    }
+  };
+};
+
+const densityOptions = computed(() => getLandscapeOptions('Students per Million'));
+const absoluteOptions = computed(() => getLandscapeOptions('Number of Students'));
 </script>
 
 <template>
@@ -312,14 +330,19 @@ const landscapeOptions = computed(() => ({
           <button v-for="level in availableLevels" :key="level" @click="selectedLevel = level" class="pill-btn" :class="{ 'active': selectedLevel === level }">{{ level }}</button>
         </div>
       </div>
+
       <div v-if="enrollmentChartData" class="landscape-card">
         <h3>Enrollment Trends</h3>
+        <p class="landscape-intro" style="margin-top: -10px;">Visualizing the total number of enrolled students across academic years.</p>
         <div class="chart-container landscape-chart"><Bar :data="enrollmentChartData" :options="enrollmentChartOptions" /></div>
       </div>
+
       <div v-if="degreesChartData" class="landscape-card">
         <h3>Degrees Awarded</h3>
+        <p class="landscape-intro" style="margin-top: -10px;">Visualizing the total number of degrees successfully awarded each academic year.</p>
         <div class="chart-container landscape-chart"><Line :data="degreesChartData" :options="degreesChartOptions" /></div>
       </div>
+
       <div class="footnotes-section" v-if="data?.footnotes?.length > 0">
         <hr />
         <div class="footnotes-header" @click="showNotes = !showNotes">
@@ -336,9 +359,9 @@ const landscapeOptions = computed(() => ({
     </div>
 
     <div v-if="activeTab === 'pipeline'" class="tab-pane">
-      <p class="landscape-intro">Visualizing the proportion of female students across BSc and MSc levels.</p>
       <div v-if="pipelineChartData" class="landscape-card">
         <h3>Trend in Female Representation</h3>
+        <p class="landscape-intro" style="margin-top: -10px;">Visualizing the proportion of female students across BSc and MSc levels.</p>
         <div class="chart-container main-chart"><Line :data="pipelineChartData" :options="pipelineChartOptions" /></div>
       </div>
     </div>
@@ -361,27 +384,26 @@ const landscapeOptions = computed(() => ({
       <div v-else>
         <div class="landscape-card">
           <h3>European Student Distribution ({{ selectedLandscapeYear }})</h3>
+          <p class="landscape-intro" style="margin-top: -10px;">Visualizing the proportional distribution of the European student population.</p>
           <div class="chart-container donut-chart-container">
             <Doughnut :data="landscapeDonutChartData" :options="landscapeDonutOptions" />
           </div>
         </div>
-
         <hr style="margin: 30px 0;" />
 
         <div class="landscape-card">
           <h3>National Density ({{ selectedLandscapeYear }})</h3>
-          <div class="chart-container landscape-chart">
-            <Bar :data="landscapeDensityChartData" :options="landscapeOptions" />
-          </div>
+          <p class="landscape-intro" style="margin-top: -10px;">Visualizing the number of enrolled students normalized per one million inhabitants.</p>
+          <div class="chart-container landscape-chart"><Bar :data="landscapeDensityChartData" :options="densityOptions" /></div>
         </div>
 
         <div class="landscape-card">
           <h3>Absolute Scale ({{ selectedLandscapeYear }})</h3>
-          <div class="chart-container landscape-chart">
-            <Bar :data="landscapeTotalChartData" :options="landscapeOptions" />
-          </div>
+          <p class="landscape-intro" style="margin-top: -10px;">Visualizing the total number of enrolled students per country.</p>
+          <div class="chart-container landscape-chart"><Bar :data="landscapeTotalChartData" :options="absoluteOptions" /></div>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -414,4 +436,5 @@ hr { border: 0; height: 1px; background: #ddd; margin: 20px 0; }
 .footnote-card { background: #f8f9fa; border-left: 4px solid #3388ff; padding: 12px; margin-bottom: 10px; border-radius: 0 6px 6px 0; }
 .footnote-title { font-weight: 600; font-size: 12px; color: #3388ff; margin-bottom: 4px; }
 .footnote-text { font-size: 12px; color: #555; line-height: 1.4; white-space: pre-wrap; }
+.no-data-state { padding: 40px; text-align: center; color: #666; font-size: 14px; background: #f8f9fa; border-radius: 8px;}
 </style>

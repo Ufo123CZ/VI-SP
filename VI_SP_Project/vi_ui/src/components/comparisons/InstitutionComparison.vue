@@ -9,13 +9,25 @@ const props = defineProps<{
   targetData: any;
 }>();
 
-const chartOptions = {
+// 1. Specific Options for Informatics Europe (Member) Data
+const instMemberOptions = {
   responsive: true,
   maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'top' as const
-    }
+  plugins: { legend: { position: 'top' as const } },
+  scales: {
+    x: { title: { display: true, text: 'Degree Level', font: { weight: 'bold' } } },
+    y: { beginAtZero: true, title: { display: true, text: 'Number of Students', font: { weight: 'bold' } } }
+  }
+};
+
+// 2. Specific Options for ETER Historical Data
+const instEterOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: { legend: { position: 'top' as const } },
+  scales: {
+    x: { title: { display: true, text: 'Academic Year', font: { weight: 'bold' } } },
+    y: { beginAtZero: true, title: { display: true, text: 'Number of Students', font: { weight: 'bold' } } }
   }
 };
 
@@ -125,44 +137,26 @@ const eterEnrollmentChart = computed(() => {
         Current Enrollment (Informatics Europe)
       </h3>
 
-      <div
-          v-if="!hasAnyMemberData"
-          class="empty-state"
-      >
-        No data available
+      <div v-if="!hasAnyMemberData" class="empty-state">
+        No Informatics Europe data available for these institutions.
       </div>
 
-      <div
-          v-else
-          class="chart-container landscape-chart"
-      >
-        <Bar
-            :data="instEnrollmentChart!"
-            :options="chartOptions"
-        />
+      <div v-else class="chart-container landscape-chart">
+        <Bar :data="instEnrollmentChart!" :options="instMemberOptions"/>
       </div>
     </div>
 
     <div class="landscape-card">
       <h3>
-        Historical Enrollment (ETER)
+        Enrollment (ETER)
       </h3>
 
-      <div
-          v-if="!hasAnyEterData"
-          class="empty-state"
-      >
-        No data available
+      <div v-if="!hasAnyEterData" class="empty-state">
+        No ETER data available for these institutions.
       </div>
 
-      <div
-          v-else
-          class="chart-container landscape-chart"
-      >
-        <Bar
-            :data="eterEnrollmentChart!"
-            :options="chartOptions"
-        />
+      <div v-else class="chart-container landscape-chart">
+        <Bar :data="eterEnrollmentChart!" :options="instEterOptions"/>
       </div>
     </div>
   </div>
@@ -171,22 +165,16 @@ const eterEnrollmentChart = computed(() => {
 <style scoped>
 .landscape-card {
   margin-bottom: 30px;
-
   background: white;
-
   padding: 20px;
-
   border-radius: 8px;
-
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 .landscape-card h3 {
   margin: 0 0 16px 0;
-
   font-size: 16px;
   color: #333;
-
   text-align: center;
 }
 
@@ -197,11 +185,9 @@ const eterEnrollmentChart = computed(() => {
 
 .empty-state {
   text-align: center;
-
   padding: 40px;
-
-  color: #777;
-
-  font-style: italic;
+  color: #d32f2f;
+  background: #ffebee;
+  border-radius: 8px;
 }
 </style>
