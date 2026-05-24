@@ -37,23 +37,30 @@ VI-SP combines geographic mapping, choropleth visualization, and statistical cha
 
 ```
 VI-SP/
-├── VI_SP_Project/vi_ui/     # Vue 3 frontend application
-│   └── src/
-│       ├── components/      # Map, panels, modals, search header
-│       └── types/           # TypeScript type definitions
-├── uni_data_parser/         # Excel → JSON parser for member statistics
-├── ie_uni_crawler/          # Scraper for IE partnership data + geocoding
-├── eter_data_parser/        # ETER dataset parser (enrollment/graduation)
-├── uni_locator/             # Department-level geocoder (YAML → JSON)
-├── data/                    # Raw YAML source data per country
-├── geoJSON/                 # Country boundary GeoJSON files
-└── VI_SP_Project/vi_ui/public/
-    ├── borders/             # Country boundary data
-    ├── unis/                # University + department data per country
-    ├── eter_data/           # ETER enrollment/graduation data
-    ├── members_data/        # Parsed member statistics
-    ├── countries_data/      # Country-level aggregated metrics
-    └── ie_members/          # IE partnership network data
+├── VI_SP_Project/vi_ui/          # Vue 3 frontend application
+│   ├── src/
+│   │   ├── components/           # Map, panels, modals, search header
+│   │   │   ├── comparisons/      # Country & institution comparison views
+│   │   │   └── details/          # Country & institution detail views
+│   │   ├── types/                # TypeScript type definitions
+│   │   └── utils/                # Composables (useChoropleth)
+│   └── public/                   # Static data served at runtime
+│       ├── borders/              # Country boundary data
+│       ├── unis/                 # University + department data per country
+│       ├── eter_data/            # ETER enrollment/graduation data
+│       ├── members_data/         # Parsed member statistics
+│       ├── countries_data/       # Country-level aggregated metrics
+│       └── ie_members/           # IE partnership network data
+├── uni_data_parser/              # Excel → JSON parser for member statistics
+├── ie_uni_crawler/               # Scraper for IE partnership data + geocoding
+├── eter_data_parser/             # ETER dataset parser (enrollment/graduation)
+├── uni_locator/                  # Department-level geocoder (YAML → JSON)
+├── data/                         # Raw source data (YAML per country, Excel)
+├── geoJSON/                      # Country boundary GeoJSON sources
+├── documentaions/                # Documentation sources and compiled PDF
+├── notes/                        # Development notes
+├── docker-compose.yml            # Docker configuration for production deployment
+└── README.md                     # Project documentation
 ```
 
 ## Getting Started

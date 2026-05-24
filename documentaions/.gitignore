@@ -23,5 +23,5 @@
 !*.pdf
 !**/*.pdf
 # But ignore PDFs inside doc/ and poster/ directories
-doc/**/*.pdf
-poster/**/*.pdf
+doc_scr/**/*.pdf
+poster_src/**/*.pdf

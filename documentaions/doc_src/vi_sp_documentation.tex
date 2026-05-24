@@ -27,8 +27,8 @@
 \address{Department of Computer Science and Engineering, Faculty of Applied Sciences, University of West Bohemia, Plze\v{n}, Czech Republic}
 
 \begin{abstract}
-This paper presents a semester project on developing an interactive web-based application for exploring informatics education data across European universities. The platform integrates geographic mapping, choropleth visualizations, and statistical charts to enable analysis of student enrollment, graduation rates, and gender participation at both country and institutional levels. 
-Data from Informatics Europe (IE) member institutions, the European Tertiary Education Register (ETER), and manually curated national sources are processed by a Python pipeline into static JSON files consumed by a Vue~3 single-page application. The system allows users to search and filter over 200 institutions, compare any two countries or institutions side by side, and examine trends across Bachelor's, Master's, and doctoral programmes.
+This paper presents a semester project on developing an interactive web-based application for exploring informatics education data across European institutions. The platform integrates geographic mapping, choropleth visualizations, and statistical charts to enable analysis of student enrollment, graduation rates, and female representation at both country and institutional levels. 
+Data from Informatics Europe (IE) member institutions, the European Tertiary Education Register (ETER), and manually curated sources are processed by a Python pipeline into static JSON files consumed by a Vue~3 single-page application. The system allows users to search and filter over 200 institutions, compare any two countries or institutions side by side, and examine trends across Bachelor's, Master's, and doctoral programmes.
 \end{abstract}
 
 \begin{keyword}
@@ -43,11 +43,11 @@ information visualization \sep educational statistics \sep Informatics Europe \s
 \section{Introduction}
 % -------------------------------------------------------
 
-Understanding the state of informatics education across Europe is critical for academics, policy makers, and institutions that wish to benchmark their performance and identify structural trends. Informatics Europe (IE) is the professional association of computer science and informatics research and education institutions in Europe, and it maintains a network of member universities along with longitudinal data on student enrollment, degrees awarded, and gender participation at Bachelor's, Master's, and doctoral levels.
+Understanding the state of informatics education across Europe is critical for academics, policy makers, and institutions that wish to benchmark their performance and identify structural trends. Informatics Europe (IE) is the professional association of computer science and informatics research and education institutions in Europe, and it maintains a network of member universities along with time-series data on student enrollment, degrees awarded, and female representation at Bachelor's, Master's, and doctoral levels.
 
 Despite the richness of this dataset, it is currently stored in Excel spreadsheets and accessed through manual queries, making it difficult to identify geographic patterns, compare institutions across countries, or observe multi-year trends without significant manual effort. The same challenge applies to the European Tertiary Education Register (ETER), a comprehensive registry of European higher-education institutions that provides enrollment and graduation statistics across all disciplines but requires specialist tooling to navigate.
 
-This work addresses these limitations by providing a unified, browser-based interface that transforms raw spreadsheet data into interactive visualizations. The platform targets three user groups: researchers studying trends in informatics education, university administrators benchmarking against peer institutions, and IE staff monitoring the coverage and health of their network.
+This work addresses these limitations by providing a unified, browser-based interface that transforms raw spreadsheet data into interactive visualizations. The application serves researchers, university administrators, and IE staff who need accessible, visual insight into the state of informatics education across Europe.
 
 The contributions of this work are:
 \begin{itemize}
@@ -61,6 +61,8 @@ The contributions of this work are:
 \section{Related Work}
 \label{sec:relatedwork}
 % -------------------------------------------------------
+
+This section reviews work related to three aspects of this project: existing platforms for exploring higher-education data in Europe, research on the gender gap in informatics education that motivates the gender-focused visualizations, and established techniques in geospatial and statistical visualization that informed the design choices made in this work.
 
 \subsection{Existing Higher-Education Data Portals}
 
@@ -84,6 +86,8 @@ Leaflet~\cite{Leaflet} has become the de facto open-source JavaScript library fo
 \section{Methods}
 \label{sec:methods}
 % -------------------------------------------------------
+
+This section describes how the application was designed and implemented. It covers the overall system architecture, the offline Python data pipeline responsible for collecting and transforming raw data into static JSON files, the frontend Vue components that render those files as interactive maps and charts, the data sources integrated by the system, and the deployment setup.
 
 \subsection{System Architecture}
 
@@ -142,13 +146,13 @@ Figure~\ref{fig:architecture} outlines the data flow from raw sources to the use
   \texttt{CompareModal}
 };
 
-\draw[->, very thick, gray!55] (src.east)  -- node[above, font=\scriptsize, black]{offline} (pipe.west);
+\draw[->, very thick, gray!55] (src.east)  -- (pipe.west);
 \draw[->, very thick, gray!55] (pipe.east) -- (json.west);
-\draw[->, very thick, gray!55] (json.east) -- node[above, font=\scriptsize, black]{HTTP fetch} (vue.west);
+\draw[->, very thick, gray!55] (json.east) -- (vue.west);
 
 \end{tikzpicture}%
 }
-\caption{High-level architecture. Offline Python scripts transform raw data from Excel, YAML, and web sources into static JSON files. The Vue~3 SPA fetches these files at runtime and renders them as interactive maps and charts.}
+\caption{Diagram of data flow. Offline Python scripts transform raw data from Excel, YAML, and web sources into static JSON files. The Vue~3 SPA fetches these files at runtime and renders them as interactive maps and charts.}
 \label{fig:architecture}
 \end{figure*}
 
@@ -160,28 +164,30 @@ The pipeline consists of four independent Python scripts, each responsible for o
 
 \textbf{University Data Parser} (\texttt{uni\_data\_parser/}): Reads the \texttt{Members-DATA} Excel workbook using \texttt{pandas} and \texttt{openpyxl}. It extracts per-institution BSc, MSc, and PhD statistics (total enrolled, first-year cohort, degrees awarded, female counts) across all available years. Country-level aggregates are computed and population data is fetched from the Wikidata SPARQL endpoint to enable per-capita metrics. Outputs are \texttt{members\_parsed.json} and \texttt{countries\_parsed.json}.
 
-\textbf{ETER Data Parser} (\texttt{eter\_data\_parser/}): Reads the ETER export files and reconciles institution names with the IE member list using fuzzy string matching (\texttt{thefuzz} library) to link ETER enrollment and graduation records to known IE institutions. Output is \texttt{eter\_parsed.json}.
+\textbf{ETER Data Parser} (\texttt{eter\_data\_parser/}): Reads the ETER export files\footnote{Data available at: \url{https://eter-project.com/data/data-for-download-and-visualisations/database/}} and reconciles institution names with the IE member list using fuzzy string matching (\texttt{thefuzz} library) to link ETER enrollment and graduation records to known IE institutions. Output is \texttt{eter\_parsed.json}.
 
 Not all ETER columns are retained — only fields relevant to the application are extracted. Table~\ref{tab:eter_fields} in the Attachments lists the selected fields grouped by category.
 
-\textbf{University Locator} (\texttt{uni\_locator/}): Processes manually curated YAML files for countries where Excel data is insufficient (Czech Republic, Germany, Norway, Portugal, Latvia) to identify and geocode individual departments within universities. Outputs are per-country GeoJSON files in \texttt{public/unis/}.
+\textbf{University Locator} (\texttt{uni\_locator/}): Processes manually curated YAML files for countries (Czech Republic, Germany, Norway, Portugal, Latvia) are used to identify and geocode individual departments within universities. Outputs are per-country GeoJSON files in \texttt{public/unis/}.
+
+\textbf{Country Border Fetcher}: Country boundary polygons used by the choropleth and leaflet layers are sourced from the GeoJSON Maps service\footnote{\url{https://geojson-maps.kyd.au/}} at the highest available resolution (10m precision). Each country's border is downloaded as a separate GeoJSON file and stored in \texttt{public/borders/}, keeping the per-country files independent so that only the borders of currently visible countries need to be loaded by the frontend at runtime.
 
 \subsection{Frontend Application}
 
 The frontend is built with Vue~3 and TypeScript, bundled with Vite, and served in production by nginx on Alpine Linux via a two-stage Docker build.
 
-\textbf{Interactive Map} (\texttt{LeafletMap.vue}): The central component renders a Leaflet~1.9 map with three toggleable marker layers: standard universities (blue), IE member institutions (red), and a combined view (green). Markers are clustered using the Leaflet.markercluster plugin to handle dense regions. Clicking a marker opens the detail modal for that institution. A \textit{fly-to} animation is triggered when the user selects an item from the search results.
+\textbf{Interactive Map} (\texttt{LeafletMap.vue}): The central component renders a Leaflet~1.9 map with two toggleable marker layers: standard institutions (blue), IE member institutions (green). When institution is selected marker will be red. Markers are clustered using the Leaflet.markercluster plugin to handle dense regions. Clicking a marker opens the detail modal for that institution. A \textit{fly-to} animation is triggered when the user selects an item from the search results.
 
 \textbf{Choropleth Panel} (\texttt{ChoroplethPanel.vue} + \texttt{useChoropleth.ts}): Country boundaries are loaded as GeoJSON and colored according to a selected dataset (BSc/MSc/PhD $\times$ enrolled/first-year/degrees awarded) and metric (total count, female count, female share, or count per~$10^6$ population). A diverging color scale maps values to a gradient from light to saturated hue. The year selector auto-detects the most data-complete year for the chosen dataset.
 
 \textbf{Search and Filtering} (\texttt{SearchHeader.vue}): A real-time text search queries a flat list of all universities and departments. Results are filtered by country (dropdown) and IE-membership status (toggle). IE members are indicated with a star icon in the results list.
 
-\textbf{Detail and Comparison Modals} (\texttt{InfoModal.vue}, \texttt{CompareModal.vue}): Opening a country or institution triggers a modal that dynamically loads parsed data and renders statistical charts using Chart.js. Distinct visual encodings are chosen to suit each variable:
+\textbf{Detail and Comparison Modals} (\texttt{InfoModal.vue}, \texttt{CompareModal.vue}): Opening a country or institution triggers a modal that dynamically loads parsed data and renders statistical charts using Chart.js. Visual encodings are chosen to suit each variable:
 \begin{itemize}
     \item \textbf{Stacked bar charts} decompose total enrollment into constituent cohorts. For BSc programs, bars distinguish incoming first-year students from returning cohorts to illustrate retention; for European-context views, bars represent aggregate enrollment across BSc, MSc, and PhD programs per country.
-    \item \textbf{Line charts} track longitudinal profile variables over time, including total degrees awarded per year and the percentage of female students across degree levels.
+    \item \textbf{Line charts} track time-series data profile variables over time, including total degrees awarded per year and the percentage of female students across degree levels.
     \item \textbf{Doughnut charts} visualize each country's proportional share of the total European student population for a selected academic year.
-    \item \textbf{Normalized density} is computed by dividing raw student totals by Wikidata population figures, yielding a students-per-million metric that reveals institutional coverage independently of country size.
+    \item \textbf{Normalized density} is computed by dividing raw student totals by Wikidata current population figures, yielding a students-per-million metric that reveals institutional coverage independently of country size.
 \end{itemize}
 The comparison mode renders two independent chart sets side by side for any selected pair of countries or institutions. Color hue differentiates degree levels (e.g., blue for BSc, orange for MSc) while line style (solid vs.\ dashed) distinguishes the two compared entities.
 
@@ -198,7 +204,7 @@ Production deployment uses Docker Compose. The \texttt{docker-compose.yml} defin
 \label{sec:results}
 % -------------------------------------------------------
 
-The deployed application visualizes informatics education data across Europe, confirming that the landscape is highly varied in both scale and density. The following subsections describe the key visualizations produced by the system. All figures are collected in the Attachments. National-level charts use France as a reference country; institution-level charts use the Instituto Polit\'{e}cnico de Leiria (Portugal).
+The deployed application visualizes informatics education data across Europe. The following subsections describe the key visualizations produced by the system. All figures are collected in the Attachments. National-level charts use France as a reference country; institution-level charts use the Instituto Polit\'{e}cnico de Leiria (Portugal).
 
 \subsection{Interactive Map and Choropleth}
 
@@ -208,9 +214,13 @@ The choropleth panel overlays country boundaries with a color scale driven by th
 
 \subsection{National Profile and Output Trends}
 
-The country detail modal exposes a country's educational profile across all available years. Figure~\ref{fig:enrollment} shows the \textit{Enrollment Trends} chart, a stacked bar chart that separates incoming first-year students from returning cohorts for BSc programs, making retention patterns immediately visible. MSc and PhD enrollments are rendered as standard single-bar charts.
+The country detail modal exposes a country's educational profile across all available years. Figure~\ref{fig:enrollment} shows the \textit{Enrollment Trends} chart, a stacked bar chart that separates incoming first-year students from returning cohorts for BSc programs, making retention patterns visible. MSc and PhD enrollments are rendered as standard single-bar charts.
 
-Figure~\ref{fig:degrees} tracks \textit{Degrees Awarded} over time via a line chart, providing a view of a country's longitudinal academic output. Figure~\ref{fig:female_rep} visualizes the \textit{Trend in Female Representation}, plotting the percentage of female students at BSc and MSc level over time and explicitly exposing persistent disparities between degree pipelines.
+Figure~\ref{fig:degrees} tracks \textit{Degrees Awarded} over time via a line chart, providing a view of a country's time-series data academic output. 
+
+\subsection{Country Female Representation}
+
+Figure~\ref{fig:female_rep} visualizes the \textit{Trend in Female Representation}, plotting the percentage of female students at BSc and MSc level over time and explicitly exposing persistent disparities between degree pipelines. The chart uses separate lines for BSc and MSc to make it immediately apparent whether the gender ratio differs between programme levels within the same country — a pattern that is not visible from enrollment totals alone. This visualization directly complements the choropleth layer: while the map shows which countries have higher female counts in a given year, this chart reveals whether those counts represent a genuine long-term trend or a short-term fluctuation.
 
 \subsection{European Context and Institutional Density}
 
@@ -220,11 +230,13 @@ Figure~\ref{fig:absolute} presents the \textit{Absolute Scale} view — a stacke
 
 \subsection{Institutional Sizing and Output}
 
-At the institutional level, the detail modal provides sizing metrics from two sources. Figure~\ref{fig:inst_ie} shows the \textit{Student Enrollment} chart from the Members-DATA source, using a grouped bar chart to juxtapose total enrollment against female enrollment across degree levels for a single academic year. This view is available only for the subset of institutions that report to Informatics Europe.
+At the institutional level, the detail modal provides sizing metrics from two sources. Figure~\ref{fig:inst_ie} shows the \textit{Student Enrollment} chart from the Members-DATA source, using a grouped bar chart to compare total enrollment against female enrollment across degree levels for a single academic year. This view is available only for the small subset of institutions that report to Informatics Europe.
 
 Figure~\ref{fig:inst_eter} tracks \textit{Enrollment Over Time} from the ETER registry using side-by-side bars to contrast BSc and MSc enrollment fluctuations across years. Figure~\ref{fig:inst_grad} extends this with a \textit{Graduates Over Time} line chart, revealing institutional output trajectories over a multi-year period.
 
 \subsection{Side-by-Side Benchmarking}
+
+When user selects some country or institution, the detail modal includes a \textit{Compare} button that opens a side-by-side view. There users can select any other country or institution to compare against the base entity.
 
 The comparison view allows users to select any two countries or institutions and view their profile variables in parallel. Figure~\ref{fig:cmp_enroll} shows \textit{Total Enrollment Comparison} between two countries using grouped, color-coded bar charts. Figure~\ref{fig:cmp_degrees} extends this to academic output via comparative line charts. Figure~\ref{fig:cmp_female} demonstrates \textit{Female Representation Comparison}, handling four simultaneous data series (BSc and MSc for two countries) using color hue to differentiate degree levels and line style (solid vs.\ dashed) to distinguish the two compared entities.
 
@@ -233,9 +245,11 @@ The comparison view allows users to select any two countries or institutions and
 \label{sec:discussion}
 % -------------------------------------------------------
 
+This section reflects on the outcomes of this work in a broader context. It first compares the application against the related systems identified in Section~\ref{sec:relatedwork}, highlighting where this work adds value and where it deliberately stays out of scope. It then examines how the gender-gap findings from the literature are made visible through the platform's visualizations. Finally, it addresses the current limitations of the system — data coverage gaps, pipeline constraints, and architectural trade-offs — that future work should consider.
+
 \subsection{Comparison with Related Systems}
 
-This work differs from the existing IE Higher Education Data Portal~\cite{IEPortal2023} primarily in its geographic dimension. Whereas the portal presents data through country-level tables and static charts, this application places every institution on an interactive map and links it to its statistical profile. The choropleth layer makes cross-country comparisons immediate, which is not possible in the tabular portal interface. At the same time, this work does not aim to replace the portal: it does not expose the full breadth of salary, staffing, or funding indicators available there, focusing instead on the enrollment, graduation, and gender metrics that benefit most from spatial and temporal visualization.
+This work differs from the existing IE Higher Education Data Portal~\cite{IEPortal2023} primarily in its geographic dimension. Whereas the portal presents data through country-level tables and static charts, this application places every institution on an interactive map and links it to its statistical profile. The choropleth layer makes cross-country comparisons immediate, which is not possible in the tabular portal interface. At the same time, this work does not aim to replace the portal: it does not expose the full range of salary, staffing, or funding indicators available there, focusing instead on the enrollment, graduation, and gender metrics that benefit most from spatial and temporal visualization.
 
 Compared to EHESO~\cite{Lepori2023}, this work is narrower in disciplinary scope (informatics only) but deeper in the IE-specific layer: geocoded departments, IE membership status, and the Members-DATA statistics are not surfaced in EHESO. The two systems are therefore complementary rather than competing.
 
@@ -253,7 +267,7 @@ The platform makes the findings of~\cite{DAngelo2024} directly accessible to non
 
 \textbf{Manual YAML curation.} Department-level data for the Czech Republic, Germany, Norway, Portugal, and Latvia depends on hand-maintained YAML files. Keeping these current requires editorial effort that scales poorly as the number of covered countries grows.
 
-\textbf{Static deployment.} The single-page application architecture simplifies hosting but precludes server-side filtering, pagination, or user-specific state that would be needed to support a significantly larger dataset or more complex query patterns.
+\textbf{Static deployment.} The single-page application architecture simplifies hosting but prevents server-side filtering, pagination, or user-specific state that would be needed to support a significantly larger dataset or more complex query patterns.
 
 % -------------------------------------------------------
 \section{Future Work}
@@ -272,7 +286,7 @@ Several directions could extend the current platform:
 
 \textbf{Mobile optimization}: The current layout is designed for desktop browsers. Responsive breakpoints and touch-friendly controls for the map and modals would improve usability on smaller screens.
 
-\textbf{Export functionality}: Allowing users to export filtered datasets as CSV or the current chart view as PNG would improve the platform's utility for researchers preparing reports.
+\textbf{Export functionality}: Allowing users to export filtered datasets as CSV or the current chart view as PNG or PDF would improve the platform's utility for researchers preparing reports.
 
 % -------------------------------------------------------
 \section*{Acknowledgement}
@@ -342,7 +356,7 @@ OSM Nominatim API & University and department geographic coordinates \\
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/europe_map.png}
-    \caption{Interactive map of Europe showing all universities and departments as clustered markers. Cluster size reflects the number of institutions in the area; clusters expand on zoom or click to reveal individual markers. Blue markers represent general universities; red markers indicate Informatics Europe member institutions.}
+    \caption{Interactive map of Europe showing all universities and departments as clustered markers. Cluster size reflects the number of institutions in the area; clusters expand on zoom or click to reveal individual markers. Blue markers represent general institutions, green markers indicate IE members. In this view the IE member institutions and other institutions are clustered together.}
     \label{fig:europe_map}
 \end{figure*}
 
@@ -356,7 +370,7 @@ OSM Nominatim API & University and department geographic coordinates \\
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/color_map_female_10-11.png}
-    \caption{Choropleth map showing the absolute number of female BSc informatics students per country in the 2010/11 academic year. Darker color indicates a higher count. Countries with no available data are shown in grey.}
+    \caption{Choropleth map showing the absolute number of female BSc informatics students per country in the 2010/11 academic year. The greener the color, the higher the count. Countries with no available data are shown in grey.}
     \label{fig:choropleth_2010}
 \end{figure*}
 
@@ -391,63 +405,63 @@ OSM Nominatim API & University and department geographic coordinates \\
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/eu_student_distribution.png}
-    \caption{European Student Distribution: doughnut chart showing each country's proportional share of the total European informatics student population (2023/24 academic year).}
+    \caption{European Student Distribution: doughnut chart showing each country's proportional share of the total European informatics student population (2023/24 academic year). In this view the main focus in on the displaced red slice representing the country of interest (France shown).}
     \label{fig:doughnut}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/absolute_scale.png}
-    \caption{Absolute Scale: stacked bar chart of unadjusted total enrolled students (BSc, MSc, PhD) per country, illustrating sheer volume.}
+    \caption{Absolute Scale: stacked bar chart of unadjusted total enrolled students (BSc, MSc, PhD) per country, illustrating sheer volume (France shown).}
     \label{fig:absolute}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/national_density.png}
-    \caption{National Density: stacked bar chart of enrolled students per million inhabitants (BSc, MSc, PhD), normalizing for country population size.}
+    \caption{National Density: stacked bar chart of enrolled students per million inhabitants (BSc, MSc, PhD), normalizing for country population size (France shown).}
     \label{fig:density}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/student_enrollment_ie.png}
-    \caption{Student Enrollment (IE data, 2023--2024): grouped bar chart juxtaposing total and female enrollment across BSc, MSc, and PhD levels for a single institution.}
+    \caption{Student Enrollment (IE data, 2023--2024): grouped bar chart comparing total and female enrollment across BSc, MSc, and PhD levels for a single institution (Instituto Polit\'{e}cnico de Leiria (Portugal)).}
     \label{fig:inst_ie}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/student_enrollment_eter.png}
-    \caption{Enrollment Over Time (ETER data): grouped bar chart contrasting historical BSc and MSc enrollment at the institutional level.}
+    \caption{Enrollment Over Time (ETER data): grouped bar chart contrasting historical BSc and MSc enrollment at the institutional level (Instituto Polit\'{e}cnico de Leiria (Portugal)).}
     \label{fig:inst_eter}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/graduates_eter.png}
-    \caption{Graduates Over Time (ETER data): line chart tracking the historical output of successfully awarded BSc and MSc degrees at the institutional level.}
+    \caption{Graduates Over Time (ETER data): line chart tracking the historical output of successfully awarded BSc and MSc degrees at the institutional level (Instituto Polit\'{e}cnico de Leiria (Portugal)).}
     \label{fig:inst_grad}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/student_enrollment_eter_comparison.png}
-    \caption{Total Enrollment Comparison: grouped bar chart overlaying enrollment data of two countries for direct year-by-year comparison.}
+    \caption{Total Enrollment Comparison: grouped bar chart overlaying enrollment data of two countries for direct year-by-year comparison (Czech Republic and France).}
     \label{fig:cmp_enroll}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/degrees_awarded_comparison.png}
-    \caption{Degrees Awarded Comparison: line charts contrasting the historical degree output of two distinct countries.}
+    \caption{Degrees Awarded Comparison: line charts contrasting the historical degree output of two distinct countries (Czech Republic and France).}
     \label{fig:cmp_degrees}
 \end{figure*}
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width=0.92\linewidth]{images/female_representation_comparison.png}
-    \caption{Female Representation Comparison: multi-variable line chart comparing gender parity at BSc and MSc level across two countries. Solid lines represent the base country; dashed lines represent the target country; colors differentiate degree levels.}
+    \caption{Female Representation Comparison: multi-variable line chart comparing gender parity at BSc and MSc level across two countries. Solid lines represent the base country; dashed lines represent the target country; colors differentiate degree levels (Czech Republic and France).}
     \label{fig:cmp_female}
 \end{figure*}
 
