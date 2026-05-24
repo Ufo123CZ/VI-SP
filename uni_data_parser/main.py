@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import glob
 import requests
+import os
 
 def fetch_wikidata_populations(country_names):
     print("Fetching updated populations from Wikidata...")
@@ -39,7 +40,7 @@ def fetch_wikidata_populations(country_names):
         return {}
 
 
-def parse_members_data(file_path, dynamic_populations):
+def parse_members_data(file_path, dynamic_populations, output_dir):
     # Using read_excel because the file is an .xlsx
     df = pd.read_excel(file_path, header=[1, 2])
     
@@ -106,13 +107,14 @@ def parse_members_data(file_path, dynamic_populations):
         }
         members_json[uni]["data"].append(stat_entry)
         
-    with open("members_parsed.json", "w", encoding="utf-8") as f:
+    os.makedirs(output_dir, exist_ok=True)
+    with open(os.path.join(output_dir, "members_parsed.json"), "w", encoding="utf-8") as f:
         json.dump(members_json, f, indent=4, ensure_ascii=False)
     print("Successfully parsed Members data.")
 
 
-def parse_country_data(dynamic_populations):
-    excel_files = glob.glob("*_RU-UAS.xlsx")
+def parse_country_data(dynamic_populations, data_dir, output_dir):
+    excel_files = glob.glob(os.path.join(data_dir, "student-statistics", "*_RU-UAS.xlsx"))
     if not excel_files:
         print("Warning: No files ending in '_RU-UAS.xlsx' were found in this directory!")
         return
@@ -120,7 +122,7 @@ def parse_country_data(dynamic_populations):
     countries_dict = {}
     
     for file in excel_files:
-        dataset_name = file
+        dataset_name = os.path.basename(file)
         print(f"Processing {file}...")
         
         # 1. Parse Footnotes
@@ -217,19 +219,25 @@ def parse_country_data(dynamic_populations):
         except Exception as e:
             print(f"  -> Skipping data in {file}: {e}")
 
-    with open("countries_parsed.json", "w", encoding="utf-8") as f:
+    os.makedirs(output_dir, exist_ok=True)
+    with open(os.path.join(output_dir, "countries_parsed.json"), "w", encoding="utf-8") as f:
         json.dump(countries_dict, f, indent=4, ensure_ascii=False)
     print("Successfully parsed Country data.")
 
 
 if __name__ == "__main__":
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(script_dir, "..", "data")
+
     target_countries = [
-        "Austria", "Belgium", "Bulgaria", "Czech Republic", "Denmark", "Estonia", 
-        "Finland", "France", "Germany", "Greece", "Iceland", "Ireland", "Italy", 
-        "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Portugal", 
+        "Austria", "Belgium", "Bulgaria", "Czech Republic", "Denmark", "Estonia",
+        "Finland", "France", "Germany", "Greece", "Iceland", "Ireland", "Italy",
+        "Latvia", "Lithuania", "Netherlands", "Norway", "Poland", "Portugal",
         "Romania", "Spain", "Sweden", "Switzerland", "Turkey", "UK"
     ]
-    
+
+    output_dir = os.path.join(script_dir, "output")
+
     dynamic_populations = fetch_wikidata_populations(target_countries)
-    parse_members_data("Members-DATA-NO-PT.xlsx", dynamic_populations)
-    parse_country_data(dynamic_populations)
+    parse_members_data(os.path.join(data_dir, "Members-DATA-NO-PT.xlsx"), dynamic_populations, output_dir)
+    parse_country_data(dynamic_populations, data_dir, output_dir)
