@@ -2,13 +2,18 @@ import pandas as pd
 import json
 import re
 import difflib
+import os
+
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+_SOURCE_DIR = os.path.join(_SCRIPT_DIR, 'source')
+_OUTPUT_DIR = os.path.join(_SCRIPT_DIR, 'output')
 
 # Configuration: Update this with your exact ETER Excel filename
-ETER_EXCEL_FILE = 'eter-export-selected-1777372360417.xlsx'
-OUTPUT_FILE = 'eter_parsed.json'
+ETER_EXCEL_FILE = os.path.join(_SOURCE_DIR, 'eter-export-selected-1777372360417.xlsx')
+OUTPUT_FILE = os.path.join(_OUTPUT_DIR, 'eter_parsed.json')
 
 # List all your extra country JSON files here
-EXTRA_JSON_FILES = ['pt.json', 'cz.json', 'de.json', 'lv.json', 'no.json']
+EXTRA_JSON_FILES = [os.path.join(_SOURCE_DIR, name) for name in ['pt.json', 'cz.json', 'de.json', 'lv.json', 'no.json']]
 
 # Generic words that should NEVER be allowed to match as a standalone substring
 GENERIC_WORDS = [
@@ -32,7 +37,7 @@ def load_target_institutions():
 
     # 1. Load from members_parsed.json
     try:
-        with open('members_parsed.json', 'r', encoding='utf-8') as f:
+        with open(os.path.join(_SOURCE_DIR, 'members_parsed.json'), 'r', encoding='utf-8') as f:
             members = json.load(f)
             for original_name in members.keys():
                 cleaned = clean_name(original_name)
@@ -43,7 +48,7 @@ def load_target_institutions():
 
     # 2. Load from ie_partners.json
     try:
-        with open('ie_partners.json', 'r', encoding='utf-8') as f:
+        with open(os.path.join(_SOURCE_DIR, 'ie_partners.json'), 'r', encoding='utf-8') as f:
             partners_data = json.load(f)
             for country in partners_data:
                 for partner in country.get('partners', []):
@@ -169,6 +174,7 @@ def main():
                 "graduates_msc": parse_numeric(row.get('GRAD.ISCED7FOE06'))
             }
 
+    os.makedirs(_OUTPUT_DIR, exist_ok=True)
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
