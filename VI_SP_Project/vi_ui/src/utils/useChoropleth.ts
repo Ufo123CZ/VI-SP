@@ -75,6 +75,7 @@ export function useChoropleth(parsedCountriesData: ReturnType<typeof ref<ParsedD
   const dataset  = ref('');
   const year     = ref('');
   const field    = ref('ratio per 1M');
+  const appliedField = ref('ratio per 1M');
   const min      = ref(0);
   const max      = ref(1);
   const datasets = ref<string[]>([]);
@@ -127,8 +128,8 @@ export function useChoropleth(parsedCountriesData: ReturnType<typeof ref<ParsedD
   };
 
   const formatValue = (v: number): string => {
-    if (field.value === 'female %')     return `${(v * 100).toFixed(1)}%`;
-    if (field.value === 'ratio per 1M') return v.toFixed(1);
+    if (appliedField.value === 'female %')     return `${(v * 100).toFixed(1)}%`;
+    if (appliedField.value === 'ratio per 1M') return v.toFixed(1);
     return Math.round(v).toLocaleString();
   };
 
@@ -156,6 +157,7 @@ export function useChoropleth(parsedCountriesData: ReturnType<typeof ref<ParsedD
       paths.forEach(p => p.setStyle({ fillColor: color, fillOpacity: 0.7, color: '#444', weight: 1 }));
     }
 
+    appliedField.value = field.value;
     active.value = true;
   };
 
