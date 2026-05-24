@@ -1,0 +1,27 @@
+# Ignore everything in this directory and below
+*
+
+# But do not ignore directories so Git can recurse into them
+!*/
+
+# Allow TeX files anywhere in the tree
+!*.tex
+!**/*.tex
+
+# Keep the .gitignore itself
+!.gitignore
+
+# Do not ignore bibliography, class and bst files
+!*.bib
+!**/*.bib
+!*.cls
+!**/*.cls
+!*.bst
+!**/*.bst
+
+# Keep all PDF files except in doc/ and poster/ directories
+!*.pdf
+!**/*.pdf
+# But ignore PDFs inside doc/ and poster/ directories
+doc/**/*.pdf
+poster/**/*.pdf
