@@ -1,0 +1,209 @@
+# Video Script — Interactive Visualization Platform for Informatics Education Statistics
+# Target duration: ~4:00 minutes
+# 10 slides · delivery style: clear, conversational, academic — not a sales pitch
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 1 — Title  (~20 sec)
+═══════════════════════════════════════════════════════════════════
+
+Good afternoon — my name is Břetislav Milota, and together with my colleague Martin Schön
+we built an interactive web platform for exploring informatics education
+statistics across European universities.
+
+This was our semester project for Information Visualization —
+at the University of West Bohemia in Pilsen.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 2 — The Problem & Goal  (~30 sec)
+═══════════════════════════════════════════════════════════════════
+
+The problem we set out to solve is this:
+
+Informatics Europe — the association of CS and informatics
+institutions across Europe — maintains multi-year data on student
+enrollment, graduation rates, and female representation.
+
+But all of that data lives in Excel spreadsheets.
+Finding a geographic pattern, comparing two countries, or spotting a
+14-year trend requires a significant amount of work.
+
+Our goal was to turn those spreadsheets into a unified,
+interactive, browser-based platform — usable by researchers,
+administrators, and policy makers — covering over 200 institutions
+across 34 countries with 14 years of data.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 3 — Interactive Map  (~30 sec)
+═══════════════════════════════════════════════════════════════════
+
+The main entry point is a full-screen interactive map.
+
+At a continent-wide zoom, markers cluster automatically to show
+institutional density. As you zoom in, clusters expand to reveal
+individual universities — and in countries with detailed data,
+you can drill down to individual departments.
+
+Color coding keeps things readable: green markers are IE member
+institutions, blue markers are general institutions, and a selected
+marker turns red.
+
+Selecting any institution from the search bar triggers a smooth
+fly-to animation, and opens a detail modal with its full statistical profile.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 4 — Choropleth Layer  (~35 sec)
+═══════════════════════════════════════════════════════════════════
+
+Overlaid on the map is a configurable choropleth layer.
+
+You can choose any combination of degree level — Bachelor's, Master's,
+or PhD — with enrollment type, and then pick a metric: total count,
+female count, female share as a percentage, or count per million inhabitants.
+
+These two maps illustrate the point well.
+On the left: absolute female Bachelor's enrollment in 2010.
+On the right: the same metric in 2023.
+
+The colors have shifted — absolute numbers clearly grew.
+But when you switch to the female share metric, the picture barely moves.
+Thirteen years of data, and the gender ratio has remained nearly flat.
+
+That discrepancy is invisible in a table — and immediately obvious in the choropleth.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 5 — Statistical Charts: Enrollment & Degrees  (~30 sec)
+═══════════════════════════════════════════════════════════════════
+
+Clicking on any country or institution opens a detail modal with several chart types.
+
+The Enrollment Trends chart uses stacked bars to separate first-year students
+from returning cohorts — which makes retention patterns visible over time.
+
+Next to it, the Degrees Awarded chart tracks total degrees per year as a line chart,
+showing the academic output trajectory of a country.
+
+At the bottom, we also surface institution-level data from the ETER registry —
+showing enrollment and graduate counts for individual universities
+over time, which is especially useful for smaller institutions.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 6 — Statistical Charts: Gender Analysis  (~30 sec)
+═══════════════════════════════════════════════════════════════════
+
+The gender analysis view plots BSc and MSc female share on the same
+axis, with separate lines — so you can immediately see whether the gap differs
+between programme levels within the same country.
+
+And with the comparison modal, you can overlay two countries at once —
+four lines total, with colour distinguishing degree level and line style
+distinguishing the country.
+
+The key insight here is that MSc female share is consistently higher than BSc
+in most countries — yet both remain well below 30%.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 7 — Statistical Charts: European Context 1  (~25 sec)
+═══════════════════════════════════════════════════════════════════
+
+Zooming out to the European level, users can view two comparative charts.
+
+The doughnut chart shows each country's proportional share of the total
+European informatics student population.
+
+And the Absolute Scale bar chart shows raw enrollment numbers per country —
+where large nations like Germany, the UK, and Turkey naturally dominate.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 8 — Statistical Charts: European Context 2  (~25 sec)
+═══════════════════════════════════════════════════════════════════
+
+But when you normalize by population — dividing by million inhabitants —
+the ranking reverses completely.
+
+Sweden, Finland, and Greece rise to the top, while Germany and Turkey
+drop toward the bottom.
+
+And on the right, the side-by-side comparison chart lets you overlay
+two countries year by year — making it easy to benchmark any two
+nations directly against each other.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 9 — Key Findings  (~30 sec)
+═══════════════════════════════════════════════════════════════════
+
+Let me highlight three things the platform makes visible.
+
+First: the gender gap is persistent. Most European countries have
+been below 25% female at BSc level for the entire 14-year window
+— and that has barely changed.
+
+Second: growth masks stagnation. Raw female enrollment numbers grew,
+giving the impression of progress — but the relative share shows almost
+no movement.
+
+Third: population normalization reverses the country rankings completely.
+Germany and Turkey dominate the raw charts; Sweden, Finland, and Estonia
+lead the per-million view.
+
+[pause 1 sec]
+
+═══════════════════════════════════════════════════════════════════
+SLIDE 10 — Conclusion & Future Work  (~20 sec)
+═══════════════════════════════════════════════════════════════════
+
+To summarize: we built a fully static, browser-based platform that brings
+geographic, temporal, and comparative visualization to a dataset that
+previously required manual spreadsheet work to navigate.
+
+Looking ahead, this app would benefit from automated data refresh via CI/CD,
+a year-by-year choropleth animation, an institution-type filter,
+a mobile-optimized layout, and export functionality for charts and data.
+
+Thank you for watching.
+
+[END — total target: ~4:00]
+
+═══════════════════════════════════════════════════════════════════
+TIMING GUIDE
+═══════════════════════════════════════════════════════════════════
+
+Slide 1  — Title                              ~20 sec
+Slide 2  — Problem & Goal                     ~30 sec
+Slide 3  — Interactive Map                    ~30 sec
+Slide 4  — Choropleth Layer                   ~35 sec
+Slide 5  — Statistical Charts: Enrollment     ~30 sec
+Slide 6  — Statistical Charts: Gender         ~30 sec
+Slide 7  — Statistical Charts: EU Context 1   ~25 sec
+Slide 8  — Statistical Charts: EU Context 2   ~25 sec
+Slide 9  — Key Findings                       ~30 sec
+Slide 10 — Conclusion & Future Work           ~20 sec
+──────────────────────────────────────────────────────
+TOTAL                                         ~3:55 – 4:10 min
+
+Tip: read at a calm, natural pace — around 130 words/minute.
+Pauses between slides add ~10 seconds total.
+
+═══════════════════════════════════════════════════════════════════
+TYPO / GRAMMAR FIXES FROM PREVIOUS VERSION
+═══════════════════════════════════════════════════════════════════
+
+- "significant ammount fo work"  →  "significant amount of work"
+- "thes app would benefit"       →  "this app would benefit"
+- Slide 3 (Data & Architecture) was missing — now covered as the Interactive Map slide
+  since your presentation no longer has a separate architecture slide.

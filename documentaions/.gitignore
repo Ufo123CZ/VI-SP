@@ -25,3 +25,7 @@
 # But ignore PDFs inside doc/ and poster/ directories
 doc_scr/**/*.pdf
 poster_src/**/*.pdf
+
+# Keep script and presentation files
+!*.pptx
+!*.txt
