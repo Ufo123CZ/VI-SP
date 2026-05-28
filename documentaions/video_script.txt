@@ -21,11 +21,11 @@ SLIDE 2 — The Problem & Goal  (~30 sec)
 
 The problem we set out to solve is this:
 
-Informatics Europe — the association of CS and informatics
+Informatics Europe — the association of computer science and informatics
 institutions across Europe — maintains multi-year data on student
 enrollment, graduation rates, and female representation.
 
-But all of that data lives in Excel spreadsheets.
+But the data lives in Excel spreadsheets.
 Finding a geographic pattern, comparing two countries, or spotting a
 14-year trend requires a significant amount of work.
 
@@ -51,9 +51,6 @@ Color coding keeps things readable: green markers are IE member
 institutions, blue markers are general institutions, and a selected
 marker turns red.
 
-Selecting any institution from the search bar triggers a smooth
-fly-to animation, and opens a detail modal with its full statistical profile.
-
 [pause 1 sec]
 
 ═══════════════════════════════════════════════════════════════════
@@ -70,11 +67,11 @@ These two maps illustrate the point well.
 On the left: absolute female Bachelor's enrollment in 2010.
 On the right: the same metric in 2023.
 
-The colors have shifted — absolute numbers clearly grew.
+The colors have shifted — absolute numbers grew.
 But when you switch to the female share metric, the picture barely moves.
 Thirteen years of data, and the gender ratio has remained nearly flat.
 
-That discrepancy is invisible in a table — and immediately obvious in the choropleth.
+That discrepancy is invisible in a table, but visible in the choropleth.
 
 [pause 1 sec]
 
@@ -84,15 +81,11 @@ SLIDE 5 — Statistical Charts: Enrollment & Degrees  (~30 sec)
 
 Clicking on any country or institution opens a detail modal with several chart types.
 
-The Enrollment Trends chart uses stacked bars to separate first-year students
+The Enrollment Trends chart uses stacked bars to separate first-year bachelor students
 from returning cohorts — which makes retention patterns visible over time.
 
 Next to it, the Degrees Awarded chart tracks total degrees per year as a line chart,
 showing the academic output trajectory of a country.
-
-At the bottom, we also surface institution-level data from the ETER registry —
-showing enrollment and graduate counts for individual universities
-over time, which is especially useful for smaller institutions.
 
 [pause 1 sec]
 
@@ -100,8 +93,8 @@ over time, which is especially useful for smaller institutions.
 SLIDE 6 — Statistical Charts: Gender Analysis  (~30 sec)
 ═══════════════════════════════════════════════════════════════════
 
-The gender analysis view plots BSc and MSc female share on the same
-axis, with separate lines — so you can immediately see whether the gap differs
+The female representation view plots BSc and MSc female share on the same
+axis, with separate lines — so you can see whether the gap differs
 between programme levels within the same country.
 
 And with the comparison modal, you can overlay two countries at once —
@@ -123,7 +116,7 @@ The doughnut chart shows each country's proportional share of the total
 European informatics student population.
 
 And the Absolute Scale bar chart shows raw enrollment numbers per country —
-where large nations like Germany, the UK, and Turkey naturally dominate.
+where large nations like Germany dominate.
 
 [pause 1 sec]
 
@@ -134,8 +127,7 @@ SLIDE 8 — Statistical Charts: European Context 2  (~25 sec)
 But when you normalize by population — dividing by million inhabitants —
 the ranking reverses completely.
 
-Sweden, Finland, and Greece rise to the top, while Germany and Turkey
-drop toward the bottom.
+Sweden, Finland, and Greece rise to the top, while Germany drop.
 
 And on the right, the side-by-side comparison chart lets you overlay
 two countries year by year — making it easy to benchmark any two
@@ -158,7 +150,7 @@ giving the impression of progress — but the relative share shows almost
 no movement.
 
 Third: population normalization reverses the country rankings completely.
-Germany and Turkey dominate the raw charts; Sweden, Finland, and Estonia
+Germany dominates the raw charts; Sweden, Finland, and Estonia
 lead the per-million view.
 
 [pause 1 sec]
@@ -170,10 +162,6 @@ SLIDE 10 — Conclusion & Future Work  (~20 sec)
 To summarize: we built a fully static, browser-based platform that brings
 geographic, temporal, and comparative visualization to a dataset that
 previously required manual spreadsheet work to navigate.
-
-Looking ahead, this app would benefit from automated data refresh via CI/CD,
-a year-by-year choropleth animation, an institution-type filter,
-a mobile-optimized layout, and export functionality for charts and data.
 
 Thank you for watching.
 
